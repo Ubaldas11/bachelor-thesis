@@ -14,6 +14,11 @@
 \usepackage{wrapfig}
 \usepackage{tabularx}
 
+\usepackage{enumitem}
+%PAKEISTA, tarpai tarp sąrašo elementų
+\setitemize{noitemsep,parsep=0.7pt,partopsep=0.7pt}
+\setenumerate{noitemsep,parsep=0.7pt,partopsep=0.7pt}
+
 % Titulinio aprašas
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
@@ -29,7 +34,7 @@
 
 % Nustatymai
 % \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
-\bibliography{bibliografija}
+\bibliography{Bakalaurinis}
 
 \begin{document}
 \maketitle
@@ -42,21 +47,14 @@
 % \end{center}
 
 \input{chapters/summary}
-
+\input{chapters/intro}
 
 
 
 
 \tableofcontents
 
-\sectionnonum{Įvadas}
-Įvade nurodomas darbo tikslas ir uždaviniai, kuriais bus įgyvendinamas tikslas,
-aprašomas temos aktualumas, apibrėžiamas tiriamasis objektas akcentuojant
-neapibrėžtumą, kuris bus išspręstas darbe, aptariamos teorinės darbo prielaidos
-bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
-temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
-naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
-Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2–4 puslapiai.
+
 
 \section{Medžiagos darbo tema dėstymo skyriai}
 Medžiagos darbo tema dėstymo skyriuose išsamiai pateikiamos nagrinėjamos temos
