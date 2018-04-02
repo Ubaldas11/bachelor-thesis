@@ -1,9 +1,37 @@
 \sectionnonum{Sąvokų apibrėžimai}
-Atributas - charakteristika, susieta su esybe, pavyzdžiui fiziniu asmeniu. Galimi asmens atributai: gimimo data,
-vardas, ūgis, pirštų antspaudai \cite{Camp2004}. 
+\textbf{Atributas} - charakteristika, susieta su esybe, pavyzdžiui fiziniu asmeniu. Galimi asmens atributai: gimimo data,
+vardas, ūgis, pirštų antspaudai \cite{Camp2004}. Atributas gali būti laikinas (pvz. adresas) arba nuolatinis (pvz. asmens kodas).
 
-Skaitmeninė tapatybė - abstrakti fizinės esybės reprezentacija, sudaryta iš aibės esybės nuolatinių atributų,
-kurie vienareikšmiškai susiejami su fizine esybe \cite{Glasser2009, Camp2004}. Šiame darbe
-esybė dažniausiai yra fizinis asmuo.
+\textbf{Identifikatorius} - tai atributas, kuris vienareikšmiškai susiejamas su jį pateikiančiu asmeniu ir kurį
+sunku arba neįmanoma pakeisti. Fizinio asmens identifikatoriaus pavyzdys galėtų būti gimimo data
+(žmogus gali apie ją meluoti, tačiau gimimo datos pakeisti neįmanoma) \cite{Camp2004}.
 
-Skaitmeninės tapatybės valdymas - 
+\textbf{Identifikavimas} - tai procesas, kurio metu asmuo susiejamas su jo identifikatoriumi \cite{Camp2004}. Identifikavimo
+pavyzdys yra asmens ir jo vardo susiejimas: \textit{tu esi Jonas Jonaitis}.
+
+\textbf{Autentifikavimas} - tai procesas, kurio metu patvirtinama sąsaja tarp tapatybės ir jos identifikatoriaus (t.y., įrodoma,
+kad asmuo iš tikrųjų yra tas, kas sakosi esąs) \cite{Camp2004, Strictest2011}. Dažniausiai internete autentifikavimui pateikiamas identifikatorius
+yra slapyvardžio ir slaptažodžio pora. Autentifikavimo pavyzdys:
+\textit{tavo pateikta slapyvardžio ir slaptažodžio pora patvirtina, kad tu esi Jonas Jonaitis}.
+
+\textbf{Autorizavimas} - tai procesas, kurio metu leidžiama arba draudžiama asmeniui atlikti konkretų veiksmą, priklausomai
+nuo jo identifikatoriaus ar atributo \cite{Camp2004}. Pavyzdys: \textit{kadangi tu pateikei administratoriaus
+prieigos raktą, tau leidžiama ištrinti šį tinklalapio puslapį}. 
+
+\textbf{Skaitmeninė tapatybė} - abstrakti fizinės esybės reprezentacija, sudaryta iš aibės esybės nuolatinių ar laikinų atributų,
+kurie susiejami su fizine esybe \cite{Glasser2009, Camp2004}. Fizinė esybė gali būti fizinis arba juridinis asmuo.
+Šiame darbe, jei nenurodyta kitaip, kalbama apie fizinio asmens skaitmeninę tapatybę.
+
+\textbf{Skaitmeninės tapatybės valdymas} (angl. \textit{digital identity management}) - tai procesų, skirtų kontroliuoti
+tapatybę ir su ja susijusius procesus, visuma \cite{Dabrowski2008}. Į tai įeina autentifikavimas, autorizavimas,
+prieigų kontrolė, tapatybės gyvavimo ciklo
+valdymas bei saugus tapatybės atributų perdavimas trečiosioms šalims \cite{Cao2010}.
+
+\textbf{Paslaugų tiekėjas} (angl. \textit{service provider}) - tai betkokia taikomoji programa, kuri suteikia naudotojui tam tikrą paslaugą ar
+norimą turinį. Galimi paslaugų tiekėjai yra interneto tinklapiai, susirašinėjimo programos ar kitos taikomosios programos,
+į kurias kreipiasi naudotojas \cite{Pashalidis2003, Samar1999}. Paslaugų tiekėjas gali turėti vieną ar kelias paslaugas,
+kurioms reikia tapatybės valdymo funkcijų.
+
+\textbf{Tapatybės tiekėjas} (angl. \textit{identity provider}) - servisas ar taikomoji programa, skirta koordinuoti su tapatybe
+susijusius duomenis tarp naudotojų, jų naršyklių bei paslaugų tiekėjų \cite{Strictest2011}. Pagrindinės tapatybės tiekėjo funkcijos:
+infrastruktūros naudotojų tapatybės duomenims apdoroti sukūrimas ir užklausų iš paslaugų tiekėjų bei naudotojų apdorojimas \cite{Cao2010}.
