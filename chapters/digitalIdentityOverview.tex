@@ -75,7 +75,7 @@ kitos skaitmeninio identiteto sistemų savybės. Žemiau pateikiami pagrindiniai
     naudotojai pradeda nepasitikėti taikomųjų programų kūrėjais, nes jie pilnai nežino, kokia informacija apie juos kaupiama ir kokioms
     sistemoms ji perduodama;
     \item patogumas (angl. \textit{usability}). Naudotojams skaitmeninės tapatybės valdymas dažnai yra tik pašalinis mechanizmas, reikalingas
-    norint pasiekti paslaugą \cite{Dhamija2008}. Dėl šios priežasties sistemos naudojimosi patogumas yra svarbus - kuo tapatybės valdymas yra labiau integruota
+    norint pasiekti paslaugą \cite{Dhamija2008}. Dėl šios priežasties sistemos naudojimosi patogumas yra svarbus - kuo tapatybės valdymas yra labiau integruotas
     su asmens jau naudojamomis sistemomis ir kuo mažiau jis reikalauja papildomo naudotojo įsitraukimo, tuo labiau naudotojas bus linkęs pasirinkti šį identiteto valdymo sprendimą.
 \end{itemize}
 
@@ -86,18 +86,56 @@ kitos skaitmeninio identiteto sistemų savybės. Žemiau pateikiami pagrindiniai
     paslaugų tiekėjui gali tekti skirti daug arba mažai resursų (programuotojų, laiko, investavimo į technologijas)
     naudotojų tapatybės valdymo veiksmams užtikrinti;
     \item naudotojo patirties kontrolė (angl. \textit{user experience control}). Paslaugų tiekėjai siekia užtikrinti teigiamą
-    naudotojų patirtį, o tapatybės valdymo sistemos veikimo primesti sprendimai (pvz. nukreipimai į kitą tinklalapį) gali daryti
+    naudotojų patirtį dėl geresnio naudojamumo, privatumo ir saugumo \cite{Dhamija2008}, o tapatybės valdymo sistemos veikimo primesti sprendimai (pvz. nukreipimai į kitą tinklalapį) gali daryti
     tam įtaką.
 \end{itemize}
 
 \subsection{Skaitmeninių tapatybių valdymo sistemos}
 
 Skirtingos tapatybių valdymo sistemos yra pagrįstos skirtingomis architektūromis, kurios įgalina
-konkrečios sistemos veikimą. Šiame skyriuje apžvelgiami 4-i naudojami tapatybių valdymo modeliai bei pateikiami
-šių modelių įgyvendinimo pavyzdžiai.
+konkrečios sistemos veikimą. Šiame skyriuje apžvelgiami 4-i naudojami tapatybių valdymo sistemų
+modeliai bei pateikiami jų įgyvendinimo pavyzdžiai.
 
+\subsubsection{Izoliuotas modelis}
 
-- apibrėžt, į kokius aspektus atkreipsiu dėmėsį nagrinėdamas (let's go user centric?)
-- eit per dvi skirtingas dimensijas:
-    > architektūra (lokali, centralizuota, paskirstyta)
-    > pavyzdžiai (bobutėspaskola.com, LDAP/AD, OpenIdConnect/SAML 2.0)
+\chapter{\textbf{Modelis}}
+
+Izoliuotame modelyje paslaugų tiekėjas yra ir tapatybės tiekėjas, nes visos su tapatybės valdymu
+susijusios operacijos yra atliekamos vieno serverio. Tapatybės duomenų saugojimas, autentifikavimas
+ir autorizavimas yra įgyvendinti paties paslaugų tiekėjo \cite{Cao2010} Kiekvienas naudotojas turi atskirus identifikatorius,
+tokius kaip slaptažodžiai ar biometriniai duomenys. Modelio veikimas pavaizduotas žemiau esančiame paveiksle.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/IsolatedModel}
+    \caption{Izoliuotas skaitmeninės tapatybės valdymas \cite{Cao2010}}
+\end{figure}
+
+Pagal izoliuotą modelį, naudotojas turi savo paskyrą kiekvieno jam aktualaus paslaugų tiekėjo sistemoje. Kiekvieną kartą autentifikuojat ar autorizuojant
+naudotoją, tai atlieka pats paslaugų tiekėjas, bendraudamas tiesiogiai su naudotoju (jo naršykle). Naudotojui prisijungus prie vieno tinklalapio ir gavus
+prieigos raktą, jis gali toliau naudotis tinklalapiu, tačiau prireikus pasinaudoti kitu paslaugų tiekėju, tapatybės atpažinimo veiksmai (autentifikavimas, autorizavimas)
+turės būti atlikti iš naujo su šiuo paslaugų tiekėju.
+
+Šis modelis yra gana paprastas, tačiau turi daug trūkumų. Jis verčia naudotojus turėti daug paskyrų bei kartoti prisijungimo
+ar kitus tapatybės atpažinimo veiksmus su kiekvienu paslaugų tiekėju. Naudotojo asmens
+duomenų kontrolė priklauso tik nuo paslaugų tiekėjo suteikiamų galimybių. Paslaugų tiekėjams toks metodas taip pat nėra itin patrauklus.
+Nors jie turi visas sąlygas pilnai kontroliuoti naudotojo patirtį,
+tačiau jie privalo patys įgyvendinti ir palaikyti tapatybės valdymo funkcijas, taip pat prašyti iš
+naudotojų susikurti dar vieną paskyrą.
+\\
+
+\chapter{\textbf{Realizacijos}}
+
+Kadangi šis naudotojų autentifikavimo bei autorizavimo modelis naudojamas seniausiai,
+yra gana nemažai jį įgyvendinusių taikomųjų programų. Lietuvoje šį modelį naudoja
+\enquote{Tiketa}, \enquote{Bilietai.lt}, \enquote{Pigu.lt},
+\enquote{Varle.lt}, pasaulyje - \enquote{Booking.com}, \enquote{Skycop}, \enquote{AirBnB} bei kitos platformos. Verta
+pastebėti, kad dalis iš jų remiasi ne tik savo tapatybės valdymo, bet jau turi į savo sistemas integravę ir papildomų autentifikavimo būdų
+(pvz. prisijungimą per \enquote{Facebook} ar \enquote{Google}).
+
+Realizacijų technologiniai sprendimai dažniausiai nėra viešai prieinami.
+Šiame modelyje kiekvienas paslaugų tiekėjas yra ir tapatybės tiekėjas, tad nereikia
+specialaus protokolo, kuriuo duomenimis apsikeistų šios dvi esybės - visa tai pats nusprendžia
+ir įgyvendina paslaugų tiekėjas.
+
+\subsubsection{Centralizuotas modelis}
