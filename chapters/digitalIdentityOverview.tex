@@ -166,6 +166,8 @@ naudoti kito paslaugų tiekėjo sistemose.
     \label{fig:isolatedModel}
 \end{figure}
 
+\textcolor{red}{jei reik, pastraipa paslaugų tiekėjo bruožams}.
+
 \subsubsubsection*{Realizacijos}
 
 Centralizuotas modelis tinkamas naudoti vieno paslaugų tiekėjo ribose \cite{Josang2005}. Vienas iš pavyzdžių - 
@@ -207,11 +209,34 @@ autentifikuotas visose paslaugose, kurios palaiko šį tapatybės tiekėją \cit
 gali prisijungti prie tinklalapių iš skirtingų paslaugų tiekėjų. Asmens duomenų saugumas priklauso nuo
 bendravimo tarp paslaugų bei tapatybės tiekėjų, o šiame modelyje jis sudėtingesnis nei izoliuotame ar centralizuotame
 tapatybių valdyme, nes jungtinis valdymas paremtas tarpdomeniniu bendravimu \cite{Maler2008}. Naudotojo duomenų kontrolė jungtiniame 
-modelyje turi tiek privalumų, tiek trūkumų. Viena vertus, naudotojas savo asmens duomenis suteiks mažesniam kiekiui sistemų (tik tapatybės tiekėjams,
+modelyje turi tiek privalumų, tiek trūkumų. Viena vertus, naudotojas savo asmens duomenis suteikia mažesniam kiekiui sistemų (tik tapatybės tiekėjams,
 vietoj visų paslaugų tiekėjų). Tačiau taip paslaugų tiekėjas tampa vieninteliu nesekmės tašku (angl. \textit{single point of failure}) - programišiams įsilaužus
-į tapatybės tiekėjo sistemą, visų paslaugų paskyros tampa prieinamos \cite{Pashalidis2003}. Taip pat, naudotojui gali būti sunku kontroliuoti
+į tapatybės tiekėjo sistemą, asmens paskyros visose paslaugose tampa prieinamos \cite{Pashalidis2003}. Taip pat, naudotojui gali būti sunku kontroliuoti
 savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}.
+
+\textcolor{red}{jei reik, pastraipa paslaugų tiekėjo bruožams}.
 
 \subsubsubsection*{Realizacijos}
 
-\subsection{}
+\textcolor{red}{to be added}
+
+\subsection{Tapatybių valdymo sistemų palyginimas}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
+\begin{table}[h]
+    \centering
+    \caption{My caption}
+    \label{my-label}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{Modelis}} & \multicolumn{1}{c|}{\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Identifikatorių\\ kiekis\end{tabular}}} & \multicolumn{3}{c|}{Patogumas} & \multicolumn{1}{c|}{\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Asmens duomenų\\ kontrolė\end{tabular}}} \\ \cline{3-5}
+    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Prisijungimų\\ kiekis\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Papildoma programinė\\ įranga\end{tabular}} & \multicolumn{1}{c|}{Naudotojo patirtis} & \multicolumn{1}{c|}{} \\ \hline
+    Izoliuotas &  &  &  &  &  \\ \hline
+    Centralizuotas &  &  &  &  &  \\ \hline
+    Jungtinis &  &  &  &  &  \\ \hline
+    \end{tabular}%
+    }
+    \end{table}
