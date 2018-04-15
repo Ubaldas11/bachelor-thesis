@@ -1,16 +1,16 @@
 \sectionnonum{Įvadas}
-Naudojimasis interneto paslaugomis šiais laikais yra neatsiejama žmonių gyvenimo dalis.
+Interneto paslaugos šiais laikais yra neatsiejama žmonių gyvenimo dalis.
 Norėdami individualizuoti turinį, sustiprinti taikomosios programos saugumą ar siekdami
 iš anksto išvengti kenkėjiškų tikslų turinčių asmenų ar sukurtų robotų, paslaugų tiekėjai
-neretai prašo naudotojų autentifikuotis. Interneto naudotojų skaičiui perkopus 4 milijardus \cite{InternetUsers2018},
+siekia identifikuoti savo naudotojus. Interneto naudotojų skaičiui perkopus 4 milijardus \cite{InternetUsers2018},
 o kiekvienam naudotojui vidutiniškai turint po 7 skirtingas socialines paskyras \cite{Mander2017}, asmenų
-autentifikavimas tampa vis didesniu iššūkiu.
+tapatybių valdymas, autentifikavimas ir autorizavimas tampa vis didesniu iššūkiu.
 
-Susidariusi situacija kelia problemų tiek paslaugų tiekėjams, tiek jų naudotojams. Kiekvienas
+Tapatybių valdymas kelia problemų tiek paslaugų tiekėjams, tiek jų naudotojams. Kiekvienas
 paslaugų tiekėjas turi skirti papildomų resursų naudotojų tapatybių valdymui, jų autentifikavimui,
 jautrių duomenų saugumo užtikrinimui. Paslaugų naudotojams bene didžiausi atsiradę keblumai:
 milžiniškas įsimintinų slaptažodžių kiekis bei sunkumai kontroliuojant savo asmens duomenų sklaidą
-skirtingose sistemose. Vidutiniškai interneto naudotojas turi 25 paskyras, reikalaujančias slaptažodžių
+skirtingose sistemose. Vidutiniškai interneto naudotojas turi 25 slaptažodžių reikalaujančias paskyras
 ir per dieną turi įvesti 8-is slaptažodžius \cite{Florencio2007}. Susidarius tokiai situacijai, per didelis įsimintinų slaptažodžių kiekis neretai 
 priverčia naudotojus paaukoti saugumą dėl patogumo
 ir pradėti naudoti tą patį slaptažodį sirtingoms sistemoms \cite{Pashalidis2003, Samar1999}. Naudotojas, turėdamas keletą
@@ -31,11 +31,11 @@ prie paslaugų, nepalaikančių pasirinkto tapatybės tiekėjo, dėl paslaugų t
 tampa vieninteliu nesėkmės tašku (angl. \textit{single point of failure}), naudotojas taip pat praranda dalį savo asmens duomenų kontrolės.
 Naršantis internete asmuo yra priverstas pasitikėti tapatybės tiekėjo
 gebėjimu perduoti tik naudotojo leistus asmens duomenis ir tik toms trečiosioms šalims, kurias jis patvirtina.
-Kaip rodo \textit{Cambridge Analytica} neleistino duomenų perdavimo incidentas \cite{CambridgeAnalytica}, net didžiosios kompanijos, tokios
+Kaip rodo \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}, net didžiosios kompanijos, tokios
 kaip \textit{Facebook}, ne visada sugeba tai užtikrinti.
 
 Blokų grandinė (angl. \textit{blockchain}) yra nauja alternatyva skaitmeninės tapatybės valdymui. Ši technologija veikia kaip
-paskirstytų įrašų platforma (angl. \textit{Distributed Ledger Platform}), kurioje kiekvienas įrašas yra nekintamas (angl. \textit{immutable}), o visi
+paskirstytų įrašų platforma (angl. \textit{distributed ledger platform}), kurioje kiekvienas įrašas yra nekintamas (angl. \textit{immutable}), o visi
 užfiksuoti įrašai atspindi tikslią transakcijų istoriją nuo pat grandinės sukūrimo \cite{Baars2016}. Saugant tapatybės duomenis šioje grandinėje ir
 pritaikius reikiamą blokų grandinės pasiekiamumo lygį įrašų rašymui ir skaitymui, asmuo visada
 žino, kokia trečioji šalis gali pasiekti kokius tapatybės duomenis. Kadangi blokų grandinė yra decentralizuota, pritaikius ją skaitmeninių tapatybių valdyme taip pat

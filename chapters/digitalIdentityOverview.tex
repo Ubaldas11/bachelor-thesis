@@ -11,92 +11,101 @@ programų dalis. Paslaugų tiekėjai identifikuoja savo naudotojus norėdami \ci
     \item suteikti dalį funkcionalumo tik autorizuotiems naudotojams,
     \item individualizuoti tinklalapio ar taikomosios programos turinį pagal naudotojo poreikius,
     \item sukurti paslaugos naudotojų bendruomenę,
-    \item išvengti galimų anoniniminių naudotojų atakų.
+    \item išvengti galimų anoniminių naudotojų atakų.
 \end{itemize}
 
 Dėl išvardytų priežasčių naudotojų identifikavimas atlieka svarbią rolę įvairiose taikomųjų programų
 srityse - elektroninėje valdžioje, elektroninėje komercijoje, verslo sumanume
 (angl. \textit{business intelligence}), tyrimuose bei saugume
 (angl. \textit{homeland security}) \cite{Glasser2009}. Kiekvienas paslaugų tiekėjas turi pasirinkti,
-kaip autentifikuoti, ir, jei reikia, autorizuoti naudotojus. Programos kūrėjas taip pat turi saugoti
-naudotojų suteiktus asmens duomenis ir užtikrinti jų saugumą, o naudotojui tenka rūpintis skirtingų turimų
+kaip autentifikuoti, ir, jei reikia, autorizuoti naudotojus. Programos kūrėjas taip pat turi užtikrinti naudotojo
+suteiktų duomenų saugumą, o naudotojui tenka rūpintis skirtingų turimų
 paskyrų priežiūra ir savo duomenų sklaida tarp skirtingų sistemų. Minimus tapatybės atpažinimo
 skaitmeninėje erdvėje aspektus nagrinėja skaitmeninės tapatybės valdymo disciplina.
 
 \subsection{Skaitmeninės tapatybės valdymo samprata}
 
 Dėl nuolat vykstančios interneto ir jame esančių paslaugų plėtros tapatybių
-valdymo uždavinys pastaraisiais metais tapo itin svarbus \cite{Glasser2009}. Sprendžiant šį iššųkį,
-sukurta skirtingų skaitmeninės tapatybės valdymo sistemų, siekiančių išspręsti naudotojų
-tapatybės atpažinimo problemas. Šioms sistemoms įtaką daro
+valdymo uždavinys pastaraisiais metais tapo itin svarbus \cite{Glasser2009}. Skaitmeninės tapatybės valdymo pagrindinis uždavinys yra kontroliuoti
+tapatybę ir su ja susijusius procesus, tokius kaip autentifikavimas, autorizavimas, prieigų kontrolė,
+tapatybės gyvavimo ciklo valdymas bei saugus tapatybės atributų perdavimas trečiosioms šalims \cite{Cao2010, Dabrowski2008}. Sprendžiant šį uždavinį,
+sukurta skirtingų skaitmeninės tapatybės valdymo sistemų. Šioms sistemoms įtaką daro
 kiti tapatybę nagrinėjantys mokslai (pvz. sociologija), taip pat jos gali atlikti keletą skirtingų funkcijų, susijusių
 su naudotojų tapatybe. Žemiau pateikiama diagrama,
-kurioje pavaizduotas tapatybės valdymo sistemų kontekstas bei pagrindinės atliekamos užduotys:
+kurioje apibendrintas tapatybės valdymo sistemų kontekstas bei pagrindinės atliekamos užduotys:
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{img/IDMcontextAndUsecases}
     \caption{Skaitmeninių tapatybių valdymo sistemų kontekstas ir užduotys \cite{Glasser2009}}
+    \label{fig:IDMContext}
 \end{figure}
 
 Paveiksle matomos disciplinos turi skirtingą poveikį tapatybių valdymo sistemoms. 
 Sociologija padeda apibrėžti tapatybę ir jos atitikmenį skaitmeninėje erdvėje, teisės mokslas nusako tapatybės duomenų naudojimo reikalavimus,
 o esamos technologijos formuoja sistemos įgyvendinimo niuansus. Verta pastebėti, kad tapatybės valdymo sistema gali atlikti ne visas
-diagramoje nurodomas funkcijas, o tik dalį iš jų. Taip pat, 1-ame paveiksle bei visame darbe naudojamos skaitmeninės tapatybės valdymo sąvokos,
+diagramoje nurodomas funkcijas, o tik dalį iš jų. Taip pat, ~\ref{fig:IDMContext}-ame paveiksle bei visame darbe naudojamos skaitmeninės tapatybės valdymo sąvokos,
 tokios kaip \textit{identifikavimas}, \textit{autentifikavimas} ar \textit{autorizavimas} neretai suprantamos skirtingai, o tai sukelia
 vieningos terminologijos trūkumą ir dėl jo kylančius neaiškumus \cite{Glasser2009}. Dėl to skyriuje
-\enquote{Sąvokų apibrėžimai} pateikiami darbe dažniausiai naudojamų terminų aiškinimai.
+\enquote{Sąvokų apibrėžimai} pateikiami darbe naudojamų terminų aiškinimai.
 
 Esamų tapatybių valdymo sistemų architektūros bei veikimo principai yra skirtingi -  S. Clauß ir M.Köhntopp savo tyrime pastebi,
 kad nėra vieningo standarto identiteto
-valdymo sistemoms \cite{Claus2001}. Tolesniuose skyriuose, apžvelgus naudotojų bei paslaugų tiekėjų reikalavimus
+valdymo sistemoms \cite{Claus2001}. Tolesniuose skyriuose, apžvelgus naudotojų poreikius
 tapatybės valdymo sistemoms, pateikiamos skirtingos technologijos
 bei sprendimai, naudojami identiteto valdymui internete, jų privalumai bei trūkumai.
 
-\subsection{Skaitmeninės tapatybės valdymo sistemų charakteristikos}
+\subsection{Naudotojų poreikiai skaitmeninės tapatybės valdymo sistemoms} \label{section:IDMcharacteristics}
 
-Skaitmeninės tapatybės valdymas yra plati sritis, kurią galima analizuoti iš skirtingų pusių.
-Šiame darbe į skaitmeninių tapatybių valdymą žvelgta iš dviejų perspektyvų: naudotojo bei paslaugų tiekėjo \textcolor{red}{palikt tik naudotojo?}. Abi pusės,
-priklausomai nuo savo poreikių, turi jiems aktualias identiteto valdymo sistemų savybes. Apžvelgiant skirtingas tapatybės valdymo sistemas,
-didžiausias dėmėsys kreiptas į naudotojams bei paslaugų tiekėjams svarbiausius sistemų bruožus.
+Skaitmeninės tapatybės valdymas yra plati sritis, kurią galima analizuoti iš skirtingų pusių: paslaugų tiekėjo, tapatybės tiekėjo ar naudotojo.
+Šiame darbe į skaitmeninių tapatybių valdymą žvelgta iš naudotojo perspektyvos - kaip skaitmeninio valdymo sistemos atitinka naudotojų poreikius
+bei lūkesčius. Išskirtos šios naudotojoms aktualios sistemų savybės:
 
-Tiek naudotojams, tiek paslaugų tiekėjams itin svarbus yra pasirinkto identiteto valdymo sprendimo patikimumas, t.y., asmens duomenų saugumo užtikrinimas.
-Naudotojai nenori savo asmens duomenų nutekėjimo (angl. \textit{data leakage}) internete, tuo tarpu paslaugų tiekėjai negali rizikuoti prarasti naudotojų pasitikėjimo
-jų paslauga pasirinkus nesaugų tapatybės valdymo sprendimą. Be patikimumo, naudotojams bei paslaugų tiekėjams aktualios ir 
-kitos skaitmeninio identiteto sistemų savybės. Žemiau pateikiami pagrindiniai abiejų pusių poreikiai.
-\\
+% Abi pusės,
+% priklausomai nuo savo poreikių, turi jiems aktualias identiteto valdymo sistemų savybes. Apžvelgiant skirtingas tapatybės valdymo sistemas,
+% didžiausias dėmėsys kreiptas į naudotojams bei paslaugų tiekėjams svarbiausius sistemų bruožus.
 
-\chapter{\textbf{Naudotojams svarbūs tapatybės valdymo sistemų bruožai:}}
+% Tiek naudotojams, tiek paslaugų tiekėjams itin svarbus yra pasirinkto identiteto valdymo sprendimo patikimumas, t.y., asmens duomenų saugumo užtikrinimas.
+% Naudotojai nenori savo asmens duomenų nutekėjimo (angl. \textit{data leakage}) internete, tuo tarpu paslaugų tiekėjai negali rizikuoti prarasti naudotojų pasitikėjimo
+% jų paslauga pasirinkus nesaugų tapatybės valdymo sprendimą. Be patikimumo, naudotojams bei paslaugų tiekėjams aktualios ir 
+% kitos skaitmeninio identiteto sistemų savybės. Žemiau pateikiami pagrindiniai abiejų pusių poreikiai.
 
 \begin{itemize}
     \item identifikatorių bei slaptažodžių kiekis. Naudotojui vidutiniškai turint 25 paskyras, reikalaujančias slaptažodžių \cite{Florencio2007} bei naudojant
     nuo 2 iki 12-os el. paštų \cite{Gross2007}, jis tampa priverstas prisiminti vis daugiau identifikatorių. Atsimintinų autentifikavimo duomenų kiekiui
     augant, naudotojai yra linkę aukoti saugumą dėl patogumo ir naudoti panašius
     slaptažodžius skirtingose sistemose \cite{Pashalidis2003, Samar1999};
-    \item asmens duomenų kontrolė. Pasak Nyderlanduose atliktų tyrimų, naudotojai jaučia, kad nekontroliuoja savo asmens duomenų internete \cite{Baars2016}. Dėl to
+    \item saugumas. Privatumas yra žmogaus poreikis ir visa visuomenė nukentėtų nuo jo nebuvimo \cite{Maliki2007}.
+    Suteikiant savo asmens duomenis internete naudotojai tikisi, kad jie bus patikimai
+    saugomi ir nepasiekiami programišiams. Tapatybių valdymo sistemos turėtų būti budrios saugumo rizikoms bei viešai skelbti
+    saugumui skirtas priemones ir atliktų saugumo analizių rezultatus, kad tiek naudotojai, tiek paslaugų tiekėjai
+    galėtų pasitikėti tapatybių valdymo sistemomis \cite{Dhamija2008};
+    \item asmens duomenų kontrolė. Pasak Nyderlanduose atliktų tyrimų, naudotojai nesijaučia kontroliuojantys savo asmens duomenų internete \cite{Baars2016}. Dėl to
     naudotojai pradeda nepasitikėti taikomųjų programų kūrėjais, nes jie pilnai nežino, kokia informacija apie juos kaupiama ir kokioms
     sistemoms ji perduodama;
-    \item patogumas (angl. \textit{usability}). Naudotojams skaitmeninės tapatybės valdymas dažnai yra tik pašalinis mechanizmas, reikalingas
+    \item patogumas (angl. \textit{usability}). Naudotojams skaitmeninės tapatybės valdymas neretai yra tik pašalinis mechanizmas, reikalingas
     norint pasiekti paslaugą \cite{Dhamija2008}. Dėl šios priežasties sistemos naudojimosi patogumas yra svarbus - kuo tapatybės valdymas yra labiau integruotas
-    su asmens jau naudojamomis sistemomis ir kuo mažiau jis reikalauja papildomo naudotojo įsitraukimo, tuo labiau naudotojas bus linkęs pasirinkti šį identiteto valdymo sprendimą.
+    su asmens jau naudojamomis sistemomis, kuo mažiau jis reikalauja papildomo naudotojo įsitraukimo ir kuo suteikia geresnę naudotojo patirtį (angl. \textit{user experience}), tuo labiau naudotojas bus linkęs pasirinkti šį identiteto valdymo sprendimą.
 \end{itemize}
 
-\chapter{\textbf{Paslaugų tiekėjams aktualios tapatybės valdymo sistemų savybės:}}
+% \chapter{\textbf{Paslaugų tiekėjams aktualios tapatybės valdymo sistemų savybės:}}
 
-\begin{itemize}
-    \item kaštai, skirti tapatybės valdymui. Priklausomai nuo pasirinkto sprendimo,
-    paslaugų tiekėjui gali tekti skirti daug arba mažai resursų (programuotojų, laiko, investavimo į technologijas)
-    naudotojų tapatybės valdymo veiksmams užtikrinti;
-    \item naudotojo patirties kontrolė (angl. \textit{user experience control}). Paslaugų tiekėjai siekia užtikrinti teigiamą
-    naudotojų patirtį dėl geresnio naudojamumo, privatumo ir saugumo \cite{Dhamija2008}, o tapatybės valdymo sistemos veikimo primesti sprendimai (pvz. nukreipimai į kitą tinklalapį) gali daryti
-    tam įtaką.
-\end{itemize}
+% \begin{itemize}
+%     \item kaštai, skirti tapatybės valdymui. Priklausomai nuo pasirinkto sprendimo,
+%     paslaugų tiekėjui gali tekti skirti daug arba mažai resursų (programuotojų, laiko, investavimo į technologijas)
+%     naudotojų tapatybės valdymo veiksmams užtikrinti;
+%     \item naudotojo patirties kontrolė (angl. \textit{user experience control}). Paslaugų tiekėjai siekia užtikrinti teigiamą
+%     naudotojų patirtį dėl geresnio naudojamumo, privatumo ir saugumo \cite{Dhamija2008}, o tapatybės valdymo sistemos veikimo primesti sprendimai (pvz. nukreipimai į kitą tinklalapį) gali daryti
+%     tam įtaką.
+% \end{itemize}
 
 \subsection{Esamos skaitmeninių tapatybių valdymo sistemos}
 
-Skirtingos tapatybių valdymo sistemos yra pagrįstos skirtingomis architektūromis, kurios įgalina
-konkrečios sistemos veikimą. Šiame skyriuje apžvelgiami 3-ys dažniausiai naudojami tapatybių valdymo sistemų
-modeliai bei pateikiami jų įgyvendinimo pavyzdžiai.
+Tapatybių valdymo sistemos yra pagrįstos skirtingomis architektūromis, kurios įgalina
+konkrečios sistemos veikimą. Šiame skyriuje tiriami 3-ys dažniausiai naudojami identiteto valdymo
+modeliai. Tiriant kiekvieną modelį, pirmiausia apžvelgti jo bendri veikimo principai. Toliau, apžvelgtos paplitusios modelio realizacijos, kurių technologiniai
+sprendimai gali turėti įtakos naudotojų poreikiams. Galiausiai, analizuotas sistemos atitikimas naudotojų lūkesčiams,
+išvardytiems \ref{section:IDMcharacteristics} skyrelyje.
 
 \subsubsection{Izoliuotas tapatybių valdymas}
 
@@ -104,8 +113,8 @@ modeliai bei pateikiami jų įgyvendinimo pavyzdžiai.
 
 Izoliuotame modelyje paslaugų tiekėjas yra ir tapatybės tiekėjas, nes visos su tapatybės valdymu
 susijusios operacijos yra atliekamos vieno serverio. Tapatybės duomenų saugojimas, autentifikavimas
-ir autorizavimas yra įgyvendinti paties paslaugų tiekėjo \cite{Cao2010} Kiekvienas naudotojas turi atskirus identifikatorius
-kiekvienam paslaugų tiekėjui. Modelis grafiškai pavaizduotas žemiau esančiame paveiksle:
+ir autorizavimas yra įgyvendinti paties paslaugų tiekėjo \cite{Cao2010}. Kiekvienas naudotojas turi atskirus identifikatorius
+kiekvienai naudojamai paslaugai. Modelis grafiškai pavaizduotas žemiau esančiame paveiksle:
 
 \begin{figure}[H]
     \centering
@@ -113,18 +122,10 @@ kiekvienam paslaugų tiekėjui. Modelis grafiškai pavaizduotas žemiau esančia
     \caption{Izoliuotas skaitmeninės tapatybės valdymas \cite{Cao2010}}
 \end{figure}
 
-Pagal izoliuotą modelį, naudotojas turi savo paskyrą kiekvieno jam aktualaus paslaugų tiekėjo sistemoje. Kiekvieną kartą autentifikuojat ar autorizuojant
+Pagal izoliuotą modelį, naudotojas turi savo paskyrą kiekvienoje naudojamoje sistemoje. Kiekvieną kartą autentifikuojant ar autorizuojant
 naudotoją, tai atlieka pats paslaugų tiekėjas, bendraudamas tiesiogiai su naudotoju (jo naršykle). Naudotojui prisijungus prie vieno tinklalapio ir gavus
-prieigos raktą, jis gali toliau naudotis tinklalapiu, tačiau prireikus pasinaudoti kitu paslaugų tiekėju, tapatybės atpažinimo veiksmai (autentifikavimas, autorizavimas)
-turės būti atlikti iš naujo su šiuo paslaugų tiekėju.
-
-Šis modelis yra gana paprastas paslaugų tiekėjams, tačiau greitai tampa
-nebekontroliuojamu naudotojams \cite{Josang2005}. Jis verčia naudotojus turėti daug paskyrų, identifikatorių bei slaptažodžių.
-Tie patys tapatybės atpažinimo veiksmai (pvz. autentifikavimas) atliekamas iš naujo su kiekviena reikalinga paslauga. Naudotojui
-sunku kontroliuoti savo asmens duomenis, nes jis juos patiki visiems paslaugų tiekėjams, kuriais naudojasi - tai apsunkina 
-priežiūrą, kur kokie duomenys perduoti bei asmens duomenų atnaujinimą, kuris turi būti atliekamas su kiekvienu paslaugos tiekėju atskirai.
-
-\textcolor{red}{jei reik, pastraipa paslaugų tiekėjo bruožams}.
+prieigos raktą, jis gali toliau naudotis šiuo tinklalapiu, tačiau prireikus pasinaudoti kita taikomąja programa, tapatybės atpažinimo veiksmai (autentifikavimas, autorizavimas)
+turi vėl būti atlikti naujoje sistemoje.
 
 \subsubsubsection*{Realizacijos}
 
@@ -132,13 +133,35 @@ Kadangi šis naudotojų autentifikavimo bei autorizavimo modelis naudojamas seni
 yra gana nemažai jį įgyvendinusių taikomųjų programų. Lietuvoje šį modelį naudoja
 \enquote{Tiketa}, \enquote{Bilietai.lt}, \enquote{Pigu.lt},
 \enquote{Varle.lt}, pasaulyje - \enquote{Booking.com}, \enquote{Skycop}, \enquote{AirBnB} bei kitos platformos. Verta
-pastebėti, kad dalis iš jų jau remiasi ne tik savo tapatybės valdymo, bet jau turi į savo sistemas integravę ir papildomų autentifikavimo būdų
+pastebėti, kad dalis iš jų jau remiasi ne vien tik savo izoliuotu tapatybės valdymu, bet jau turi į savo sistemas integravę ir papildomų autentifikavimo būdų
 (pvz. prisijungimą per \enquote{Facebook} ar \enquote{Google}).
 
 Realizacijų technologiniai sprendimai dažniausiai nėra viešai prieinami.
 Šiame modelyje kiekvienas paslaugų tiekėjas yra ir tapatybės tiekėjas, tad nereikia
-specialaus protokolo, kuriuo duomenimis apsikeistų šios dvi esybės - visa tai pats nusprendžia
-ir įgyvendina paslaugų tiekėjas.
+apibrėžti protokolų, duomenų formatų ar kitų detalių, kurios formalizuotų bendravimą tarp pasikliaujančiosios šalies ir
+tapatybės tiekėjo - visa tai pats nusprendžia ir įgyvendina paslaugų tiekėjas.
+
+\subsubsubsection*{Patrauklumas naudotojams}
+
+Nors izoliuotas tapatybių valdymas yra gana paprastas paslaugų tiekėjams, tačiau jis greitai tampa
+nebekontroliuojamu naudotojams \cite{Josang2005}. Jis verčia naudotojus turėti paskyrą kiekvienai paslaugai, o tai lemia
+daugybės identifikatorių ir slaptažodžių valdymą. Tai sukelia \enquote{slaptažodžių nuovargį} (angl. 
+\textit{password fatigue}), kas veda prie tų pačių identifikatorių ir slaptažodžių pasirinkimo skirtingoms paslaugoms \cite{Dhamija2008}.
+
+Izoliuotame identiteto valdyme programišiams sunkiau atlikti sukčiavimo (angl. \textit{phishing}) ataką, nes naudotojas
+nebūna nukreipiamas į tapatybės tiekėjo puslapį. Tai pagerina šio modelio saugumą. Dėl to, kad paslaugų tiekėjas yra ir tapatybės tiekėjas,
+šiame modelyje galima išvengti duomenų perdavimo tarp skirtingų serverių - tokiu būdu sumažėja ir rizika, kad šiuos duomenis
+jų persiuntimo metu perims programišius. Tačiau, standartų duomenų formatams bei perdavimui nebuvimas gali paskatinti paslaugų
+tiekėjus nepažvelgti į tai atsakingai ir įgyvendinti bendravimą su naudotojo naršykle atmestinai.
+
+Naudotojų asmens duomenų kontrolė šiame modelyje priklauso nuo kiekvienos paslaugos. Asmenys atskirai suteikia savo duomenis
+kiekvienai paslaugai, dažniausiai paskyros sukūrimo metu. Jei paslauga informuoja apie duomenų panaudos atvejus (pvz. kam bus naudojamas
+el. pašto adresas), tuomet asmuo jausis labiau užtikrintas savo duomenų kontrole. Tačiau dėl šiame modelyje neišvengiamo duomenų suteikimo
+dideliam skirtingų paslaugų kiekiui, asmeniui tampa sunku prisiminti kiekvienos naudojamos platformos duomenų platinimo taisykles.
+
+Izoliuotame tapatybės valdyme naudotojams tenka kartoti identifikavimo procesus (autentifikavimą, autorizavimą) tiek kartų, kiek paslaugų siekiama
+naudotis. Tai vargina naudotojus ir kuria blogą naudotojo patirtį. Tačiau, izoliuotas tapatybės valdymas pasižymi nuoseklia vartotojo sąsaja (dėl 
+visų tapatybės valdymo procesų įgyvendimo tame pačiame paslaugų tiekėjo puslapyje), tad tai šiek tiek pagerina bendrą naudotojo patirtį.
 
 \subsubsection{Centralizuotas tapatybių valdymas}
 
@@ -176,13 +199,10 @@ skirtingais šio paslaugų tiekėjo produktais, tokiais kaip \enquote{Jira}, \en
 turi ir vienkartinio prisijungimo sąlygas - paslaugas galima sukonfigūruoti taip, kad prisijungus prie vienos iš jų,
 naudotojas automatiškai tampa prisijungęs ir prie kitų paslaugų.
 
-Realizacijų naudojamos technologijos nėra viešai skelbiamos. Kadangi centralizuotame modelyje paslaugų tiekėjas
-pats įgyvendina tapatybės tiekėjo modulį, jis pats apsprendžia bendravimą tarp tapatybės ir paslaugų tiekėjo. Priklausomai
-nuo skirtingų paslaugų dydžio ir reikmių, šis bendravimas su tapatybės tiekėju gali svyruoti nuo centralizuotos duomenų bazės
-naudotojų duomenims iki
-paskirstytame tapatybės valdyme naudojamų technologijų (SAML, OpenID).
-
+\textcolor{red}{pridėt Kerberos}
+ 
 \subsubsection{Jungtinis tapatybių valdymas}
+
 
 \subsubsubsection*{Modelis}
 
@@ -218,7 +238,7 @@ savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rod
 
 \subsubsubsection*{Realizacijos}
 
-\textcolor{red}{to be added}
+\textcolor{red}{paimt iš kursinio}
 
 \subsection{Tapatybių valdymo sistemų palyginimas}
 
@@ -239,4 +259,4 @@ savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rod
     Jungtinis &  &  &  &  &  \\ \hline
     \end{tabular}%
     }
-    \end{table}
+\end{table}
