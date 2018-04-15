@@ -166,21 +166,16 @@ visų tapatybės valdymo procesų įgyvendimo tame pačiame paslaugų tiekėjo p
 \subsubsection{Centralizuotas tapatybių valdymas}
 
 \subsubsubsection*{Modelis}
-Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas naudotojo identifikatorius,
-naudojamas visų paslaugų tiekėjų \cite{Josang2005}. Paslaugų tiekėjo ir tapatybės tiekėjo funkcijos tampa atskirtos - 
-tapatybės tiekėjas rūpinasi naudotojo identiteto valdymu, o paslaugų tiekėjas koncentruojasi į savo paslaugos tobulinimą.
-Naudotojui šiame modelyje užtenka vieno identifikatoriaus ir slaptažodžio, su kuriais jis gali prisijungti prie visų to paties
-paslaugų tiekėjo paslaugų. Šis modelis iliustruotas ~\ref{fig:isolatedModel}-iame paveiksle.
+Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas tapatybės tiekėjas, į kurį kreipiasi visos paslaugos,
+esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Paslaugų tiekėjo ir tapatybės tiekėjo funkcijos tampa atskirtos - 
+tapatybės tiekėjas rūpinasi naudotojo identiteto valdymu, o paslaugų tiekėjas koncentruojasi į paslaugos vystymą. Kai paslaugų tiekėjui
+reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo įvestą informaciją (pvz. identifikatorių) tapatybės tiekėjui,
+siekdamas pabaigti procesą \cite{Cao2010}. Naudotojui šiame modelyje užtenka vieno identifikatoriaus ir slaptažodžio, su kuriais jis gali prisijungti prie visų to paties
+paslaugų tiekėjo paslaugų.
 
-Iš naudotojo perspektyvos, šis modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
-kuris bus tinkamas visoms paslaugoms. Priklausomai nuo realizacijos, naudotojui gali tekti iš naujo prisijungti prie kiekvienos
-paslaugos arba vieną kartą prisijungti prie betkurios iš paslaugų ir tapti autentifikuotu visose kitose paslaugose \cite{Josang2005}. Naudotojo asmens
-duomenų kontrolė yra geresnė nei izoliuotame skaitmeninės tapatybės valdyme, nes naudotojas asmens duomenis patiki mažesniam kiekiui esybių
-(vietoj kiekvienos paslaugos, kiekvienam paslaugų tiekėjui).
+Šis modelis iliustruotas ~\ref{fig:isolatedModel}-iame paveiksle.
 
-Pagrindinis šio modelio trūkumas yra tas, kad jis galimas naudoti tik vieno paslaugų tiekėjo srityje (angl. \textit{scope}). Tai palieka laisvės paslaugų tiekėjui tapatybės valdymo sistemos
-realizavimui (tai gali būti centralizuota platforma įmonės ribose), tačiau naudotojas negali turimo identifikatoriaus
-naudoti kito paslaugų tiekėjo sistemose.
+
 
 \begin{figure}[H]
     \centering
@@ -200,7 +195,19 @@ turi ir vienkartinio prisijungimo sąlygas - paslaugas galima sukonfigūruoti ta
 naudotojas automatiškai tampa prisijungęs ir prie kitų paslaugų.
 
 \textcolor{red}{pridėt Kerberos}
+
+\subsubsubsection*{Patrauklumas naudotojams}
  
+Iš naudotojo perspektyvos, šis modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
+kuris bus tinkamas visoms paslaugoms. Priklausomai nuo realizacijos, naudotojui gali tekti iš naujo prisijungti prie kiekvienos
+paslaugos arba vieną kartą prisijungti prie betkurios iš paslaugų ir tapti autentifikuotu visose kitose paslaugose \cite{Josang2005}. Naudotojo asmens
+duomenų kontrolė yra geresnė nei izoliuotame skaitmeninės tapatybės valdyme, nes naudotojas asmens duomenis patiki mažesniam kiekiui esybių
+(vietoj kiekvienos paslaugos, kiekvienam paslaugų tiekėjui).
+
+Pagrindinis šio modelio trūkumas yra tas, kad jis galimas naudoti tik vieno paslaugų tiekėjo srityje (angl. \textit{scope}). Tai palieka laisvės paslaugų tiekėjui tapatybės valdymo sistemos
+realizavimui (tai gali būti centralizuota platforma įmonės ribose), tačiau naudotojas negali turimo identifikatoriaus
+naudoti kito paslaugų tiekėjo sistemose.
+
 \subsubsection{Jungtinis tapatybių valdymas}
 
 
