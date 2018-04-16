@@ -167,15 +167,10 @@ visų tapatybės valdymo procesų įgyvendimo tame pačiame paslaugų tiekėjo p
 
 \subsubsubsection*{Modelis}
 Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas tapatybės tiekėjas, į kurį kreipiasi visos paslaugos,
-esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Paslaugų tiekėjo ir tapatybės tiekėjo funkcijos tampa atskirtos - 
-tapatybės tiekėjas rūpinasi naudotojo identiteto valdymu, o paslaugų tiekėjas koncentruojasi į paslaugos vystymą. Kai paslaugų tiekėjui
+esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Kai paslaugų tiekėjui
 reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo įvestą informaciją (pvz. identifikatorių) tapatybės tiekėjui,
 siekdamas pabaigti procesą \cite{Cao2010}. Naudotojui šiame modelyje užtenka vieno identifikatoriaus ir slaptažodžio, su kuriais jis gali prisijungti prie visų to paties
-paslaugų tiekėjo paslaugų.
-
-Šis modelis iliustruotas ~\ref{fig:isolatedModel}-iame paveiksle.
-
-
+paslaugų tiekėjo paslaugų. Modelio veikimas iliustruotas ~\ref{fig:isolatedModel}-iame paveiksle.
 
 \begin{figure}[H]
     \centering
@@ -184,29 +179,53 @@ paslaugų tiekėjo paslaugų.
     \label{fig:isolatedModel}
 \end{figure}
 
-\textcolor{red}{jei reik, pastraipa paslaugų tiekėjo bruožams}.
+Centralizuotame modelyje paslaugų tiekėjo ir tapatybės tiekėjo funkcijos tampa atskirtos - 
+tapatybės tiekėjas rūpinasi naudotojo identiteto valdymu, o paslaugų tiekėjas koncentruojasi į paslaugos vystymą. Tai sudaro patrauklesnes sąlygas
+naudotojui, tačiau taip pat sukuria vieno nesekmės taško (angl. \textit{single point of failure}) sistemą. Tapatybės tiekėjo sistemai tapus nepasiekiamai,
+naudotojai nebegali naudotis nei viena paslauga tame pačiame domene.
 
 \subsubsubsection*{Realizacijos}
 
-Centralizuotas modelis tinkamas naudoti vieno paslaugų tiekėjo ribose \cite{Josang2005}. Vienas iš pavyzdžių - 
-\enquote{Atlassian} įmonės paslaugos. Naudotojui pakanka turėti vieną \enquote{Atlassian} paskyrą ir jis gali naudotis
-skirtingais šio paslaugų tiekėjo produktais, tokiais kaip \enquote{Jira}, \enquote{Confluence}, \enquote{Bitbucket} bei kitais. \enquote{Atlassian}
-turi ir vienkartinio prisijungimo sąlygas - paslaugas galima sukonfigūruoti taip, kad prisijungus prie vienos iš jų,
-naudotojas automatiškai tampa prisijungęs ir prie kitų paslaugų.
+Centralizuotas tapatybės valdymas leidžia pasiekti vienkartinio prisijungimo funkcionalumą, kuriuo nori naudotis
+77 procentai interneto naudotojų \cite{SSOResearch}. Ar ši savybė bus pritaikyta centralizuotame modelyje, priklauso nuo
+konkrečios jo realizacijos. Kadangi modelis tinkamas naudoti darbuotojams įmonės ribose arba vieno paslaugų tiekėjo paslaugoms \cite{Josang2005},
+pateikiami pavyzdžiai abiems šioms realizacijoms. 
 
-\textcolor{red}{pridėt Kerberos}
+Viena iš įmonėse naudojamų realizacijų centralizuotam tapatybės valdymui - 
+katalogų prieigos protokolas (angl. \textit{Lightweight Directory Access Protocol}, toliau LDAP), naudojamas pasiekti ir palaikyti informaciją interneto tinkle \cite{Strictest2011}.
+Šis protokolas dažniausiai sujungiamas su aktyviąja direktorija (angl. \textit{active directory}) ir leidžia laikyti kompanijos darbuotojų
+tapatybės informaciją vienoje vietoje. Taikomosios programos siunčia užklausas į LDAP serverį, kuriose nurodo norimą atlikti veiksmą (pvz. naudotojo
+autentifikavimą ar naudotojo atributų atnaujinimą). Informacija per LDAP perduodama LDAP duomenų apsikeitimo formatu (LDIF) (\textcolor{red}{ar verta čia įdėt pvz, kaip tas
+formatas su visais DN, CN atrodo?}).\\
+LDAP grįstas vienkartinis prisijungimas leidžia įmonės darbuotojams vieną kartą prisijungti prie tam tikros įmonėje naudojamos programos ir
+nebekartoti prisijungimo kreipiantis į kitą programą. Tačiau, tai galios tik toms programoms, kurios pasiekiamoms darbuotojams per vidinį intranetą
+\cite{Strictest2011}. Dėl šios priežasties LDAP grįstas centralizuotas tapatybės valdymas retai sutinkamas už įmonių intraneto ribų \cite{Strictest2011}.
+
+Centralizuotas tapatybės valdymas taip pat gali būti realizuotas ir ne įmonės ribose, jei konkretus paslaugų tiekėjas
+turi keletą paslaugų, skirtų naudotojams. Tokiu atveju jis gali turėti centralizuotą posistemę tapatybės valdymui, o naudotojui užtenka
+turėti vieną paslaugų tiekėjo paskyrą visoms įmonės paslaugoms. Tokios realizacijos pavyzdys - \enquote{Atlassian} įmonės paslaugos. Naudotojui pakanka turėti vieną \enquote{Atlassian} paskyrą ir jis gali naudotis
+skirtingais šio paslaugų tiekėjo produktais, tokiais kaip \enquote{Jira}, \enquote{Confluence}, \enquote{Bitbucket} bei kitais. Vieną kartą prisijungus prie \enquote{Atlassian} programos (pvz. \enquote{Jira}),
+naudotojas tampa autentifikuotas ir kituose \enquote{Atlassian} tinklalapiuose. 
 
 \subsubsubsection*{Patrauklumas naudotojams}
  
-Iš naudotojo perspektyvos, šis modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
-kuris bus tinkamas visoms paslaugoms. Priklausomai nuo realizacijos, naudotojui gali tekti iš naujo prisijungti prie kiekvienos
-paslaugos arba vieną kartą prisijungti prie betkurios iš paslaugų ir tapti autentifikuotu visose kitose paslaugose \cite{Josang2005}. Naudotojo asmens
-duomenų kontrolė yra geresnė nei izoliuotame skaitmeninės tapatybės valdyme, nes naudotojas asmens duomenis patiki mažesniam kiekiui esybių
-(vietoj kiekvienos paslaugos, kiekvienam paslaugų tiekėjui).
+Iš naudotojo perspektyvos, centralizuotas modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
+kuris bus tinkamas visoms konkretaus paslaugų tiekėjo programoms. Tačiau, norint pasiekti kito paslaugų tiekėjo paslaugą,
+naudotojui turima paskyra nebebus tinkama.
 
-Pagrindinis šio modelio trūkumas yra tas, kad jis galimas naudoti tik vieno paslaugų tiekėjo srityje (angl. \textit{scope}). Tai palieka laisvės paslaugų tiekėjui tapatybės valdymo sistemos
-realizavimui (tai gali būti centralizuota platforma įmonės ribose), tačiau naudotojas negali turimo identifikatoriaus
-naudoti kito paslaugų tiekėjo sistemose.
+Centralizuotas tapatybės valdymas ne intranete gali patirti sukčiavimo (angl. \textit{phishing}) ataką, jei paslaugų tiekėjas nukreipinėja naudotoją į tinklalapį kitame domene. Tačiau,
+kadangi paslaugų tiekėjas tapatybės valdymą realizuoja pats, jis gali leisti naudotojui vesti identifikavimo duomenis ir pačiame paslaugos puslapyje (o ne nukreipiant
+į kitą sistemą) arba nukreipti į tame pačiame domene esantį, paties paslaugų tiekėjo valdomą puslapį. Tai sumažina sukčiavimo jautrumo (angl. \textit{phishing susceptibility}) galimybę.
+
+Naudotojai neturi didelės asmens duomenų kontrolės centralizuotame tapatybės valdyme. Nors, skirtingai nei izoliuotame modelyje, jie suteikia duomenis mažesniam kiekiui taikomųjų programų
+(nebe kiekvienai programai, o kiekvienam paslaugų tiekėjui), tačiau tai vis dar nėra ideali situacija. Naudotojams vistiek reikia kontroliuoti
+visas skirtingų paslagų tiekėjų paskyras ir žinoti su jomis susijusias duomenų saugojimo bei platinimo taisykles. Taip pat, jeigu modelis taikomas ne įmonės intranete (kur
+duomenų apsikeitimui apibrėžtas formatas, pvz. LDIF), naudotojas nežino, kokiu būdu jo prisijungimo ar kiti duomenys bus perduodami iš vienos paslaugos į kitą.
+
+Centralizuotas tapatybės valdymo modelis sudaro palankias sąlygas gerai naudotojo patirčiai užtikrinti. Dėl to, kad centralizuotas modelis palaiko vienkartinį prisijungimą,
+naudotojui pakanka autentifikuotis vieną kartą. Taip pat, kadangi
+tiek tapatybės valdymo, tiek paslaugų puslapiai yra valdomi paties paslaugų tiekėjo, gali būti užtikrintas vientisas tinklalapių stilius. Taigi, centralizuotą tapatybės valdymą
+įgyvendinę paslaugų tiekėjai gali sukurti patogias, naudotojams draugiškas (angl. \textit{user-friendly}) sistemas.
 
 \subsubsection{Jungtinis tapatybių valdymas}
 
