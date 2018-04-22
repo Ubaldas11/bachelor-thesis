@@ -49,12 +49,6 @@ tokios kaip \textit{identifikavimas}, \textit{autentifikavimas} ar \textit{autor
 vieningos terminologijos trūkumą ir dėl jo kylančius neaiškumus \cite{Glasser2009}. Dėl to skyriuje
 \enquote{Sąvokų apibrėžimai} pateikiami darbe naudojamų terminų aiškinimai.
 
-Esamų tapatybių valdymo sistemų architektūros bei veikimo principai yra skirtingi -  S. Clauß ir M.Köhntopp savo tyrime pastebi,
-kad nėra vieningo standarto identiteto
-valdymo sistemoms \cite{Claus2001}. Tolesniuose skyriuose, apžvelgus naudotojų poreikius
-tapatybės valdymo sistemoms, pateikiamos skirtingos technologijos
-bei sprendimai, naudojami identiteto valdymui internete, jų privalumai bei trūkumai.
-
 \subsection{Naudotojų poreikiai skaitmeninės tapatybės valdymo sistemoms} \label{section:IDMcharacteristics}
 
 Skaitmeninės tapatybės valdymas yra plati sritis, kurią galima analizuoti iš skirtingų pusių: paslaugų tiekėjo, tapatybės tiekėjo ar naudotojo.
@@ -101,15 +95,16 @@ bei lūkesčius. Išskirtos šios naudotojoms aktualios sistemų savybės:
 
 \subsection{Esamos skaitmeninių tapatybių valdymo sistemos}
 
-Tapatybių valdymo sistemos yra pagrįstos skirtingomis architektūromis, kurios įgalina
-konkrečios sistemos veikimą. Šiame skyriuje tiriami 3-ys dažniausiai naudojami identiteto valdymo
-modeliai. Tiriant kiekvieną modelį, pirmiausia apžvelgti jo bendri veikimo principai. Toliau, apžvelgtos paplitusios modelio realizacijos, kurių technologiniai
-sprendimai gali turėti įtakos naudotojų poreikiams. Galiausiai, analizuotas sistemos atitikimas naudotojų lūkesčiams,
-išvardytiems \ref{section:IDMcharacteristics} skyrelyje.
+Naudojamų tapatybių valdymo sistemų architektūros bei veikimo principai yra skirtingi -  S. Clauß ir M.Köhntopp savo tyrime pastebi,
+kad nėra vieningo standarto identiteto valdymo sistemoms \cite{Claus2001}. Šiame skyriuje tiriami 3-ys dažniausiai naudojami identiteto valdymo
+modeliai. Tiriant kiekvieną modelį, pirmiausia apžvelgti jo bendri veikimo principai. Taip pat apžvelgtos paplitusios modelį įgalinančios technologijos
+(angl. \textit{enabling technology}),
+nes modelio realizacijoje taikomi standartai ar protokolai gali turėti įtakos naudotojų poreikiams. Galiausiai, analizuotas modelio atitikimas naudotojų lūkesčiams,
+išvardytiems ~\ref{section:IDMcharacteristics} skyrelyje.
 
 \subsubsection{Izoliuotas tapatybių valdymas}
 
-\subsubsubsection*{Modelis}
+\subsubsubsection{Modelis}
 
 Izoliuotame modelyje paslaugų tiekėjas yra ir tapatybės tiekėjas, nes visos su tapatybės valdymu
 susijusios operacijos yra atliekamos vieno serverio. Tapatybės duomenų saugojimas, autentifikavimas
@@ -127,7 +122,7 @@ naudotoją, tai atlieka pats paslaugų tiekėjas, bendraudamas tiesiogiai su nau
 prieigos raktą, jis gali toliau naudotis šiuo tinklalapiu, tačiau prireikus pasinaudoti kita taikomąja programa, tapatybės atpažinimo veiksmai (autentifikavimas, autorizavimas)
 turi vėl būti atlikti naujoje sistemoje.
 
-\subsubsubsection*{Realizacijos}
+\subsubsubsection{Realizacijos bei įgalinančios technologijos}
 
 Kadangi šis naudotojų autentifikavimo bei autorizavimo modelis naudojamas seniausiai,
 yra gana nemažai jį įgyvendinusių taikomųjų programų. Lietuvoje šį modelį naudoja
@@ -141,7 +136,7 @@ Realizacijų technologiniai sprendimai dažniausiai nėra viešai prieinami.
 apibrėžti protokolų, duomenų formatų ar kitų detalių, kurios formalizuotų bendravimą tarp pasikliaujančiosios šalies ir
 tapatybės tiekėjo - visa tai pats nusprendžia ir įgyvendina paslaugų tiekėjas.
 
-\subsubsubsection*{Patrauklumas naudotojams}
+\subsubsubsection{Naudotojų poreikių įgyvendinimas}
 
 Nors izoliuotas tapatybių valdymas yra gana paprastas paslaugų tiekėjams, tačiau jis greitai tampa
 nebekontroliuojamu naudotojams \cite{Josang2005}. Jis verčia naudotojus turėti paskyrą kiekvienai paslaugai, o tai lemia
@@ -165,7 +160,7 @@ visų tapatybės valdymo procesų įgyvendimo tame pačiame paslaugų tiekėjo p
 
 \subsubsection{Centralizuotas tapatybių valdymas}
 
-\subsubsubsection*{Modelis}
+\subsubsubsection{Modelis}
 Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas tapatybės tiekėjas, į kurį kreipiasi visos paslaugos,
 esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Kai paslaugų tiekėjui
 reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo įvestą informaciją (pvz. identifikatorių) tapatybės tiekėjui,
@@ -184,7 +179,7 @@ tapatybės tiekėjas rūpinasi naudotojo identiteto valdymu, o paslaugų tiekėj
 naudotojui, tačiau taip pat sukuria vieno nesekmės taško (angl. \textit{single point of failure}) sistemą. Tapatybės tiekėjo sistemai tapus nepasiekiamai,
 naudotojai nebegali naudotis nei viena paslauga tame pačiame domene.
 
-\subsubsubsection*{Realizacijos}
+\subsubsubsection{Realizacijos bei įgalinančios technologijos}
 
 Centralizuotas tapatybės valdymas leidžia pasiekti vienkartinio prisijungimo funkcionalumą, kuriuo nori naudotis
 77 procentai interneto naudotojų \cite{SSOResearch}. Ar ši savybė bus pritaikyta centralizuotame modelyje, priklauso nuo
@@ -207,7 +202,7 @@ turėti vieną paslaugų tiekėjo paskyrą visoms įmonės paslaugoms. Tokios re
 skirtingais šio paslaugų tiekėjo produktais, tokiais kaip \enquote{Jira}, \enquote{Confluence}, \enquote{Bitbucket} bei kitais. Vieną kartą prisijungus prie \enquote{Atlassian} programos (pvz. \enquote{Jira}),
 naudotojas tampa autentifikuotas ir kituose \enquote{Atlassian} tinklalapiuose. 
 
-\subsubsubsection*{Patrauklumas naudotojams}
+\subsubsubsection{Naudotojų poreikių įgyvendinimas}
  
 Iš naudotojo perspektyvos, centralizuotas modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
 kuris bus tinkamas visoms konkretaus paslaugų tiekėjo programoms. Tačiau, norint pasiekti kito paslaugų tiekėjo paslaugą,
@@ -230,13 +225,13 @@ tiek tapatybės valdymo, tiek paslaugų puslapiai yra valdomi paties paslaugų t
 \subsubsection{Jungtinis tapatybių valdymas}
 
 
-\subsubsubsection*{Modelis}
+\subsubsubsection{Modelis}
 
 Centralizuotas modelis reikalauja visų naudotojų būti tame pačiame domene, tačiau naudotojams reikia
 paslaugų ir iš kitų domenų \cite{Cao2010}. Jungtinis (angl. \textit{federated}) tapatybių valdymas yra aibė technologijų
 ir procesų, kurie leidžia sistemoms dalintis tapatybės informacija ir deleguoti tapatybės valdymo užduotis
 tarp skirtingų paslaugų tiekėjų \cite{Maler2008}. Šis tapatybių valdymo modelis įgalina naudotojus turėti vieną
-identifikatorių, kurį gali naudoti skirtingų paslaugų tiekėjų tinklalapiuose. Žemiau pateikiama schema, nusakanti
+identifikatorių, kurį gali naudoti skirtingų paslaugų tiekėjų tinklalapiuose. Žemiau pateikiama schema, vaizduojanti
 šio modelio architektūrą:
 
 \begin{figure}[H]
@@ -251,20 +246,66 @@ duomenys bei su tapatybe susiję veiksmai (autentifikavimas, autorizavimas) yra 
 su kuriuo prisijungia tiesiogiai tapatybės tiekėjo puslapyje. Prisijungus šioje sistemoje, naudotojas tampa
 autentifikuotas visose paslaugose, kurios palaiko šį tapatybės tiekėją \cite{Maler2008}.
 
+\subsubsubsection{Realizacijos bei įgalinančios technologijos}
+
+Kadangi jungtiniame tapatybės valdyme vyksta duomenų apsikeitimas tarp tapatybės tiekėjo bei paslaugų tiekėjo, jam formalizuoti
+sukurti technologiniai standartai. Trys labiausiai paplitę protokolai: \textit{SAML}, \textit{OAuth} bei \textit{OpenID}. Šių technologijų
+apžvalga pateikiama \ref{tab:SSOprotocols}-oje lentelėje.
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+    \centering
+    \caption{Add caption\textcolor{red}{pridėt citatas}}
+      \begin{tabular}{|p{10.22em}|r|r|r|}
+      \hline
+      Savybė & \multicolumn{1}{p{12.22em}|}{SAML} & \multicolumn{1}{p{6.945em}|}{OAuth} & \multicolumn{1}{p{8.78em}|}{OpenID} \bigstrut\\
+      \hline
+      Dabartinė versija & \multicolumn{1}{p{12.22em}|}{SAML 2.0} & \multicolumn{1}{p{6.945em}|}{OAuth 2.0} & \multicolumn{1}{p{8.78em}|}{OpenID Connect} \bigstrut\\
+      \hline
+      Paskirtis & \multicolumn{1}{p{12.22em}|}{Autentifikavimas, autorizavimas, atributų perdavimas} & \multicolumn{1}{p{6.945em}|}{Autorizavimas} & \multicolumn{1}{p{8.78em}|}{Autentifikavimas} \bigstrut\\
+      \hline
+      Duomenų perdavimas & \multicolumn{1}{p{12.22em}|}{SAML, HTTP} & \multicolumn{1}{p{6.945em}|}{HTTP} & \multicolumn{1}{p{8.78em}|}{HTTP} \bigstrut\\
+      \hline
+      Duomenų formatas & \multicolumn{1}{p{12.22em}|}{XML} & \multicolumn{1}{p{6.945em}|}{JSON, JWT} & \multicolumn{1}{p{8.78em}|}{JSON, JWT} \bigstrut\\
+      \hline
+      Pasirašymas &       &       &  \bigstrut\\
+      \hline
+      Šifravimas &       &       &  \bigstrut\\
+      \hline
+      Naudotojo sutikimas perduoti duomenis & \multicolumn{1}{p{12.22em}|}{Nėra} & \multicolumn{1}{p{6.945em}|}{Yra} & \multicolumn{1}{p{8.78em}|}{Yra} \bigstrut\\
+      \hline
+      Mobiliųjų programėlių palaikymas & \multicolumn{1}{p{12.22em}|}{Nėra} & \multicolumn{1}{p{6.945em}|}{Yra} & \multicolumn{1}{p{8.78em}|}{Yra} \bigstrut\\
+      \hline
+      Saugumo rizikos &       &       &  \bigstrut\\
+      \hline
+      \end{tabular}%
+    \label{tab:SSOprotocols}%
+  \end{table}%
+
+Atsižvelgus į technologijų savybes, galima išskirti jų pagrindinius panaudos atvejus. SAML 2.0 dažniausiai naudojamas korporacijų viduje vienkartiniam prisijungimui
+įgyvendinti. Tačiau OpenID Connect bei OAuth 2.0 turi nemažai pranašumų prieš SAML 2.0: jie naudoja kompaktiškesnius duomenų formatus (JSON, JWT), galimi naudoti
+mobiliosiose programėlėse bei suteikia daugiau kontrolės naudotojui.
+
+\subsubsection*{Naudotojų poreikių įgyvendinimas}
+
 Šis tapatybių valdymo modelis yra gana patogus naudotojams. Jiems užtenka turėti vieną identifikatorių, su kuriuo
-gali prisijungti prie tinklalapių iš skirtingų paslaugų tiekėjų. Asmens duomenų saugumas priklauso nuo
+gali prisijungti prie skirtingų paslaugų tiekėjų tinklalapių. Taip pat, vieną kartą prisijungus, naudotojui nebereikia to kartoti kitose paslaugose, 
+palaikančiose tą patį tapatybės tiekėją.
+
+Asmens duomenų saugumas priklauso nuo
 bendravimo tarp paslaugų bei tapatybės tiekėjų, o šiame modelyje jis sudėtingesnis nei izoliuotame ar centralizuotame
-tapatybių valdyme, nes jungtinis valdymas paremtas tarpdomeniniu bendravimu \cite{Maler2008}. Naudotojo duomenų kontrolė jungtiniame 
+tapatybių valdyme, nes jungtinis valdymas paremtas tarpdomeniniu bendravimu \cite{Maler2008}. Saugumas sustiprinimas persiunčiamus
+duomenis pasirašant taikant viešus ir privačius raktus bei užšifruojant. Tačiau, kol dauguma tinklalapių remiasi slapyvardžiu ir slaptažodžiu autentifikuojant naudotoją,
+šis modelis išlieka labai pažeidžiamas sukčiavimo (angl. \textit{phishing}) atakoms \cite{Maler2008}.
+
+Naudotojo duomenų kontrolė jungtiniame 
 modelyje turi tiek privalumų, tiek trūkumų. Viena vertus, naudotojas savo asmens duomenis suteikia mažesniam kiekiui sistemų (tik tapatybės tiekėjams,
 vietoj visų paslaugų tiekėjų). Tačiau taip paslaugų tiekėjas tampa vieninteliu nesekmės tašku (angl. \textit{single point of failure}) - programišiams įsilaužus
 į tapatybės tiekėjo sistemą, asmens paskyros visose paslaugose tampa prieinamos \cite{Pashalidis2003}. Taip pat, naudotojui gali būti sunku kontroliuoti
-savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}.
+savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}. Nors OpenID Connect bei OAuth 2.0
+standartai suteikia galimybes naudotojui patvirtinti, kokius duomenis jis sutinka perduoti trečiajai šaliai, tačiau tapatybės tiekėjai ne visada tinkamai informuoja,
+kokie naudotojo veiksmai gali suteikti leidimą tapatybės tiekėjui perduoti duomenis kitai sistemai.
 
-\textcolor{red}{jei reik, pastraipa paslaugų tiekėjo bruožams}.
-
-\subsubsubsection*{Realizacijos}
-
-\textcolor{red}{paimt iš kursinio}
 
 \subsection{Tapatybių valdymo sistemų palyginimas}
 
