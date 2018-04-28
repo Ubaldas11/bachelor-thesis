@@ -163,15 +163,15 @@ visų tapatybės valdymo procesų įgyvendimo tame pačiame paslaugų tiekėjo p
 \subsubsubsection{Modelis}
 Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas tapatybės tiekėjas, į kurį kreipiasi visos paslaugos,
 esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Kai paslaugų tiekėjui
-reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo įvestą informaciją (pvz. identifikatorių) tapatybės tiekėjui,
+reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo pateiktus atpažinimo duomenis tapatybės tiekėjui,
 siekdamas pabaigti procesą \cite{Cao2010}. Naudotojui šiame modelyje užtenka vienų atpažinimo duomenų, su kuriais jis gali prisijungti prie visų to paties
-paslaugų tiekėjo paslaugų. Modelio veikimas iliustruotas ~\ref{fig:isolatedModel}-iame paveiksle.
+paslaugų tiekėjo paslaugų. Modelio veikimas iliustruotas ~\ref{fig:centralisedModel}-iame paveiksle.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{img/centralizedModel}
     \caption{Centralizuotas skaitmeninės tapatybės valdymas \cite{Cao2010}}
-    \label{fig:isolatedModel}
+    \label{fig:centralisedModel}
 \end{figure}
 
 Centralizuotame modelyje paslaugų tiekėjo ir tapatybės tiekėjo funkcijos tampa atskirtos - 
@@ -181,10 +181,8 @@ naudotojai nebegali naudotis nei viena paslauga tame pačiame domene.
 
 \subsubsubsection{Realizacijos bei įgalinančios technologijos}
 
-Centralizuotas tapatybės valdymas leidžia pasiekti vienkartinio prisijungimo funkcionalumą, kuriuo nori naudotis
-77 procentai interneto naudotojų \cite{SSOResearch}. Ar ši savybė bus pritaikyta centralizuotame modelyje, priklauso nuo
-konkrečios jo realizacijos. Kadangi modelis tinkamas naudoti darbuotojams įmonės ribose arba vieno paslaugų tiekėjo paslaugoms \cite{Josang2005},
-pateikiami pavyzdžiai abiems šioms realizacijoms. 
+Centralizuotas modelis tinkamiausias naudoti darbuotojams įmonės ribose arba vieno paslaugų tiekėjo paslaugoms \cite{Josang2005}.
+Pateikiami pavyzdžiai abiems šioms realizacijoms. 
 
 Viena iš įmonėse naudojamų realizacijų centralizuotam tapatybės valdymui - 
 katalogų prieigos protokolas (angl. \textit{Lightweight Directory Access Protocol}, toliau LDAP), naudojamas pasiekti ir palaikyti informaciją interneto tinkle \cite{Strictest2011}.
@@ -204,9 +202,9 @@ naudotojas tampa autentifikuotas ir kituose \enquote{Atlassian} tinklalapiuose.
 
 \subsubsubsection{Naudotojų poreikių įgyvendinimas}
  
-Iš naudotojo perspektyvos, centralizuotas modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vieną identifikatorių,
-kuris bus tinkamas visoms konkretaus paslaugų tiekėjo programoms. Tačiau, norint pasiekti kito paslaugų tiekėjo paslaugą,
-naudotojui turima paskyra nebebus tinkama.
+Iš naudotojo perspektyvos, centralizuotas modelis yra patogesnis nei izoliuotas. Naudotojui pakanka turėti vienus atpažinimo duomenis,
+kurie bus tinkami visoms konkretaus paslaugų tiekėjo programoms. Tačiau, norint pasiekti kito paslaugų tiekėjo paslaugą,
+naudotojo turima paskyra nebebus tinkama.
 
 Centralizuotas tapatybės valdymas ne intranete gali patirti sukčiavimo (angl. \textit{phishing}) ataką, jei paslaugų tiekėjas nukreipinėja naudotoją į tinklalapį kitame domene. Tačiau,
 kadangi paslaugų tiekėjas tapatybės valdymą realizuoja pats, jis gali leisti naudotojui vesti identifikavimo duomenis ir pačiame paslaugos puslapyje (o ne nukreipiant
@@ -217,8 +215,8 @@ Naudotojai neturi didelės asmens duomenų kontrolės centralizuotame tapatybės
 visas skirtingų paslagų tiekėjų paskyras ir žinoti su jomis susijusias duomenų saugojimo bei platinimo taisykles. Taip pat, jeigu modelis taikomas ne įmonės intranete (kur
 duomenų apsikeitimui apibrėžtas formatas, pvz. LDIF), naudotojas nežino, kokiu būdu jo prisijungimo ar kiti duomenys bus perduodami iš vienos paslaugos į kitą.
 
-Centralizuotas tapatybės valdymo modelis sudaro palankias sąlygas gerai naudotojo patirčiai užtikrinti. Dėl to, kad centralizuotas modelis palaiko vienkartinį prisijungimą,
-naudotojui pakanka autentifikuotis vieną kartą. Taip pat, kadangi
+Centralizuotas tapatybės valdymo modelis sudaro palankias sąlygas gerai naudotojo patirčiai užtikrinti. Centralizuotas modelis, priklausomai nuo realizacijos,
+gali palaikyti vienkartinį prisijungimą, o tai leidžia naudotojui prisijungti vieną kartą ir tapti autentifikuotu visose paslaugų tiekėjo sistemose. Taip pat, kadangi
 tiek tapatybės valdymo, tiek paslaugų puslapiai yra valdomi paties paslaugų tiekėjo, gali būti užtikrintas vientisas tinklalapių stilius. Taigi, centralizuotą tapatybės valdymą
 įgyvendinę paslaugų tiekėjai gali sukurti patogias, naudotojams draugiškas (angl. \textit{user-friendly}) sistemas.
 
@@ -227,16 +225,15 @@ tiek tapatybės valdymo, tiek paslaugų puslapiai yra valdomi paties paslaugų t
 
 \subsubsubsection{Modelis}
 
-Centralizuotas modelis reikalauja visų naudotojų būti tame pačiame domene, tačiau naudotojams reikia
-paslaugų ir iš kitų domenų \cite{Cao2010}. Jungtinis (angl. \textit{federated}) tapatybių valdymas yra aibė technologijų
+Jungtinis (angl. \textit{federated}) tapatybių valdymas yra aibė technologijų
 ir procesų, kurie leidžia sistemoms dalintis tapatybės informacija ir deleguoti tapatybės valdymo užduotis
-tarp skirtingų paslaugų tiekėjų \cite{Maler2008}. Šis tapatybių valdymo modelis įgalina naudotojus turėti vieną
-identifikatorių, kurį gali naudoti skirtingų paslaugų tiekėjų tinklalapiuose. Žemiau pateikiama schema, vaizduojanti
+tarp skirtingų paslaugų tiekėjų \cite{Maler2008}. Šis tapatybių valdymo modelis įgalina naudotojus turėti vienus atpažinimo duomenis,
+kuriuos gali naudoti skirtingų paslaugų tiekėjų tinklalapiuose. Žemiau pateikiama schema, vaizduojanti
 šio modelio architektūrą:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.75]{img/federatedModel}
+    \includegraphics[scale=0.7]{img/federatedModel}
     \caption{Jungtinis skaitmeninės tapatybės valdymas \cite{Cao2010}}
     \label{fig:federatedModel}
 \end{figure}
@@ -248,8 +245,8 @@ autentifikuotas visose paslaugose, kurios palaiko šį tapatybės tiekėją \cit
 
 \subsubsubsection{Realizacijos bei įgalinančios technologijos}
 
-Kadangi jungtiniame tapatybės valdyme vyksta duomenų apsikeitimas tarp tapatybės tiekėjo bei paslaugų tiekėjo, jam formalizuoti
-sukurti technologiniai standartai. Trys labiausiai paplitę protokolai: \textit{SAML}, \textit{OAuth} bei \textit{OpenID}. Šių technologijų
+Kadangi jungtiniame tapatybės valdyme tapatybės tiekėjas bei paslaugų tiekėjas yra skirtingų kūrėjų sistemos,
+duomenų apsikeitimui tarp jų sukurti technologiniai standartai. Trys šiuo metu labiausiai paplitę protokolai: \textit{SAML}, \textit{OAuth} bei \textit{OpenID}. Šių technologijų
 apžvalga pateikiama \ref{tab:SSOprotocols}-oje lentelėje.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -288,7 +285,7 @@ mobiliosiose programėlėse bei suteikia daugiau kontrolės naudotojui.
 
 \subsubsection*{Naudotojų poreikių įgyvendinimas}
 
-Šis tapatybių valdymo modelis yra gana patogus naudotojams. Jiems užtenka turėti vieną identifikatorių, su kuriuo
+Šis tapatybių valdymo modelis yra gana patogus naudotojams. Jiems užtenka turėti vienus atpažinimo duomenis, su kuriais
 gali prisijungti prie skirtingų paslaugų tiekėjų tinklalapių. Taip pat, vieną kartą prisijungus, naudotojui nebereikia to kartoti kitose paslaugose, 
 palaikančiose tą patį tapatybės tiekėją.
 
