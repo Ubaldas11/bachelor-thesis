@@ -294,8 +294,10 @@ Jungtinis tapatybės valdymas išsprendžia paskyrų kiekio bei prisijungimų sk
     \item naudotojų kontrolės trūkumas. Asmenys dažnai privesti suvesti daugybę tapatybės duomenų registruodamiesi, kurių nebūtinai
     reikia registracijos metu \cite{Sun2011}. Po registracijos naudotojui belieka pasikliauti paslaugų bei tapatybės tiekėjais, kad jo duomenys nebus 
     perduodami nepageidaujamoms trečiosioms šalims. Nors naudojamos technologijos, tokios kaip OAuth, išreikštinai prašo naudotojų
-    sutikimo perduodant duomenis naujai paslaugai, \textit{CambridgeAnalytica} incidentas rodo, kad to gali neužtekti \cite{CambridgeAnalytica}.
-    Visa tai veda prie to, kad naudotojai jaučiasi nekontroliuojantys savo asmens duomenų internete ir norėtų lengviau keisti bei trinti juos \cite{Baars2016};
+    sutikimo perduodant duomenis naujai paslaugai (žr. priedą ~\ref{appendix:SSOUserConsent}), tai atliekama tik pradedant naudotis tam tikra paslauga. Taip pat,
+    \textit{CambridgeAnalytica} incidentas \cite{CambridgeAnalytica} rodo, kad šio sutikimo gali neužtekti.
+    Visa tai veda prie to, kad naudotojai jaučiasi nekontroliuojantys savo asmens duomenų internete, norėtų lengviau keisti bei trinti juos, o
+    dalį tapatybės valdymo sistemų naudoja tik todėl, kad neturi kitos išeities \cite{Baars2016};
 
     \item saugumo iššūkiai. Dėl naudojamų nukreipimų jungtinis tapatybės valdymas yra itin jautrus sukčiavimo (angl. \textit{phishing}) atakoms,
     tačiau paslaugų tiekėjai dažniausiai vis dar remiasi naudotojų gebėjimu atpažinti netikrus programišių tinklalapius, nors to nerekomenduoja tyrimai \cite{Sun2011}.
@@ -309,7 +311,7 @@ Jungtinis tapatybės valdymas išsprendžia paskyrų kiekio bei prisijungimų sk
     o paslaugų tiekėjai retai atskleidžia sistemos veikimo detales \cite{Baars2016}, naudotojų pasitikėjimas senka.
 \end{itemize}
 
-Pateikti jungtinio tapatybės valdymo trūkumai leidžia suprasti, kad tapatybės valdymo sritis vis dar yra tobulintina naudotojų atžvilgiu.
+Pateikti jungtinio tapatybės valdymo trūkumai rodo, kad tapatybės valdymo sritis vis dar yra tobulintina naudotojų atžvilgiu.
 Naudotojams trūksta didesnės tapatybės duomenų kontrolės, o dėl galimų saugumo iššūkių, vieno nesekmės taško situacijos ir neatskleidžiamų
-sistemų įgyvendinimo detalių, pasitikėti paslaugų bei tapatybės tiekėjais yra sunku. Toliau darbe nagrinėjama,
-kaip blokų grandinė gali padėti spręsti įvardytas identiteto valdymo internete problemas.
+sistemų įgyvendinimo detalių, pasitikėti paslaugų bei tapatybės tiekėjais yra sunku. Toliau darbe apžvelgiama blokų grandinės technologija, atkreipiant dėmesį
+į jos potencialą spręsti įvardytas problemas skaitmeniniame tapatybių valdyme: vieno nesėkmės taško situaciją bei kontrolės, skaidrumo ir pasitikėjimo trūkumą.
