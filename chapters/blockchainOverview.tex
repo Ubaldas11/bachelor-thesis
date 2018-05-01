@@ -55,9 +55,8 @@ bei kaip patikrinti kito dalyvio pasiūlyto bloko validumą.
 \subsection{Konsensuso strategijos} \label{blockchain:consensus}
 
 Kadangi blokų grandinės sistema yra decentralizuota, nėra centrinės institucijos, kuri nuspręstų, ar naujai siūlomas pridėti į grandinę blokas
-yra validus (be transakcijų su falsifikuotais duomenimis). Taip pat, tinklo grandinės dalyviai neturėtų aklai pasitikėti kitais tinklo dalyviais - 
-viešoje blokų grandinėje jie gali būti programišiai. Todėl blokų grandinės tinkle taikoma konsensuso strategija,
-pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Pateikiamos trys dažniausiai naudojami konsensuso strategijos.
+yra validus (be transakcijų su falsifikuotais duomenimis). Todėl blokų grandinės tinkle taikoma konsensuso strategija,
+pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Apžvelgiamos trys dažnos strategijos: darbo, įtakos bei autoriteto įrodymo.
 
 \subsection{Darbo įrodymo (angl. \textit{proof of work})}
 
@@ -66,7 +65,8 @@ dalyvis nebus linkęs sukčiauti. Šioje strategijoje tinklo dalyvis, norėdamas
 imlų matematinį
 uždavinį (užsiima \textit{bloko kasimu}). Pirmas uždavinio reikšmę radęs tinklo dalyvis praneša apie ją kitiems, kurie turi patvirtinti,
 ar ši reikšmė teisinga. Jei tai patvirtinta, tinklo dalyviai patikrina, ar naujojo bloko transakcijos yra validžios. Jeigu jos validžios,
-blokas pridedamas į grandinę \cite{Zheng2017}.\\
+blokas pridedamas į grandinę \cite{Zheng2017}.
+
 Darbo įrodymo matematinis uždavinys būna paremtas kriptografine maišos funkcija, kurios rezultatą lengvą validuoti,
 tačiau duomenis, sugeneravusius šį rezultatą, sunku surasti. Uždavinio tikslas ir būna surasti šiuos duomenis. Tinklo dalyviai eikvoja didžiulius kiekius energijos ir laiko,
 nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dėl šios priežasties rezultato ieškantiems tinklo dalyviams
@@ -82,13 +82,17 @@ grąžinamos į bendrą transakcijų sankaupą (angl. \textit{transaction pool})
 Realiuose blokų grandinės taikymuose, dažnai laukiama keleto iš eilės einančių naujų blokų, kad būtų galima atmesti \textit{bloką-našlaitį}. Pavyzdžiui,
 Bitcoin blokų grandinėje laukiama apytiksliai 6 blokų, kad \textit{bloką-našlaitį} būtų galima atmesti \cite{Zheng2017}.
 
-
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{img/blockchainLongestRule}
     \caption{Ilgiausios grandinės taisyklės taikymas}
     \label{fig:blockchainLongestRule}
 \end{figure}
+
+Pagrindinis šios konsensuso strategijos privalumas yra tas, kad dideli kasimo kaštai gali atgrasyti programišius nuo potencialių atakų. Tačiau,
+taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas Bitcoin ir Ethereum blokų grandinėms kartu sudėjus per dieną
+sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną eurų \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
+gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
 \subsubsection{Turto įrodymo (angl. \textit{proof of stake})}
 
@@ -98,11 +102,23 @@ tiems tinklo dalyviams, kurie įrodo kad turi daugiausia turto (pvz. blokų gran
 nes turtingiausias tinklo dalyvis gali būti vienvaldžiu sprendimų priėmėju. Dėl to blokų grandinės tinklai neretai taiko šios strategijos
 variantus: Peercoin papildomai vertina turto amžių, Blackcoin kitą patvirtintoją paskiria pagal atsitiktinę funkciją, kuri atsižvelgia ir į turimą turtą \cite{Zheng2017}.
 
-Ši strategija leidžia nebeeikvoti didžiulių elektros kiekių, skirtingai nei darbo įrodymo strategijoje \cite{Ethereum}. Algoritmo efektyvumas
+Ši strategija leidžia nebeeikvoti didžiulių elektros kiekių, skirtingai nei darbo įrodymo strategija \cite{Ethereum}. Algoritmo efektyvumas
 taip pat sutaupo laiko ir blokai būna greičiau patvirtinami ir pridedami į grandinę. Tačiau, dėl praktiškai nulinių bloko \textit{kasimo} sąnaudų,
 galimos dažnesnės tinklo atakos \cite{Zheng2017}. 
 
-\subsubsection{Įtakos įrodymo (angl. \textit{proof of authority})}
+\subsubsection{Autoriteto įrodymo (angl. \textit{proof of authority})}
+
+Autoriteto įrodymo strategija remiasi keletu tinklo dalyvių, kuriems suteikta teisė validuoti naujus blokus. Ši strategija nebėra tinkama visiškai
+decentralizuotai blokų grandinei, kurioje būtinas pilnas pasitikėjimo padalinimas \cite{ProofOfAuthority}. Tačiau ši strategija tinkama privačioms
+ar konsorciumo blokų grandinėms.
+
+Šis konsensuso mechanizmas remiasi iš anksto išrinktais tinklo dalyviais, kurie bus atsakingi už blokų validavimą. Kiekvieną kartą pridedant naują
+bloką į grandinę, vienas iš išrinktų validuotojų patvirtins arba atmes pasiūlytą bloką. Siekiant sumažinti galimą kenksmingų patvirtintojų žalą,
+įvedamos taisyklės, neleidžiančios tam pačiam validuotojui patvirtinti keleto blokų iš eilės \cite{ProofOfAuthority}.
+
+Autoriteto įrodymo strategijoje validuotojams svarbu išlaikyti gerą reputaciją - susigadinus ją, validuotojas gali būti pašalintas iš tinklo. Šis konsensuso mechanizmas
+leidžia greitai ir su itin mažais ištekliais pridėti blokus, tačiau nėra tinkama pilnai decentralizuotoms blokų grandinėms. Šią strategiją
+taiko Parity blokų grandinė \cite{ProofOfAuthority}.
 
 \subsection{Viešumo tipai}
 
