@@ -43,7 +43,7 @@ nes perrašyti įrašus blokuose nepastebėtam labai sunku \cite{SatoshiNakamoto
 
 \subsection{Decentralizuotumas}
 
-Blokų grandinės sistema yra decentralizuota. Sistemą sudaro daugybė blokų grandinės mazgų (angl. \textit{node}), kurie turi visą blokų grandinės kopiją. Šie mazgai
+Viešos blokų grandinės sistema yra decentralizuota. Sistemą sudaro daugybė blokų grandinės mazgų (angl. \textit{node}), kurie turi visą blokų grandinės kopiją. Šie mazgai
 yra atsakingi už naujų transakcijų validavimą, blokų su transakcijomis kūrimą, sukurtų blokų priėmimą į blokų grandinę ir pranešimus kitiems mazgams apie naują į grandinę priimtą
 bloką \cite{Antonopoulos2016}.
 
@@ -52,13 +52,27 @@ visi tinklo dalyviai. Egzistuoja skirtingos taisyklės, vadinamos konsensuso str
 remdamiesi tinklo mazgai nusprendžia, ar pasiūlytas blokas yra validus. Šios taisyklės apibrėžia, kaip tinklo dalyviai turi įrodyti bloko validumą jį siūlydami į grandinę
 bei kaip patikrinti kito dalyvio pasiūlyto bloko validumą.
 
+Priklausomai nuo blokų grandinės tipo, decentralizuotumo lygis gali skirtis. Pagal tai, kokios blokų grandinės skaitymo ir rašymo teisės,
+išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati. Tipų skirtumai pateikiami~\ref{tab:blockchainComparison} lentelėje.
+
+\input{tables/blockchainComparison}
+
+Kadangi vieša blokų grandinė yra atvira visam pasauliui, visiems matomos ir joje išsaugotos transakcijos. Tai sudaro puikias salygas įrašų
+auditui, tačiau sumažina naudotojų privatumą. Siekiant išlaikyti tam tikrą privatumo lygį, viešoje grandinėje matomi tik transakcijas atlikusių 
+asmenų vieši raktai \cite{SatoshiNakamoto}.
+
+Privačios bei konsorciumo blokų grandinės yra tik dalinai decentralizuotos - jose blokų validavimą ir priėmimą į grandinę atlieka vienas
+ar dalis tinklo dalyvių. Šios grandinės privalumai: visi validuotojai yra žinomi, grandinės efektyvesnės dėl greičiau priimamų blokų, apribotos blokų skaitymo teisės suteikia didesnį
+privatumo lygį, o iškilus poreikiui, tinklo dalyviai gali pakeisti ar atšaukti įvykusias transakcijas \cite{Buterin2015}. Konsorciumo ir privačios blokų grandinės labiau tinkamos įmonių vidiniam (ar jungtiniam,
+pvz. tarp kelių finansinių institucijų) naudojimui. Blokų grandinių karkasų sprendimus įmonėms siūlo IBM, Microsoft, Hyperledger \cite{Zheng2017}.
+
 \subsection{Konsensuso strategijos} \label{blockchain:consensus}
 
 Kadangi blokų grandinės sistema yra decentralizuota, nėra centrinės institucijos, kuri nuspręstų, ar naujai siūlomas pridėti į grandinę blokas
 yra validus (be transakcijų su falsifikuotais duomenimis). Todėl blokų grandinės tinkle taikoma konsensuso strategija,
-pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Apžvelgiamos trys dažnos strategijos: darbo, įtakos bei autoriteto įrodymo.
+pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Apžvelgiamos trys dažnai naudojamos strategijos: darbo, įtakos bei autoriteto įrodymo.
 
-\subsection{Darbo įrodymo (angl. \textit{proof of work})}
+\subsubsection{Darbo įrodymo (angl. \textit{proof of work})}
 
 Darbo įrodymo konsensuso strategija remiasi principu, kad daug pastangų ir resursų į bloko validumo įrodymą įdėjęs tinklo
 dalyvis nebus linkęs sukčiauti. Šioje strategijoje tinklo dalyvis, norėdamas pridėti bloką į blokų grandinę, turi išspręsti laikui ir resursams
@@ -68,7 +82,7 @@ ar ši reikšmė teisinga. Jei tai patvirtinta, tinklo dalyviai patikrina, ar na
 blokas pridedamas į grandinę \cite{Zheng2017}.
 
 Darbo įrodymo matematinis uždavinys būna paremtas kriptografine maišos funkcija, kurios rezultatą lengvą validuoti,
-tačiau duomenis, sugeneravusius šį rezultatą, sunku surasti. Uždavinio tikslas ir būna surasti šiuos duomenis. Tinklo dalyviai eikvoja didžiulius kiekius energijos ir laiko,
+tačiau duomenis, sugeneravusius šį rezultatą, sunku surasti. Uždavinio tikslas - surasti šiuos duomenis. Tinklo dalyviai eikvoja didžiulius kiekius energijos ir laiko,
 nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dėl šios priežasties rezultato ieškantiems tinklo dalyviams
 (vadinamiems \textit{kasėjais}) neretai būna įvestas paskatinimo sistema, kuri teisingą reikšmę radusį
 \textit{kasėją} apdovanoja piniginiu atlygiu \cite{SatoshiNakamoto}. 
@@ -119,6 +133,3 @@ bloką į grandinę, vienas iš išrinktų validuotojų patvirtins arba atmes pa
 Autoriteto įrodymo strategijoje validuotojams svarbu išlaikyti gerą reputaciją - susigadinus ją, validuotojas gali būti pašalintas iš tinklo. Šis konsensuso mechanizmas
 leidžia greitai ir su itin mažais ištekliais pridėti blokus, tačiau nėra tinkama pilnai decentralizuotoms blokų grandinėms. Šią strategiją
 taiko Parity blokų grandinė \cite{ProofOfAuthority}.
-
-\subsection{Viešumo tipai}
-
