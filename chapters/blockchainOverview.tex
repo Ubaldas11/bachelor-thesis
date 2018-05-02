@@ -16,7 +16,7 @@ nekeičiami įrašai \cite{SatoshiNakamoto}. Šią technologiją galima apibūdi
 
 Blokų grandinėje kiekvienas blokas yra sudarytas iš šių dalių:
 
-\begin{enumerate}
+\begin{itemize}
     \item transakcijų. Kiekviena transakcija yra duomenys, kuriuos norima saugoti blokų grandinėje. Šie duomenys gali būti bet kokia vertinga informacija:
     finansinės transakcijos, programinis kodas, asmens duoti sutikimai (angl. \textit{consents}) ar kt. Kiekviena transakcija yra pasirašoma
     kūrėjo privačiu raktu. Vienas blokas gali turėti vieną arba daugiau transakcijų;
@@ -24,7 +24,7 @@ Blokų grandinėje kiekvienas blokas yra sudarytas iš šių dalių:
     \item ankstesnio (tėvinio) bloko kriptografinės maišos funkcijos rezultato;
     \item bloko sukūrimo laiko. Blokai grandinėje saugomi chronologiškai;
     \item kitų metaduomenų (pvz. bloko eilės numerio, blokų grandinės versijos, \textit{nonce} darbo įrodymui).
-\end{enumerate}
+\end{itemize}
 
 Kiekvieno bloko maišos funkcijos rezultatas priklauso nuo jo transakcijų, prieš tai buvusio bloko maišos rezultato ir bloko metaduomenų.
 Jeigu betkurio bloko duomenys būtų pakeisti, tuomet maišos funkcija sugeneruotų kitokį maišos rezultatą ir būtų lengva patikrinti, kad
@@ -43,17 +43,21 @@ nes perrašyti įrašus blokuose nepastebėtam labai sunku \cite{SatoshiNakamoto
 
 \subsection{Decentralizuotumas}
 
-Viešos blokų grandinės sistema yra decentralizuota. Sistemą sudaro daugybė blokų grandinės mazgų (angl. \textit{node}), kurie turi visą blokų grandinės kopiją. Šie mazgai
+Blokų grandinės sistema yra decentralizuota - nėra vieno centrinio serverio, kuris vienas turėtų visą blokų grandinę.
+Sistemą sudaro daugybė blokų grandinės mazgų (angl. \textit{node}), kurie turi visą blokų grandinės kopiją. Šie mazgai
 yra atsakingi už naujų transakcijų validavimą, blokų su transakcijomis kūrimą, sukurtų blokų priėmimą į blokų grandinę ir pranešimus kitiems mazgams apie naują į grandinę priimtą
-bloką \cite{Antonopoulos2016}.
+bloką \cite{Antonopoulos2016}. Kiekvienas mazgas yra susietas su keletu kitu mazgų. Mazgas, kuris nori pridėti naują bloką (vadinamas \textit{kasėju}), praneša apie jį
+kitiems mazgams, jie savo ruožtu žinią perduoda kitiems mazgams ir taip ilgainiui kiekvienas mazgas tinkle turi naujausią blokų grandinės versiją.
 
 Kadangi nėra centrinės institucijos, kuri nuspręstų, ar siūlomas blokas yra tinkamas priimti į grandinę, sprendimą bendrai turi priimti
 visi tinklo dalyviai. Egzistuoja skirtingos taisyklės, vadinamos konsensuso strategijomis (plačiau apie juos~\ref{blockchain:consensus} skyrelyje), kuriomis
 remdamiesi tinklo mazgai nusprendžia, ar pasiūlytas blokas yra validus. Šios taisyklės apibrėžia, kaip tinklo dalyviai turi įrodyti bloko validumą jį siūlydami į grandinę
 bei kaip patikrinti kito dalyvio pasiūlyto bloko validumą.
 
-Priklausomai nuo blokų grandinės tipo, decentralizuotumo lygis gali skirtis. Pagal tai, kokios blokų grandinės skaitymo ir rašymo teisės,
-išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati. Tipų skirtumai pateikiami~\ref{tab:blockchainComparison} lentelėje.
+\subsection{Skirtingi tipai}
+
+Priklausomai nuo tinklo dalyviams suteikiamų blokų grandinės skaitymo ir rašymo teisių,
+išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati.  Tipų skirtumai pateikiami~\ref{tab:blockchainComparison} lentelėje.
 
 \input{tables/blockchainComparison}
 
@@ -81,10 +85,11 @@ uždavinį (užsiima \textit{bloko kasimu}). Pirmas uždavinio reikšmę radęs 
 ar ši reikšmė teisinga. Jei tai patvirtinta, tinklo dalyviai patikrina, ar naujojo bloko transakcijos yra validžios. Jeigu jos validžios,
 blokas pridedamas į grandinę \cite{Zheng2017}.
 
-Darbo įrodymo matematinis uždavinys būna paremtas kriptografine maišos funkcija, kurios rezultatą lengvą validuoti,
-tačiau duomenis, sugeneravusius šį rezultatą, sunku surasti. Uždavinio tikslas - surasti šiuos duomenis. Tinklo dalyviai eikvoja didžiulius kiekius energijos ir laiko,
-nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dėl šios priežasties rezultato ieškantiems tinklo dalyviams
-(vadinamiems \textit{kasėjais}) neretai būna įvestas paskatinimo sistema, kuri teisingą reikšmę radusį
+Darbo įrodymo matematinis uždavinys dažniausiai būna paremtas kriptografine maišos funkcija, kurios rezultatą lengvą validuoti,
+tačiau duomenis, sugeneravusius šį rezultatą, sunku surasti. Uždavinio tikslas - surasti šiuos duomenis. Tinklo dalyviai eikvoja didžiulius
+kiekius elektros energijos ir laiko,
+nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dėl šios priežasties rezultato ieškantiems \textit{kasėjams}
+ neretai būna įvesta paskatinimo sistema, kuri teisingą reikšmę radusį
 \textit{kasėją} apdovanoja piniginiu atlygiu \cite{SatoshiNakamoto}. 
 
 Kadangi blokų grandinės tinklas yra decentralizuotas, įmanoma situacija, kad labai panašiu metu į grandinę skirtingų mazgų pridėti du validūs blokai.
@@ -105,7 +110,7 @@ Bitcoin blokų grandinėje laukiama apytiksliai 6 blokų, kad \textit{bloką-na�
 
 Pagrindinis šios konsensuso strategijos privalumas yra tas, kad dideli kasimo kaštai gali atgrasyti programišius nuo potencialių atakų. Tačiau,
 taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas Bitcoin ir Ethereum blokų grandinėms kartu sudėjus per dieną
-sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną eurų \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
+sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
 gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
 \subsubsection{Turto įrodymo (angl. \textit{proof of stake})}
@@ -131,5 +136,40 @@ bloką į grandinę, vienas iš išrinktų validuotojų patvirtins arba atmes pa
 įvedamos taisyklės, neleidžiančios tam pačiam validuotojui patvirtinti keleto blokų iš eilės \cite{ProofOfAuthority}.
 
 Autoriteto įrodymo strategijoje validuotojams svarbu išlaikyti gerą reputaciją - susigadinus ją, validuotojas gali būti pašalintas iš tinklo. Šis konsensuso mechanizmas
-leidžia greitai ir su itin mažais ištekliais pridėti blokus, tačiau nėra tinkama pilnai decentralizuotoms blokų grandinėms. Šią strategiją
+leidžia greitai ir su itin mažais ištekliais pridėti blokus, tačiau nėra tinkamas pilnai decentralizuotoms blokų grandinėms. Šią strategiją
 taiko Parity blokų grandinė \cite{ProofOfAuthority}.
+
+\subsection{Pavojai ir trūkumai}
+
+Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant pasitikėjimo vienam ar keliems dalyviams, laikyti nekeičiamus duomenis.
+Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų, saugumo bei privatumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų.
+Pagrindiniai iš jų aptariami šiame skyriuje.
+
+\subsubsection{Daugumos ataka}
+
+Viešose blokų grandinėse dauguma (>50\%) mazgų tinkle turi patvirtinti bloką, kad jis būtų priimtas į grandinę. Potencialus įsilaužėlis gali pateikti
+falsifikuotą blokų grandinės bloką (pvz. su netikromis transakcijomis), tačiau kol jis neturi daugumos skaičiavimo galios tinkle, šis blokas bus
+atmestas likusių dalyvių mazge (ir taps \textit{bloku-našlaičiu} taikant ilgiausios grandinės taisyklę). Tačiau jeigu įsilaužėlis (ar keletas jų)
+turi daugumą skaičiavimo galios, jis gali dirbti su falsifikuota blokų grandinės versija greičiau negu likę dalyviai tinkle ir taip ilgiausia grandine, prie kurios
+pereis visi dalyviai, taps jo sukurta grandinė su falsifikuotais blokai \cite{Zheng2017}. Ši ataka neištiko dviejų didžiausių blokų grandinių Bitcoin bei Ethereum, tačiau
+buvo įvykdyta prieš Verge blokų grandinę \cite{Sedgwick2018}.
+
+\subsubsection{Plečiamumas}
+
+Blokų grandinės plečiamumas matuojamas pagal du kriterijus: transakcijų pralaidumą ir saugojimo reikalavimus mazgams. Transakcijų pralaidumas, kuris priklauso nuo to,
+kaip greitai nauji blokai su transakcijomi yra pridedami į blokų grandinę, susijęs su taikoma konsensuso strategija.
+Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. Bitcoin blokų grandinėje, taikančioje darbo įrodymo konsensusą,
+apdorojoma apie 7 transakcijas per sekundę \cite{Zheng2017}, kai Tendermint blokų grandinė, taikanti
+atsparumo klaidoms konsensusą, teigia galinti apdoroti tūkstančius transakcijų per sekundę \cite{Tendermint2017}. Dėl darbo įrodymo strategijos neefektyvumo
+blokų grandinės dažnai keičia ją į kitą konsensuso strategiją - Ethereum blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{Ethereum}.
+
+Kita priežastis, dėl ko transakcijos tvirtinamos gana lėtai - blokai turi dydžio apribojimus. Dėl šių apribojimų, tik dalis susikaupusių transakcijų gali būti priimtos
+į naują bloką, o likusios turi laukti, kol pateks į kitą bloką. Tam spręsti pasitelktos šalutinės blokų grandinės. Jos dalį bloko duomenų iškelia į šalutinę grandinę,
+taip palikdamos daugiau vietos pagrindinės grandinės bloke. Tokį sprendimą priėmė Bitcoin blokų grandinė, į tinklą pristatydama SegWit protokolą, kuris iškelia skaitmeninių
+parašų duomenis į atskirą grandinę \cite{Segwit}.
+
+Visos blokų grandinės dydis taip pat gali sukelti plečiamumo problemų. Šiuo metu Bitcoin blokų grandinė užima per 100 gigabaitų \cite{Zheng2017}. Siekiant sumažinti šį kiekvienam mazgui 
+reikiamą saugoti duomenų kiekį,
+siūlomi įvairūs sprendimai: mazgams neturėti seniausių blokų grandinės dalių (taip seni blokai su transakcijomis būtų iškeliami į atskirą duombazę)
+arba dalį blokuose esančios informacijos saugoti šalutinėje blokų grandinėje. 
+
