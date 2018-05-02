@@ -54,7 +54,7 @@ visi tinklo dalyviai. Egzistuoja skirtingos taisyklės, vadinamos konsensuso str
 remdamiesi tinklo mazgai nusprendžia, ar pasiūlytas blokas yra validus. Šios taisyklės apibrėžia, kaip tinklo dalyviai turi įrodyti bloko validumą jį siūlydami į grandinę
 bei kaip patikrinti kito dalyvio pasiūlyto bloko validumą.
 
-\subsection{Skirtingi tipai}
+\subsection{Tipai}
 
 Priklausomai nuo tinklo dalyviams suteikiamų blokų grandinės skaitymo ir rašymo teisių,
 išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati.  Tipų skirtumai pateikiami~\ref{tab:blockchainComparison} lentelėje.
@@ -142,8 +142,8 @@ taiko Parity blokų grandinė \cite{ProofOfAuthority}.
 \subsection{Pavojai ir trūkumai}
 
 Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant pasitikėjimo vienam ar keliems dalyviams, laikyti nekeičiamus duomenis.
-Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų, saugumo bei privatumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų.
-Pagrindiniai iš jų aptariami šiame skyriuje.
+Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų ar saugumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų,
+kurių galimą poveikį būtina įvertinti prieš taikant šią technologiją konkrečioje srityje. Pagrindinės grėsmės ir trūkumai aptariami šiame skyriuje.
 
 \subsubsection{Daugumos ataka}
 
@@ -158,7 +158,7 @@ buvo įvykdyta prieš Verge blokų grandinę \cite{Sedgwick2018}.
 
 Blokų grandinės plečiamumas matuojamas pagal du kriterijus: transakcijų pralaidumą ir saugojimo reikalavimus mazgams. Transakcijų pralaidumas, kuris priklauso nuo to,
 kaip greitai nauji blokai su transakcijomi yra pridedami į blokų grandinę, susijęs su taikoma konsensuso strategija.
-Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. Bitcoin blokų grandinėje, taikančioje darbo įrodymo konsensusą,
+Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. Bitcoin kriptovaliutos blokų grandinėje, taikančioje darbo įrodymo konsensusą,
 apdorojoma apie 7 transakcijas per sekundę \cite{Zheng2017}, kai Tendermint blokų grandinė, taikanti
 atsparumo klaidoms konsensusą, teigia galinti apdoroti tūkstančius transakcijų per sekundę \cite{Tendermint2017}. Dėl darbo įrodymo strategijos neefektyvumo
 blokų grandinės dažnai keičia ją į kitą konsensuso strategiją - Ethereum blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{Ethereum}.
@@ -168,8 +168,23 @@ Kita priežastis, dėl ko transakcijos tvirtinamos gana lėtai - blokai turi dyd
 taip palikdamos daugiau vietos pagrindinės grandinės bloke. Tokį sprendimą priėmė Bitcoin blokų grandinė, į tinklą pristatydama SegWit protokolą, kuris iškelia skaitmeninių
 parašų duomenis į atskirą grandinę \cite{Segwit}.
 
-Visos blokų grandinės dydis taip pat gali sukelti plečiamumo problemų. Šiuo metu Bitcoin blokų grandinė užima per 100 gigabaitų \cite{Zheng2017}. Siekiant sumažinti šį kiekvienam mazgui 
-reikiamą saugoti duomenų kiekį,
-siūlomi įvairūs sprendimai: mazgams neturėti seniausių blokų grandinės dalių (taip seni blokai su transakcijomis būtų iškeliami į atskirą duombazę)
-arba dalį blokuose esančios informacijos saugoti šalutinėje blokų grandinėje. 
+Visos blokų grandinės dydis taip pat gali sukelti plečiamumo problemų. Šiuo metu Bitcoin blokų grandinė užima per 100 gigabaitų \cite{Zheng2017}. Siekiant sumažinti blokų grandinės
+(kurią turi kiekvienas mazgas tinkle) dydį,
+siūlomi įvairūs sprendimai. Vienas variantas yra mazgams neturėti seniausių blokų grandinės dalių, o senus blokus su transakcijomis iškelti į atskirą duomenų bazę.
+Kitas sprendimo būdas - pagrindinėje blokų grandinėje laikyti tik transakcijų maišos rezultatą, o pačius transakcijų duomenis
+iškelti už grandinės ribų (angl. \textit{off-chain}) \cite{Lo2017}.
+
+\subsubsection{Anonimiškumas}
+
+Manoma, kad blokų grandinės išsaugo naudotojų privatumą dėl to, kad transakcijose atskleidžiamas tik naudotojų
+viešas raktos vietoj tikrosios tapatybės \cite{Zheng2017}. Tačiau, tyrimai rodo, kad iš viešojo rakto galima
+atsekti tikrąją naudotojo tapatybę \cite{Barcelo2007}. Taip pat, transakcijoje buvę duomenys (pvz. pervestas pinigų kiekis)
+viešoje blokų grandinėje bus matomas visiems tinklo dalyviams.
+
+Jei reikia didesnio anonimiškumo, tam yra
+keletas galimų sprendimų. Pirmiausia, reikia atsižvelgti, ar negalima naudoti privačios blokų grandinės, kurioje
+blokų skaitymo teisės būtų apribotos. Kitas variantas - blokų grandinėje saugoti užšifruotus duomenis, kurių skaitymui
+reikia turėti dešifravimo raktą. Jeigu tai netinkama išeitis, tuomet transakcijas galima atlikti per tarpininką, kuris išskaidys vieną transakciją
+į keletą, vykdomų su skirtingais viešaisiais raktais, ir taip bus sunkiau atsekti transakcijos autorių \cite{Zheng2017}.
+
 
