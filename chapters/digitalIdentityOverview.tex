@@ -288,7 +288,7 @@ teigia paliksiantys ar negrįšiantys į tokį puslapį, o 26\% ieškos kito pan
 
 \input{tables/IDMcomparison}
 
-\subsection{Naudotojų problemų tapatybės valdyme apibendrinimas}
+\subsection{Naudotojų problemų tapatybės valdyme apibendrinimas} \label{IDM:problemsSummarized}
 
 Skaitmeninės tapatybės valdymas taikant jungtinį modelį išsprendžia nemažai problemų: sumažintas
 naudotojams reikalingų paskyrų kiekis, įsimintinų slapyvardžių ir slaptažodžių gausa, apribotas
@@ -296,18 +296,18 @@ reikiamų prisijungimų kiekis. Nepaisant to, nemažai problemų naudotojams iš
 
 \begin{itemize}
     \item vienintelio nesekmės taško situacija. Jungtiniame tapatybės valdyme tapatybės tiekėjas yra vienintelis nesekmės taškas (angl. \textit{single point of failure}).
-    Tapatybės tiekėjui tapus nepasiekiamam, asmuo internete nebegali naudoti visų paslaugų, prie
-    kurių prisijungdavo per šį tapatybės tiekėją;
+    Tapatybės tiekėjui tapus nepasiekiamam, asmuo internete nebegali naudoti visų paslaugų, kurios buvo integruotos
+    su šiuo tapatybės tiekėju.
 
-    \item naudotojų kontrolės trūkumas. Asmenys dažnai priversti suvesti daugybę tapatybės duomenų registruodamiesi, kurių nebūtinai
-    reikia registracijos metu \cite{Sun2011}. Po registracijos naudotojui belieka pasikliauti paslaugų bei tapatybės tiekėjais, kad jo duomenys nebus 
-    perduodami nepageidaujamoms trečiosioms šalims. Nors naudojamos technologijos, tokios kaip OAuth, išreikštinai prašo naudotojų
+    \item kontrolės trūkumas. Organizacijos renka didžiulius kiekius asmens duomenų - \enquote{Facebook} nuo sukūrimo
+    jau sukaupė 300 petabaitų duomenų apie naudotojus \cite{Vagata2014}, tačiau naudotojai nėra pakankamai informuoti,
+    kur perduodami jų duomenys. Nors naudojamos technologijos, tokios kaip OAuth, išreikštinai prašo naudotojų
     sutikimo perduodant duomenis naujai paslaugai (žr. priedą ~\ref{appendix:SSOUserConsent}), tai atliekama tik pradedant naudotis tam tikra paslauga. Taip pat,
     \textit{CambridgeAnalytica} incidentas \cite{CambridgeAnalytica} rodo, kad šio sutikimo gali neužtekti.
     Visa tai veda prie to, kad naudotojai jaučiasi nekontroliuojantys savo asmens duomenų internete, norėtų lengviau keisti bei trinti juos, o
     dalį tapatybės valdymo sistemų naudoja tik todėl, kad neturi kitos išeities \cite{Baars2016};
 
-    \item pasitikėjimo trūkumas. Naudotojams jungtiniame tapatybės valdyme tenka pasikliauti tiek tapatybės tiekėjų,
+    \item pasitikėjimo stoka. Naudotojams jungtiniame tapatybės valdyme tenka pasikliauti tiek tapatybės tiekėjų,
     tiek paslaugų tiekėjų gebėjimu patikimai saugoti ir perduoti tapatybės duomenis. Norint naudotojų pasitikėjimo,
     sistemos turėtų būti skaidrios (angl. \textit{transparent}) apie tai, kaip jos saugo, valdo tapatybės duomenis \cite{Baars2016}.
     Tačiau, kai technologijų specifikacijos palieka vietos nesaugiam protokolų įgyvendinimui \cite{OAuthSecurity},
