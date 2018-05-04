@@ -139,7 +139,39 @@ Autoriteto įrodymo strategijoje validuotojams svarbu išlaikyti gerą reputacij
 leidžia greitai ir su itin mažais ištekliais pridėti blokus, tačiau nėra tinkamas pilnai decentralizuotoms blokų grandinėms. Šią strategiją
 taiko Parity blokų grandinė \cite{ProofOfAuthority}.
 
-\subsection{Pavojai ir trūkumai}
+\subsection{Išmanieji kontraktai}
+
+Išmanusis kontraktas (angl. \textit{smart contract}) - tai kompiuterizuotas transakcijos protokolas, kuris patenkinus numatytus kriterijus
+išpildo kontrakto sąlygas \cite{Szabo1997}. Idėja, pristatyta dar prieš 2000-uosius, šiais laikais yra įgyvendinama pasitelkiant blokų grandinę.
+Išmanųjį kontraktą galima apibūdinti kaip tam tikras sąlygas (išreikštas kodu), kurios, patenkinus reikalavimus, bus įvykdytos automatiškai,
+be trečiosios šalies priežiūros. 
+
+Blokų grandinės leidžia programų, parašytų su išmaniaisiais kontraktais veikimą,
+padaryti prieinamu visiems. Patalpinus išmanųjį kontraktą į blokų grandinę, kontrakto kodas taps viešai matomu
+visiems tinklo dalyviams. Taip kiekvienas norintis gali pamatyti, kaip realizuota programa.
+Tačiau, kadangi kodas patalpintas į blokų grandinę, jis nebegali būti keičiamas. Tai padidina naudotojų pasitikėjimą, nes jokia centrinė institucija negali
+pakeisti kontrakto sąlygų, tačiau jei kode palikta defektų, jų nebebus galima ištaisyti.
+
+Blokų grandinėje esančių išmaniųjų kontraktų kodas yra vykdomas automatiškai tinkle esančių kasėjų \cite{Zheng2017}.
+Taip nebelieka vienintelio nesekmės taško situacijos, kai kodą vykdytų vienas centrinis serveris - išmaniojo kontrakto
+kodas butų nebevykdomas tik tada, jei visi tinklo mazgai išeitų iš tinklo. Už tai, kad tinklo dalyviai naudoja savo kompiuterių
+resursus išmaniųjų kontraktų kodui vykdyti, jiems dažniausiai suteikiamas piniginis paskatinimas.
+
+Egzistuoja kelios platformos, pritaikytos išmaniųjų kontraktų kūrimui. Bene žymiausia iš jų - Ethereum.
+2015-aisias pradėjusi veikta platforma pristatė blokų grandinę, kuri pritaikyta kurti būseną galinčius keisti
+išmaniuosius kontraktus su visaverte
+(angl. \textit{Turing complete}) programavimo kalba \cite{EthereumWhitePaper}. Ethereum kontraktai vykdomi visų tinklo
+dalyvių Ethereum virtualiosios mašinos pagalba. Dalyviai už kontraktų kodo vykdymą apdovanojami šios platformos kriptovaliuta - eteriu.\\
+Ethereum apibrėžia dviejų tipų paskyras, skirtas tinklo dalyviams atlikti transakcijas. Išorinės paskyros
+(angl. \textit{externally owned accounts}), savininkų valdomos privačiais raktais, neturi kodo, o iš jų galima
+siųsti žinutes kitai išorinei paskyrai sukūrus ir pasirašius transakciją. Kontraktų paskyros (angl. \textit{contract accounts})
+turi kodą bei būseną, o priėmusios žinutę iš kitos paskyros gali keisti būseną ar siųsti žinutes kitiems kontraktams.\\
+Ethereum išmanieji kontraktai gali saugoti bei keisti būseną (kontrakto apibrėžtus duomenis) ar kviesti kitų kontraktų funkcijas siunčiant jiems žinutes.
+Kontrakto vykdymas yra apmokestinamas Ethereum kuru. Kontrakte apibrėžtos funkcijos kvietėjas už kiekvieną
+vykdytą operaciją turi susimokėti tam tikrą kuro kiekį. Kuro sistema padeda apsisaugoti nuo begalinių ciklų vykdymų - jei vykdant
+funkciją baigiasi kuras, vykdymas nutraukiamas, o kuras nėra grąžinamas \cite{EthereumWhitePaper}.\\
+
+\subsection{Pavojai ir trūkumai} \label{blockchain:concerns}
 
 Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant pasitikėjimo vienam ar keliems dalyviams, laikyti nekeičiamus duomenis.
 Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų ar saugumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų,
@@ -151,7 +183,7 @@ Viešose blokų grandinėse dauguma (>50\%) mazgų tinkle turi patvirtinti blok�
 falsifikuotą blokų grandinės bloką (pvz. su netikromis transakcijomis), tačiau kol jis neturi daugumos skaičiavimo galios tinkle, šis blokas bus
 atmestas likusių dalyvių mazge (ir taps \textit{bloku-našlaičiu} taikant ilgiausios grandinės taisyklę). Tačiau jeigu įsilaužėlis (ar keletas jų)
 turi daugumą skaičiavimo galios, jis gali dirbti su falsifikuota blokų grandinės versija greičiau negu likę dalyviai tinkle ir taip ilgiausia grandine, prie kurios
-pereis visi dalyviai, taps jo sukurta grandinė su falsifikuotais blokai \cite{Zheng2017}. Ši ataka neištiko dviejų didžiausių blokų grandinių Bitcoin bei Ethereum, tačiau
+pereis visi dalyviai, taps jo sukurta grandinė su falsifikuotais blokai \cite{Zheng2017}. Ši ataka neištiko dviejų žinomiausių blokų grandinių Bitcoin bei Ethereum, tačiau
 buvo įvykdyta prieš Verge blokų grandinę \cite{Sedgwick2018}.
 
 \subsubsection{Plečiamumas}
@@ -194,12 +226,12 @@ Blokų grandinės savybės atveria įdomių galimybių skaitmeninių tapatybių 
 \begin{enumerate}
     \item Decentralizuota sistema eliminuoja vienintelio nesekmės taško situaciją. Pritaikius decentralizuotą blokų grandinę
     tapatybės valdymo sistemoje, dėl blokų grandinės išskirstymo po skirtingus mazgus 
-    tapatybės tiekėjas nebebūtų vienintelis nesekmės taškas identiteto valdymo infrastruktūroje;
+    tapatybės tiekėjas nebebūtų vienintelis nesekmės taškas identiteto valdymo infrastruktūroje. Tokiu būdu tapatybės informacija būtų prieinama ir tada,
+    kai tapatybės tiekėjas yra nepasiekiamas.
 
-    \item Visiems prieinami grandinės įrašai ir sistemos veikimas padidina skaidrumą. Blokų grandinėje saugant tapatybės atributus
-    ar skirtingiems paslaugų tiekėjams suteiktas teises pasiekti juos, naudotojas visada žinotų, kurios programos turi jo duomenis ar suteiktas
-    prieigas. Taip pat, jei būtų pritaikyta privati blokų grandinė, naudotojas galėtų būti jos savininkas ir pasirinktoms paslaugoms suteikti
-    skaitymo teises.
+    \item Visiems prieinami grandinės įrašai ir sistemos veikimas padidina skaidrumą. Blokų grandinėje saugant naudotojo suteiktas prieigas skirtingoms paslaugoms,
+    naudotojas betkada galėtų matyti paslaugoms suteiktas teises. Prieigų suteikimą aprašius išmaniuosiuose kontraktuose, paslaugų užklausos duomenimis
+    pasiekti galėtų būti suteiktos tik tada, kai naudotojas jas patvirtina.
 
     \item Nekintamumas apsaugo nuo galimų įsilaužimų siekiant pakeisti įrašus.
     Blokų grandinėje saugant naudotojo atributus ar paslaugų prieigos teises,
@@ -208,10 +240,10 @@ Blokų grandinės savybės atveria įdomių galimybių skaitmeninių tapatybių 
 
 \end{enumerate}
 
-Įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme. Kai 
-kriptovaliutos milžiniškas transakcijų kiekis kelia klausimų blokų grandinės greitaveikai, taikant technologiją skaitmeninės tapatybės
-valdymo sistemoje nedidelis įrašų kiekis neturėtų kelti problemų \cite{Lo2017}. Daugumos atakos bei anonimiškumo klausimus galima spręsti
-apribojant skaitymo/rašymo teises skirtingiems mazgams bei blokų grandinėje nesaugant itin jautrių duomenų ar šifruojant juos.
+~\ref{blockchain:concerns} skyrelyje įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme.  Anonimiškumo klausimą galima spręsti šifruojant saugomus tapatybės duomenis,
+o raktus dešifravimui turint tik autorizuotoms paslaugoms. Blokų grandinės greitaveika neturėti kelti problemų
+standartinėms tapatybės valdymo sistemos operacijoms \cite{Lo2017}. Daugumos ataka decentralizuotoje viešoje blokų grandinėje išlieka kaip galimas pavojus,
+tačiau tapatybės sistemai pasirinkus tokią grandinę, kurioje šios atakos vykdymas reikalauja milžiniškų resursų, jos įvykdymo tikimybė išlieka gana maža.
 
 Apžvelgus blokų grandinės technologiją galima teigti, kad jos savybės tinkamos naudotojų problemoms skaitmeniniame tapatybės
 valdyme spręsti. Blokų grandine paremta decentralizuota, skaidri ir apsauganti nuo neleistino įrašų keitimo sistema gali padėti
