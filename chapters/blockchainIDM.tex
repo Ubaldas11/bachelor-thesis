@@ -1,11 +1,40 @@
-\section{Blokų grandine paremta tapatybės valdymo sistema}
+\section{Blokų grandine paremta tapatybės atributų valdymo sistema}
+
+Atsižvelgus į blokų grandinės savybes, tinkamas tapatybės valdymo problemoms spręsti, šiame skyriuje pateikiamas
+blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti ~\ref{IDM:problemsSummarized} skyrelyje
+apibendrintoms naudotojų problemoms. Kadangi tapatybės valdymas apima
+daug skirtingų procesų, aprašomas modelis apsiriboja asmens tapatybės atributų valdymu ir perdavimu.
 
 \subsection{Reikalavimai}
 
-\subsection{Modelis}
+Naudotojams kylančios problemos tapatybės valdyme remiasi į tai, kad jų tapatybė yra
+visiškai patikėta valdyti tapatybės tiekėjams. Dėl menko naudotojų įsitraukimo į tapatybės valdymo
+procesus, asmenys neretai lieka tik pasyvūs stebėtojai.
 
-\subsection{Plečiamumas}
 
-\subsection{Panašūs produktai}
+Siekiant išspręsti šią problemą, kuriamo modelio reikalavimai kurti pagal į naudotoją orientuotos tapatybės
+(angl. \textit{user-centric identity}) principus. Ši paradigma akcentuoja naudotojus kaip centrinę
+identiteto valdymo sistemų dalį, perduodant paslaugų ir tapatybės tiekėjų turimą tapatybės kontrolę
+naudotojams \cite{Cao2010}. Tokiu būdu, naudotojai turi aktyviau prižiūrėti ir dalyvauti tapatybės
+valdymo procesuose (dažniausiai naudojant papildomą programinę įrangą),
+tačiau geriau žino, kaip ir kur yra naudojami jų asmens duomenys.
 
-\subsection{Privalumai ir trūkumai}
+Taikant į asmenis orientuotos skaitmeninės tapatybės principus, reikalavimai modeliui suformuluoti naudotojų istorijų forma:
+
+\begin{enumerate}
+    \item Kaip interneto naudotojas, aš noriu žinoti, kurios programos turi prieigą prie kurių mano asmens duomenų.
+    \item Kaip interneto naudotojas, aš noriu kontroliuoti savo asmens duomenis ir pats suteikti arba atmesti prieigą paslaugų tiekėjams pasiekti mano duomenis.
+    \item Kaip interneto naudotojas, aš noriu galimybės lengvai atnaujinti savo asmens duomenis vienoje vietoje.
+    \item Kaip interneto naudotojas, aš nenoriu, jog mano asmens duomenų pasiekiamumas priklausytų tik nuo vienos trečiosios šalies pasiekiamumo.
+\end{enumerate}
+
+Pateiktos naudotojų istorijos padengia 1 skyriuje apibrėžtus asmenų poreikius tapatybės valdymo
+sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problemas. Saugumo iššūkiai internete
+yra plati tema, kuri šiame skyriuje nebus nagrinėjama. \textcolor{red}{ar užtenka tokio sakinio pasakymui kad čia \textit{out of scope}? nes saugumui užtikrint reik
+kad naudojamos paslaugos SSL turėtų, ir šiaip plati tema labai, kurios vien blockchain neišspręs}
+
+\subsection{Architektūra}
+
+Kuriamo modelio architektūra remiasi MIT tyrime \cite{}
+
+\subsection{Naudojimo sekos}

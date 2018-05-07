@@ -168,7 +168,7 @@ siųsti žinutes kitai išorinei paskyrai sukūrus ir pasirašius transakciją. 
 turi kodą bei būseną, o priėmusios žinutę iš kitos paskyros gali keisti būseną ar siųsti žinutes kitiems kontraktams.\\
 Ethereum išmanieji kontraktai gali saugoti bei keisti būseną (kontrakto apibrėžtus duomenis) ar kviesti kitų kontraktų funkcijas siunčiant jiems žinutes.
 Kontrakto vykdymas yra apmokestinamas Ethereum kuru. Kontrakte apibrėžtos funkcijos kvietėjas už kiekvieną
-vykdytą operaciją turi susimokėti tam tikrą kuro kiekį. Kuro sistema padeda apsisaugoti nuo begalinių ciklų vykdymų - jei vykdant
+vykdytą operaciją, priklausomai nuo jos skaičiavimo sudėtingumo, turi susimokėti tam tikrą kuro kiekį. Kuro sistema padeda apsisaugoti nuo begalinių ciklų vykdymų - jei vykdant
 funkciją baigiasi kuras, vykdymas nutraukiamas, o kuras nėra grąžinamas \cite{EthereumWhitePaper}.\\
 
 \subsection{Pavojai ir trūkumai} \label{blockchain:concerns}
@@ -219,7 +219,7 @@ blokų skaitymo teisės būtų apribotos. Kitas variantas - blokų grandinėje s
 reikia turėti dešifravimo raktą. Jeigu tai netinkama išeitis, tuomet transakcijas galima atlikti per tarpininką, kuris išskaidys vieną transakciją
 į keletą, vykdomų su skirtingais viešaisiais raktais, ir taip bus sunkiau atsekti transakcijos autorių \cite{Zheng2017}.
 
-\subsection{Pritaikymas tapatybės valdyme}
+\subsection{Pritaikymas tapatybės valdyme} \label{blockchain:suitabilityForIDM}
 
 Blokų grandinės savybės atveria įdomių galimybių skaitmeninių tapatybių valdyme:
 
