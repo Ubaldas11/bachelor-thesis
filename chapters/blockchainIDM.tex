@@ -4,15 +4,14 @@ Atsižvelgus į blokų grandinės savybes, tinkamas tapatybės valdymo problemom
 blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti ~\ref{IDM:problemsSummarized} skyrelyje
 apibendrintoms naudotojų problemoms. Kadangi tapatybės valdymas apima
 daug skirtingų procesų, aprašomas modelis apsiriboja asmens tapatybės atributų valdymu ir perdavimu. Kuriamo modelio architektūra 
-remiasi MIT tyrime \cite{MITPaper} pristatytais teoriniais protokolais, bandant juos pritaikyti
-ne tik mobiliosioms aplikacijoms, o ir interneto tinklalapiams. 
+remiasi MIT tyrime \cite{MITPaper} pristatytais teoriniais protokolais, bandant juos modifikuoti ir pritaikyti
+ne tik mobiliosioms aplikacijoms, o ir interneto tinklalapiams.
 
 \subsection{Reikalavimai}
 
 Naudotojams kylančios problemos tapatybės valdyme remiasi į tai, kad jų tapatybė yra
 visiškai patikėta valdyti tapatybės tiekėjams. Dėl menko naudotojų įsitraukimo į tapatybės valdymo
 procesus, asmenys neretai lieka tik pasyvūs stebėtojai.
-
 
 Siekiant išspręsti šią problemą, kuriamo modelio reikalavimai kurti pagal į naudotoją orientuotos tapatybės
 (angl. \textit{user-centric identity}) principus. Ši paradigma akcentuoja naudotojus kaip centrinę
@@ -31,15 +30,15 @@ Taikant į asmenis orientuotos skaitmeninės tapatybės principus, reikalavimai 
 \end{enumerate}
 
 Pateiktos naudotojų istorijos padengia 1 skyriuje apibrėžtus asmenų poreikius tapatybės valdymo
-sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problemas. Saugumo iššūkiai internete
-yra plati tema, kuri šiame skyriuje nebus nagrinėjama. \textcolor{red}{ar užtenka tokio sakinio pasakymui kad čia \textit{out of scope}? nes saugumui užtikrint reik
+sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problemas. Interneto tapatybių valdymo sistemo saugumo atakos (angl.
+\textit{cross site scripting}, \textit{phishing}) yra plati tema, verta atskiro tyrimo, tad ji šiame modelyje nebus nagrinėjama. \textcolor{red}{ar užtenka tokio sakinio pasakymui kad čia \textit{out of scope}? nes saugumui užtikrint reik
 kad naudojamos paslaugos SSL turėtų, ir šiaip plati tema labai, kurios vien blockchain neišspręs}
 
 \subsection{Modelio dalys}
 
 Modelis sudarytas iš dviejų dalių: blokų grandinės (ir joje esančių išmaniųjų kontraktų, aprašančių veikimo logiką)
-bei klientinės programos, skirtos naudotojui palengvinti bendravimą (siųsti transakcijas) su blokų grandine ir apžvelgti
-autorizuotas paslaugas.
+bei klientinės programos, skirtos sugeneruoti šifro raktą tarp konkrečios paslaugos bei naudotojo ir palengvinti naudotojo bendravimą
+(transakcijų siuntimą) su blokų grandine.
 
 \subsubsection{Blokų grandinė} \label{BCIDM:blockchainFunctions}
 
@@ -48,78 +47,111 @@ prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai
 
 \begin{itemize}
     \item naudotojo atliekamą paslaugų autorizavimą. Naudotojas, kviesdamas išmanaus kontrakto funkciją, gali pasirinkti,
-    ar suteikti konkrečiai paslaugai prieigą prie jos norimo atributo. Prieigos yra valdomos ne visos tapatybės, o atributų lygmenyje -
-    viena paslauga gali turėti prieigą prie mažiau atributų nei kita.
+    ar suteikti konkrečiai paslaugai prieigą prie jos norimo atributo. Prieigos yra valdomos ne visos tapatybės, o
+    atskirų atributų lygmenyje.
 
     \item šifruotų atributų saugojimą. Išmaniuosiuose kontraktuose saugomi naudotojo tapatybės atributai. Jeigu paslaugą P
-    naudotojas yra autorizavęs atributui X, tuomet kontrakte išsaugomas P viešu raktu užšifruotas atributas X. Taip tik paslauga P
-    su savo viešu raktu galės perskaityti viešajame kontrakte esantį atributą.
+    naudotojas N yra autorizavęs atributui A, tuomet kontrakte išsaugomas N ir P simetriškų šifro raktu (angl.
+    \textit{symmetric encryption key}) užšifruotas atributas A. Taip tik paslauga P
+    ir naudotojas N galės perskaityti viešame išmaniajame kontrakte esantį atributą.
 
     \item pateikiamas funkcijas paslaugoms pasiekti atributus. Išmanusis kontraktas atsižvelgia į tai, kokia paslauga kreipiasi (iš
-    jos viešo rakto) bei kokio atributo prašo. Tuomet, patikrinęs, ar ši paslauga turi prieigą, atitinkamai persiunčia
+    jos adreso) bei kokio atributo prašo. Tuomet, patikrinęs, ar ši paslauga turi prieigą, atitinkamai persiunčia
     paslaugai atributą, praneša apie atmestą prieigą arba išsaugo užklausą, laukiančią naudotojo sprendimo.
 \end{itemize}
 
 \subsubsection{Klientinė programa}
 
-Klientinė programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats saugoti
-savo privatų raktą bei formuoti tiesiogines užklausas į blokų grandinę, tačiau tai nėra patogu. Dėl šios priežasties,
-modelyje taip pat pristatoma klientinė programa, kuri stebi (angl. \textit{monitor}) blokų grandinės išmaniųjų kontraktų būseną,
-o su šia programa naudotojas gali siųsti pranešimus į blokų grandinę.
+Klientinė programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats formuoti užklausas
+bei sugeneruoti simetriško šifro raktą ir perduoti jį paslaugai, tačiau tai nėra patogu. Dėl šių priežasčių, ši klientinė
+programa padeda naudotojui matyti bei keisti suteiktas išmaniajame kontrakte esančias prieigas, užšifruoti ir persiųsti atributus į blokų grandinę
+bei sugeneruoti šifro raktą, unikalų kiekvienai naudotojo N ir paslaugos P porai.
 
 Modelyje nėra apibrėžiama, kaip turi būti įgyvendinta ši programa - tai gali būti kompiuterio darbalaukio programa,
 mobilioji programėlė ar 
 interneto tinklapis. Jos įgyvendinimas būtų panašus į centralizuotos kriptovaliutos piniginės kūrimą (pvz. \enquote{Coinbase}), nes ši
-programa skirta palengvinti naudotojo bendravimą su blokų grandine, kuris aprašytas~\ref{BCIDM:blockchainFunctions} skyrelyje.
+programa skirta palengvinti naudotojo bendravimą su blokų grandine, kuris aprašytas~\ref{BCIDM:blockchainFunctions} skyrelyje ir
+stebėti jau suteiktas prieigas.
 
 Klientinė programa saugo naudotojo privatų raktą, praneša apie naujas paslaugų užklausas, padeda šifruoti
-į blokų grandinę saugomus atributus su paslaugos viešuoju raktu.
+į blokų grandinę saugomus atributus su paslaugos viešuoju raktu. Taip pat, joje naudotojas
+matytų suteiktų prieigų apžvalgą ir betkada galėtų pakeisti konkrečių paslaugų pasiekiamus atributus.
 
 \subsection{Naudojimo sekos}
 
 Šiame skyriuje UMl sekų diagramomis pateikiami pagrindiniai modelio panaudos atvejai (angl. \textit{use cases}).
 
-\subsubsection{Naudotojo viešo rakto suteikimas paslaugai}
+\subsubsection{Naudotojo adreso suteikimas paslaugai}
 
-Kai naudotojas pirmą kartą pasinaudoja paslauga, paslauga paprašo naudotojo pateikti jo viešą raktą. Taip paslauga
-su šiuo raktu galės kreiptis į blokų grandinę ir atlikti pageidaujamų atributų užklausas.
+Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo pateikti jo adresą (naudotojo patogumui, adresas rodomas
+klientinėje programoje),
+kuris yra viešas naudotojo identifikatorius blokų grandinėje.
+Gavus šį adresą, paslauga iš klientinės programos prašo šifro rakto, su kuriuo galės dešifruoti iš blokų grandinės gautus atributus.
+Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.~\ref{fig:userGivesAddress}).
 
-\begin{figure}[H]
+Modelis neapibrėžia, kada naudotojas N privalo pateikti adresą paslaugai P. Svarbu, kad paslauga P gautų šį adresą ir unikalų šifro raktą tarp N ir P,
+nes be jų P negalės gauti ir perskaityti norimų tapatybės duomenų. Šis suteikimas galėtų būti atliekamas prisijungimo metu, įtraukiant
+papildomą žingsnį.
+
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.8]{img/initiateUserServiceRelationship}
-    \caption{Pirmas naudotojo pasinaudojimas paslauga}
-    \label{fig:initiateUserServiceRelations}
+    \includegraphics[scale=0.6]{img/userGivesAddress}
+    \caption{Naudotojas adreso suteikimas paslaugai}
+    \label{fig:userGivesAddress}
 \end{figure}
 
-\subsubsection{Paslaugos atliekama atributo užklausa}
+\subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}
 
-Aprašymas.
+Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą), kreipiasi į blokų grandinės išmanųjį kontraktą (žr.~\ref{fig:askForAttributeSequence} pav.).
+Kontraktas tuomet patikrina, ar ši paslauga turi prieigą prie pageidaujamo atributo. Jei turi, tuomet grąžina šį atributą. Jis
+užšifruotas paslaugos P turimu šifro raktu, tad paslauga gali jį dešifruoti ir perskaityti duomenis. Jei
+naudotojas atmetęs prieigą, apie tai pranešama paslaugai. Jei naudotojas dar nesvarstęs šios prieigos, išsaugoma laukianti
+(angl. \textit{pending}) paslaugos P atributo A užklausa ir laukiama naudotojo sprendimo. Naudotojas šią laukiančią užklausą galės pamatyti savo 
+klientinėje programoje ir ten atlikti sprendimą.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.8]{img/askForAttributeSequence}
+    \includegraphics[scale=0.7]{img/askForAttributeSequence}
     \caption{Pirmas naudotojo pasinaudojimas paslauga}
     \label{fig:askForAttributeSequence}
 \end{figure}
 
 \subsubsection{Naudotojo atliekamas paslaugos autorizavimas}
 
-Aprašymas.
+Klientinė programa, stebinti išmaniuosiuose kontraktuose naujas paslaugų užklausas, praneša naudotojui apie dar
+neatliktus autorizavimus. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
+A paslaugai P. (žr.~\ref{fig:givePermissions} pav.)\\
+Jei naudotojas prieigą suteikia, tuomet klientinė programa prašo pasirinkti, iš kur naudoti duomenis atributui. Tai
+daroma todėl, kad kiekvienas atributas, suteiktas paslaugai P, turi būti užšifruotas tik paslaugai P ir naudotojui N
+žinomu šifro raktu bei nusiųstas
+į išmanųjį kontraktą. Pasirinkus, kokius duomenis šifruoti (naudotojas galėtų juos įvesti pats arba pasirinkti, kad
+jie būtų imami iš tapatybės tiekėjo), jie nusiunčiami į išmanųjį kontraktą ir jame pažymima, kad paslauga P autorizuota
+pasiekti atributą A.\\
+Jei naudotojas prieigą atmeta, tuomet blokų grandinėje pažymima, kad paslauga P nėra autorizuota pasiekti atributą A.
 
-\begin{figure}[H]
+Jei naudotojas vėliau nuspręstų pakeisti savo sprendimą (pvz. panaikinti suteiktas prieigas prie atributo A paslaugai P),
+jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieigai.
+
+
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.8]{img/givePermissions}
+    \includegraphics[scale=0.65]{img/givePermissions}
     \caption{Pirmas naudotojo pasinaudojimas paslauga}
     \label{fig:givePermissions}
 \end{figure}
 
-\subsubsection{Klientinės programos atliekamas blokų grandinės stebėjimas}
+\subsubsection{Klientinės programos atliekamas blokų grandinės stebėjimas} \label{BCIDM:blockchainMonitoring}
 
-Aprašymas.
+Blokų grandinės išmanusis kontraktas negali tiesiogiai pranešti išorinei (ne išmaniajame kontrakte esančiai) programai
+apie įvykusius pasikeitimus. Todėl išmanusis kontraktas gali saugoti būseną, o ją vėliau pasiekia norinti taikomoji programa.
+Tokiu būdu klientinė programa periodiškai kreipiasi į išmanųjį kontraktą ir žiūri, ar yra naujų paslaugų užklausų. Jeigu jų yra,
+klientinė programa išsaugo pranešimą apie tai naudotojui (žr.~\ref{fig:checkForPendingPermissions} pav.).\\
+Panašiu stebėjimo principu pasikeitimus išmaniojo kontrakto būsenoje gali stebėti ir paslaugų tiekėjai
+(pvz. apie pasikeitusias prieigas).
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
-    \includegraphics[scale=0.8]{img/checkForPendingPermissions}
+    \includegraphics[scale=0.6]{img/checkForPendingPermissions}
     \caption{Pirmas naudotojo pasinaudojimas paslauga}
     \label{fig:checkForPendingPermissions}
 \end{figure}
