@@ -1,6 +1,79 @@
-\section{Vertinimas}
+\section{Tapatybės atributų valdymo modelio vertinimas}
 
+Šiame skyriuje apžvelgiama, kaip~\ref{section:BCIDM} skyriuje pristatytas blokų grandine paremtas tapatybės atributų
+valdymo modelis tenkina iškeltus reikalavimus, jo trūkumus ir pritaikymo barjerus.
 
-\subsection{Plečiamumas}
+\subsection{Reikalavimų įgyvendinimas}
 
-\subsection{Privalumai ir trūkumai}
+Pristatytas modelis įgyvendina~\ref{BCIDM:requirements} skyrelyje aprašytus reikalavimus.
+Kadangi asmens duomenys
+saugomi decentralizuotuoje blokų grandinėje, paslaugų tiekėjai betkada gali juos pasiekti tol, kol bent vienas blokų grandinės
+mazgas yra pasiekiamas.
+
+\subsection{Privalumai}
+
+\subsubsection{Naudotojui suteikta atributų valdymo kontrolė}
+
+Naudotojas su atributų valdymo programa gali autorizuoti paslaugas pasiekti jo atributus, esančius blokų grandinėje. Programoje
+taip pat galima pamatyti visus įvestus atributus ir paslaugas, kurios yra autorizuotos juos pasiekti. Naudotojas taip pat
+gali pakeisti anksčiau priimtą sprendimą ir programa atnaujins prieigą blokų grandinėje. Naudotojui nusprendus pakeisti
+atributo reikšmę, jis tai padaro atributų valdymo programoje, o ši kreipiasi į blokų grandinę ir joje atnaujina esančias reikšmes. Kaip
+galėtų atrodyti tokia atributų valdymo programa pateikiama priede~\ref{appendix:attributeManagementApp}.\\
+Išvardytos funkcijos padengia~\ref{BCIDM:requirements} skyrelio 1, 2 ir 3 reikalavimus.
+
+\subsubsection{Tapatybės atributai decentralizuoti}
+
+Tapatybės atributus saugant blokų grandinėje, atributai tampa pasiekiami nepriklausomai nuo vienos trečiosios šalies pasiekiamumo.
+Taip tiek paslaugų tiekėjai, tiek naudotojas gali betkada pamatyti suteiktus atributus tol, kol bent vienas blokų grandinės mazgas
+yra pasiekiamas.
+Šis privalumas įgyvendina~\ref{BCIDM:requirements} skyrelio 4-ą reikalavimą.
+
+\subsubsection{Sumažintas reikiamas pasitikėjimas trečiosioms šalims}
+
+Kadangi tapatybės atributai yra saugomi viešoje, decentralizuotoje blokų grandinėje, kurios išmaniųjų kontraktų
+logika prieinama visiems, naudotojams nebereikia pasitikėti vien tik paslaugų bei tapatybės tiekėjais - jų
+atributai šiuo atveju priklauso nuo korektiško išmaniųjų kontraktų veikimo.
+
+Verta pastebėti, kad pristatytame modelyje naudotojui vis dar reikia pasitikėti atributų valdymo programa. Šiam pasitikėjimui
+padidinti ši programa turėtų būti atviro kodo, kuris viešai prienamas. Taip pat, paslaugų tiekėjai parsisiuntę atributą
+iš blokų grandinės, vis dar gali jį išsisaugoti. Tačiau, galimybė paslaugai pačiai nesaugoti naudotojo duomenų turėtų būti pagrindinė paskata
+naudotis šiuo modeliu - taip naudotojai labiau pasitikės šia paslauga. Galimas išsisaugojimo pavojus pastebimas ir
+\cite{MITPaper} tyrime, kurio autoriai aptaria ir galimybę neleisti paslaugai pasiekti pačio duomens, o atlikti
+reikalingus skaičiavimus pačiame tinkle.
+
+\subsection{Trūkumai}
+
+\subsubsection{Atributų reikšmių įvedimas}
+
+Norint naudotis aprašytu modeliu, asmuo turi į atributų valdymo programą įvesti norimų atributų reikšmes. Taip daroma todėl,
+kad naudotojui nereiktų vesti atributo kiekvieną kartą, kai nori autorizuoti tam tikrą paslaugą. Tačiau, tokiu būdu,
+naudotojas suteikia savo duomenis dar vienai paslaugai - pačiai atributų valdymo programai. Tai suteikia patogumo (nereik
+daugybę kartų vesti atributo), tačiau naudotojui reikia pasitikėti atributų valdymo programa. Norint to išvengti,
+galima būtų naudotojo prašyti įvesti atributą kiekvieną kartą, kai paslauga prašo autorizuoti prieigą prie pasirinkto atributo.
+
+\subsubsection{Nepatikimos atributų reikšmės}
+
+Paslaugų tiekėjai iš blokų grandinės gauna reikšmes, kurias įvedė pats naudotojas. Tai nesudaro jokių keblumų,
+kai jų teisingumą gali patikrinti pati paslauga (pvz. atsiųsti žinutę į telefono numerį), tačiau kai to atlikti negalima,
+paslaugai tenka pasitikėti naudotojo įvesta reikšme.
+
+Tai būtų galima tobulinti, jei šias reikšmes galėtų verifikuoti
+atsakingos institucijos (pvz. bankas). Tuomet, šios institucijos turėtų teikti papildomą paslaugą, kurioje naudotojui
+paprašius, jos galėtų atlikti užklausą į blokų grandinę ir patvirtinti, kad atributo reikšmė yra teisinga, o tai būtų
+išsaugota išmaniajame kontrakte. Tokiu atveju,
+į blokų grandinę besikreipianti paslauga galėtų matyti, ar šis atributas yra verifikuotas. Panašus tvirtinimo mechanizmas
+nagrinėjamas \cite{Baars2016} tyrime.
+
+\subsubsection{Kaina}
+
+Blokų grandinės išmaniųjų kontraktų funkcijų kvietimai kainuoja pinigus. Įprastu atveju, funkcijos vykdymą apmoka
+funkcijos kvietėjas.
+Aprašytame modelyje kvietimus į blokų grandinę vykdo tiek paslaugų tiekėjas, tiek atributų valdymo programa. Kai atributų valdymo
+programa gali būti mokama naudotojui, nėra aišku, ar paslaugų tiekėjai būtų pasiryžę mokėti už funkcijų kvietimus.
+
+Vienas iš galimų sprendimų - kviečiant funkciją paslaugai, ją apmokėtų ne paslaugos tiekėjas, o pats kontraktas. Taip
+kontraktas būtų apmokamas iš naudotojo lėšų, o jos naudojamos paslaugai kviečiant kontrakto funkcijas.
+Tačiau, tokį mechanizmą turi palaikyti pasirinkta blokų grandinė, taikant jį reiktų apsisaugoti ir nuo
+galimų pavojingų pakartotinių kvietimų, kurie būtų skirti tik išeikvoti kontrakto lėšas.
+
+\subsection{Pritaikymo barjerai}

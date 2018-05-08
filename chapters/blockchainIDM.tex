@@ -1,4 +1,4 @@
-\section{Blokų grandine paremtas tapatybės atributų valdymo modelis}
+\section{Blokų grandine paremtas tapatybės atributų valdymo modelis} \label{section:BCIDM}
 
 Atsižvelgus į blokų grandinės savybes, tinkamas tapatybės valdymo problemoms spręsti, šiame skyriuje pateikiamas
 blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti ~\ref{IDM:problemsSummarized} skyrelyje
@@ -7,7 +7,7 @@ daug skirtingų procesų, aprašomas modelis apsiriboja asmens tapatybės atribu
 remiasi MIT tyrime \cite{MITPaper} pristatytais teoriniais protokolais, bandant juos modifikuoti ir pritaikyti
 ne tik mobiliosioms aplikacijoms, o ir interneto tinklalapiams.
 
-\subsection{Reikalavimai}
+\subsection{Reikalavimai} \label{BCIDM:requirements}
 
 Naudotojams kylančios problemos tapatybės valdyme remiasi į tai, kad jų tapatybė yra
 visiškai patikėta valdyti tapatybės tiekėjams. Dėl menko naudotojų įsitraukimo į tapatybės valdymo
@@ -36,11 +36,11 @@ kad naudojamos paslaugos SSL turėtų, ir šiaip plati tema labai, kurios vien b
 
 \subsection{Modelio dalys}
 
-Modelis sudarytas iš dviejų dalių: blokų grandinės (ir joje esančių išmaniųjų kontraktų, aprašančių veikimo logiką)
+Modelis sudarytas iš dviejų dalių: blokų grandinės išmaniųjų kontraktų
 bei atributų valdymo programos, skirtos sugeneruoti šifro raktą tarp konkrečios paslaugos bei naudotojo ir palengvinti naudotojo bendravimą
 (transakcijų siuntimą) su blokų grandine.
 
-\subsubsection{Blokų grandinė} \label{BCIDM:blockchainFunctions}
+\subsubsection{Blokų grandinės išmanieji kontraktai} \label{BCIDM:blockchainFunctions}
 
 Pagrindinė blokų grandinės paskirtis yra pagal išmaniuosiuose kontraktuose aprašytą logiką suteikti arba nesuteikti
 prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai yra atsakingi už:
@@ -121,11 +121,11 @@ atributų valdymo programoje ir ten atlikti sprendimą.
 atributų valdymo programa, stebinti išmaniuosiuose kontraktuose naujas paslaugų užklausas, praneša naudotojui apie dar
 neatliktus autorizavimus. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
 A paslaugai P. (žr.~\ref{fig:givePermissions} pav.)\\
-Jei naudotojas prieigą suteikia, tuomet atributų valdymo programa prašo pasirinkti, iš kur naudoti duomenis atributui. Tai
+Jei naudotojas prieigą suteikia, tuomet atributų valdymo programa užšifruoja atributą A. Tai
 daroma todėl, kad kiekvienas atributas, suteiktas paslaugai P, turi būti užšifruotas tik paslaugai P ir naudotojui N
 žinomu šifro raktu bei nusiųstas
-į išmanųjį kontraktą. Pasirinkus, kokius duomenis šifruoti (naudotojas galėtų juos įvesti pats arba pasirinkti, kad
-jie būtų imami iš tapatybės tiekėjo), jie nusiunčiami į išmanųjį kontraktą ir jame pažymima, kad paslauga P autorizuota
+į išmanųjį kontraktą. Pati atributo reikšmė yra iš anksto įvesta naudotojo į atributų valdymo programą.
+Užšifravus reikšmę, duomenys nusiunčiami į išmanųjį kontraktą ir jame pažymima, kad paslauga P autorizuota
 pasiekti atributą A.\\
 Jei naudotojas prieigą atmeta, tuomet blokų grandinėje pažymima, kad paslauga P nėra autorizuota pasiekti atributą A.
 
