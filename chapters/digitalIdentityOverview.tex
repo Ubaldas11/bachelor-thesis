@@ -83,7 +83,7 @@ kad nėra vieningo standarto identiteto valdymo sistemoms \cite{Claus2001}. Šia
 modeliai. Tiriant kiekvieną modelį, pirmiausia apžvelgti jo bendri veikimo principai. Taip pat apžvelgtos paplitusios modelį įgalinančios technologijos
 (angl. \textit{enabling technology}),
 nes modelio realizacijoje taikomi standartai ar protokolai gali turėti įtakos naudotojų poreikiams. Galiausiai, analizuotas modelio atitikimas naudotojų lūkesčiams,
-išvardytiems ~\ref{section:IDMUserNeeds} skyrelyje.
+išvardytiems \hypertarget{section:IDMUserNeeds}{~\ref{section:IDMUserNeeds}} skyrelyje.
 
 \subsubsection{Izoliuotas tapatybių valdymas}
 
@@ -150,7 +150,7 @@ Centralizuotame skaitmeninių tapatybių valdyme egzistuoja vienas tapatybės ti
 esančios to paties paslaugų tiekėjo domene \cite{Josang2005}. Kai paslaugų tiekėjui
 reikia autentifikuoti naudotoją (ar atlikti kitą tapatybės valdymo procesą), jis persiųs naudotojo pateiktus atpažinimo duomenis tapatybės tiekėjui,
 siekdamas pabaigti procesą \cite{Cao2010}. Naudotojui šiame modelyje užtenka vienų atpažinimo duomenų, su kuriais jis gali prisijungti prie visų to paties
-paslaugų tiekėjo paslaugų. Modelio veikimas iliustruotas ~\ref{fig:centralisedModel}-iame paveiksle.
+paslaugų tiekėjo paslaugų. Modelio veikimas iliustruotas \hypertarget{fig:centralisedModel}{~\ref{fig:centralisedModel}}-iame paveiksle.
 
 \begin{figure}[H]
     \centering
@@ -236,7 +236,7 @@ autentifikuotas visose paslaugose, kurios palaiko šį tapatybės tiekėją \cit
 Kadangi jungtiniame tapatybės valdyme tapatybės tiekėjas bei paslaugų tiekėjas yra skirtingų kūrėjų sistemos,
 duomenų apsikeitimui tarp jų sukurti technologiniai standartai. Trys šiuo metu labiausiai paplitę protokolai: \textit{SAML}, \textit{OAuth} bei \textit{OpenID}
 \cite{OIDvsOAuthvsSAML}. Šių technologijų
-apžvalga pateikiama ~\ref{tab:SSOProtocols}-oje lentelėje.
+apžvalga pateikiama \hypertarget{tab:SSOProtocols}{~\ref{tab:SSOProtocols}}-oje lentelėje.
 
 \input{tables/SSOProtocols}
 
@@ -271,14 +271,14 @@ vietoj visų paslaugų tiekėjų). Tačiau taip paslaugų tiekėjas tampa vienin
 į tapatybės tiekėjo sistemą, asmens paskyros visose paslaugose tampa prieinamos \cite{Pashalidis2003}. Taip pat, naudotojui gali būti sunku kontroliuoti
 savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}. Nors OpenID Connect bei OAuth 2.0
 standartai suteikia galimybes naudotojui išreikštinai patvirtinti, kokius duomenis jis sutinka perduoti trečiosios šalies paslaugai, kai
-jis pradeda ja naudotis (pavyzdys pateikiamas priede ~\ref{appendix:SSOUserConsent}), tačiau tapatybės tiekėjai ne visada tinkamai informuoja,
+jis pradeda ja naudotis (pavyzdys pateikiamas priede \hypertarget{appendix:SSOUserConsent}{~\ref{appendix:SSOUserConsent}}), tačiau tapatybės tiekėjai ne visada tinkamai informuoja,
 kokie naudotojo veiksmai gali neišreikštai suteikti leidimą tapatybės tiekėjui perduoti duomenis kitai sistemai.
 
 
 \subsubsection{Skaitmeninės tapatybės valdymo modelių palyginimas}
 
-Apžvelgus skirtingas skaitmeninės tapatybės valdymo architektūras,~\ref{tab:IDMComparison} lentelėje pateikiamas modelių palyginimas.
-Skirtingi modeliai lyginti pagal~\ref{section:IDMUserNeeds} skyrelyje apibrėžtus naudotojų poreikius. 
+Apžvelgus skirtingas skaitmeninės tapatybės valdymo architektūras,\hypertarget{tab:IDMComparison}{~\ref{tab:IDMComparison}} lentelėje pateikiamas modelių palyginimas.
+Skirtingi modeliai lyginti pagal\hypertarget{section:IDMUserNeeds}{~\ref{section:IDMUserNeeds}} skyrelyje apibrėžtus naudotojų poreikius. 
 
 Atsižvelgus į palyginimo rezultatus, galima teigti, kad jungtinis tapatybės valdymas naudotojams yra parankesnis nei centralizuotas
 ar lokalizuotas valdymas. Šie modeliai verčia naudotojus kurti ir administruoti naujas paskyras nebandytose sistemose,
@@ -302,7 +302,7 @@ reikiamų prisijungimų kiekis. Nepaisant to, nemažai problemų naudotojams iš
     \item kontrolės trūkumas. Organizacijos renka didžiulius kiekius asmens duomenų - \enquote{Facebook} nuo sukūrimo
     jau sukaupė 300 petabaitų duomenų apie naudotojus \cite{Vagata2014}, tačiau naudotojai nėra pakankamai informuoti,
     kur perduodami jų duomenys. Nors naudojamos technologijos, tokios kaip OAuth, išreikštinai prašo naudotojų
-    sutikimo perduodant duomenis naujai paslaugai (žr. priedą ~\ref{appendix:SSOUserConsent}), tai atliekama tik pradedant naudotis tam tikra paslauga. Taip pat,
+    sutikimo perduodant duomenis naujai paslaugai (žr. priedą \hypertarget{appendix:SSOUserConsent}{~\ref{appendix:SSOUserConsent}}), tai atliekama tik pradedant naudotis tam tikra paslauga. Taip pat,
     \textit{CambridgeAnalytica} incidentas \cite{CambridgeAnalytica} rodo, kad šio sutikimo gali neužtekti.
     Visa tai veda prie to, kad naudotojai jaučiasi nekontroliuojantys savo asmens duomenų internete, norėtų lengviau keisti bei trinti juos, o
     dalį tapatybės valdymo sistemų naudoja tik todėl, kad neturi kitos išeities \cite{Baars2016};

@@ -1,7 +1,7 @@
 \section{Blokų grandine paremtas tapatybės atributų valdymo modelis} \label{section:BCIDM}
 
 Atsižvelgus į blokų grandinės savybes, tinkamas tapatybės valdymo problemoms spręsti, šiame skyriuje pateikiamas
-blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti ~\ref{IDM:problemsSummarized} skyrelyje
+blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti\hypertarget{IDM:problemsSummarized}{~\ref{IDM:problemsSummarized}} skyrelyje
 apibendrintoms naudotojų problemoms. Kadangi tapatybės valdymas apima
 daug skirtingų procesų, aprašomas modelis apsiriboja asmens tapatybės atributų valdymu ir perdavimu. Kuriamo modelio architektūra 
 remiasi MIT tyrime \cite{MITPaper} pristatytais teoriniais protokolais, bandant juos modifikuoti ir pritaikyti
@@ -69,7 +69,7 @@ bei sugeneruoti šifro raktą, unikalų kiekvienai naudotojo N ir paslaugos P po
 Modelyje nėra apibrėžiama, kaip turi būti įgyvendinta ši programa - tai gali būti kompiuterio darbalaukio programa,
 mobilioji programėlė ar 
 interneto tinklapis. Jos įgyvendinimas būtų panašus į centralizuotos kriptovaliutos piniginės kūrimą (pvz. \enquote{Coinbase}), nes ši
-programa skirta palengvinti naudotojo bendravimą su blokų grandine, kuris aprašytas~\ref{BCIDM:blockchainFunctions} skyrelyje ir
+programa skirta palengvinti naudotojo bendravimą su blokų grandine, kuris aprašytas\hypertarget{BCIDM:blockchainFunctions}{~\ref{BCIDM:blockchainFunctions}} skyrelyje ir
 stebėti jau suteiktas prieigas.
 
 Atributų valdymo programa saugo naudotojo privatų raktą, praneša apie naujas paslaugų užklausas, padeda šifruoti
@@ -103,7 +103,7 @@ Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo 
 atributų valdymo programoje),
 kuris yra viešas naudotojo identifikatorius blokų grandinėje.
 Gavus šį adresą, paslauga iš atributų valdymo programos prašo šifro rakto, su kuriuo galės dešifruoti iš blokų grandinės gautus atributus.
-Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.~\ref{fig:userGivesAddress}).
+Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.\hypertarget{fig:userGivesAddress}{~\ref{fig:userGivesAddress pav.}}).
 
 Modelis neapibrėžia, kada naudotojas N privalo pateikti adresą paslaugai P. Svarbu, kad paslauga P gautų šį adresą ir unikalų šifro raktą tarp N ir P,
 nes be jų P negalės gauti ir perskaityti norimų tapatybės duomenų. Šis suteikimas galėtų būti atliekamas prisijungimo metu, įtraukiant
@@ -120,7 +120,7 @@ papildomą žingsnį.
 
 Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą)\footnote{ Paslaugai kreipiantis į kontraktą, ji turi žinoti, koks yra norimo atributo identifikatorius, kurį reikia perduoti į kontrakto funkciją. 
 Atributų identifikatoriai gali būti pateikiami atskirame išmaniajame kontrakte arba kuriamo modelio interneto puslapyje.}
-, kreipiasi į blokų grandinės išmanųjį kontraktą (žr.~\ref{fig:askForAttributeSequence} pav.).
+, kreipiasi į blokų grandinės išmanųjį kontraktą (žr.\hypertarget{fig:askForAttributeSequence}{~\ref{fig:askForAttributeSequence} pav.}).
 Kontraktas tuomet patikrina, ar ši paslauga turi prieigą prie pageidaujamo atributo. Jei turi, tuomet grąžina šį atributą. Jis
 užšifruotas paslaugos P turimu šifro raktu, tad paslauga gali jį dešifruoti ir perskaityti duomenis. Jei
 naudotojas atmetęs prieigą, apie tai pranešama paslaugai. Jei naudotojas dar nesvarstęs šios prieigos, išsaugoma laukianti
@@ -138,7 +138,7 @@ atributų valdymo programoje ir ten atlikti sprendimą.
 
 Atributų valdymo programa, stebinti išmaniuosiuose kontraktuose naujas paslaugų užklausas, praneša naudotojui apie dar
 neatliktus autorizavimus. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
-A paslaugai P. (žr.~\ref{fig:givePermissions} pav.). Blokų grandinė asmeniui leidžia autorizuoti tik savo naudojamas paslaugas
+A paslaugai P. (žr.\hypertarget{fig:givePermissions}{~\ref{fig:givePermissions} pav.}). Blokų grandinė asmeniui leidžia autorizuoti tik savo naudojamas paslaugas
 \footnote{ Ar naudotojo N prieigai pakeisti siunčiamą žinutę tikrai siunčia N, blokų grandinė atskiria iš žinutės parašo.}.
 
 Jei naudotojas prieigą suteikia, tuomet atributų valdymo programa užšifruoja atributą A. Tai
@@ -166,7 +166,7 @@ jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieig
 Blokų grandinės išmanusis kontraktas negali tiesiogiai pranešti išorinei (ne išmaniajame kontrakte esančiai) programai
 apie įvykusius pasikeitimus. Todėl išmanusis kontraktas gali saugoti būseną, o ją vėliau pasiekia norinti taikomoji programa.
 Tokiu būdu atributų valdymo programa periodiškai kreipiasi į išmanųjį kontraktą ir žiūri, ar yra naujų paslaugų užklausų. Jeigu jų yra,
-atributų valdymo programa išsaugo pranešimą apie tai naudotojui (žr.~\ref{fig:checkForPendingPermissions} pav.).\\
+atributų valdymo programa išsaugo pranešimą apie tai naudotojui (žr.\hypertarget{fig:checkForPendingPermissions}{~\ref{fig:checkForPendingPermissions} pav.}).\\
 Panašiu stebėjimo principu pasikeitimus išmaniojo kontrakto būsenoje gali stebėti ir paslaugų tiekėjai
 (pvz. apie pasikeitusias prieigas).
 

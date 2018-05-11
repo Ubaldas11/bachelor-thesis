@@ -2,7 +2,7 @@
 
 Blokų grandinė - tai vieno su kitu susijusių blokų grandinė, kurios blokuose saugomi
 nekeičiami įrašai \cite{SatoshiNakamoto}. Šią technologiją galima apibūdinti kaip daugybę paskirstytų nekintamų skaitmeninių įrašų 
-(angl. \textit{immutable distributed ledger}), tarpusavyje susietų taikant kriptografiją (blokų grandinės pavyzdys pateikiamas~\ref{fig:blockchain} paveiksle). Technologija geriausiai žinoma dėl jos panaudojimo Bitcoin kriptovaliutoje.
+(angl. \textit{immutable distributed ledger}), tarpusavyje susietų taikant kriptografiją (blokų grandinės pavyzdys pateikiamas\hypertarget{fig:blockchain}{~\ref{fig:blockchain}} paveiksle). Technologija geriausiai žinoma dėl jos panaudojimo Bitcoin kriptovaliutoje.
 Šiame skyriuje apžvelgiami pagrindiniai blokų grandinės techniniai aspektai, savybės bei galimi skirtingi variantai.
 
 \begin{figure}[H]
@@ -30,7 +30,7 @@ Kiekvieno bloko maišos funkcijos rezultatas priklauso nuo jo transakcijų, prie
 Jeigu betkurio bloko duomenys būtų pakeisti, tuomet maišos funkcija sugeneruotų kitokį maišos rezultatą ir būtų lengva patikrinti, kad
 naujai perskaičiuotas maišos rezultatas nesutampa su bloke esančiu rezultatu. Taip pat, kadangi kiekvienas blokas
 priklauso nuo prieš tai buvusio bloko, net ir pakeitus vieną iš pirmųjų blokų, pakeitimas būtų pastebimas pridedant naujus blokus ir būtų galima suprasti,
-kad turima blokų grandinės versija yra nevalidi (žr.~\ref{fig:blockchainNotIntact} pav.). Tokiu būdu kiekvienas blokų grandinės blokas patvirtina prieš tai
+kad turima blokų grandinės versija yra nevalidi (žr.\hypertarget{fig:blockchainNotIntact}{~\ref{fig:blockchainNotIntact}} pav.). Tokiu būdu kiekvienas blokų grandinės blokas patvirtina prieš tai
 buvusio bloko integralumą, taip pasiekiant blokų grandinės nekintamumą (angl. \textit{immutability}),
 nes perrašyti įrašus blokuose nepastebėtam labai sunku \cite{SatoshiNakamoto}.
 
@@ -50,14 +50,14 @@ bloką \cite{Antonopoulos2016}. Kiekvienas mazgas yra susietas su keletu kitu ma
 kitiems mazgams, jie savo ruožtu žinią perduoda kitiems mazgams ir taip ilgainiui kiekvienas mazgas tinkle turi naujausią blokų grandinės versiją.
 
 Kadangi nėra centrinės institucijos, kuri nuspręstų, ar siūlomas blokas yra tinkamas priimti į grandinę, sprendimą bendrai turi priimti
-visi tinklo dalyviai. Egzistuoja skirtingos taisyklės, vadinamos konsensuso strategijomis (plačiau apie juos~\ref{blockchain:consensus} skyrelyje), kuriomis
+visi tinklo dalyviai. Egzistuoja skirtingos taisyklės, vadinamos konsensuso strategijomis (plačiau apie juos\hypertarget{blockchain:consensus}{~\ref{blockchain:consensus}} skyrelyje), kuriomis
 remdamiesi tinklo mazgai nusprendžia, ar pasiūlytas blokas yra validus. Šios taisyklės apibrėžia, kaip tinklo dalyviai turi įrodyti bloko validumą jį siūlydami į grandinę
 bei kaip patikrinti kito dalyvio pasiūlyto bloko validumą.
 
 \subsection{Tipai}
 
 Priklausomai nuo tinklo dalyviams suteikiamų blokų grandinės skaitymo ir rašymo teisių,
-išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati.  Tipų skirtumai pateikiami~\ref{tab:blockchainComparison} lentelėje.
+išskiriami trys pagrindiniai blokų grandinės tipai: vieša, konsorciumo bei privati.  Tipų skirtumai pateikiami\hypertarget{tab:blockchainComparison}{~\ref{tab:blockchainComparison}} lentelėje.
 
 \input{tables/blockchainComparison}
 
@@ -94,7 +94,7 @@ nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dė
 
 Kadangi blokų grandinės tinklas yra decentralizuotas, įmanoma situacija, kad labai panašiu metu į grandinę skirtingų mazgų pridėti du validūs blokai.
 Taip dalis tinklo dalyvių gaus vieną mazgą, o dalis - kitą, o abu jie bus susieti su tuo pačiu prieš tai buvusiu bloku.
-Tokiu atveju, taikoma ilgiausios grandinės taisyklė (žr.~\ref{fig:blockchainLongestRule} pav.). Mazgai dirba prie pirmiau gauto bloko,
+Tokiu atveju, taikoma ilgiausios grandinės taisyklė (žr.\hypertarget{fig:blockchainLongestRule}{~\ref{fig:blockchainLongestRule}} pav.). Mazgai dirba prie pirmiau gauto bloko,
 tačiau išsaugo kitą gautą bloką kaip šaką. Po to, kai bus gautas dar vienas blokas, jis bus susietas tik su viena iš šakų - taip ši šaka taps ilgesnė. Tuomet
 ilgesnė šaka paskelbiama aktyviąja grandine, visi su trumpesniąja šaka dirbę mazgai turi pereiti prie aktyviosios grandinės, o atmesto bloko (vadinamo \textit{bloku-našlaičiu}) transakcijos
 grąžinamos į bendrą transakcijų sankaupą (angl. \textit{transaction pool}) \cite{SatoshiNakamoto}.
@@ -240,7 +240,7 @@ Blokų grandinės savybės atveria įdomių galimybių skaitmeninių tapatybių 
 
 \end{enumerate}
 
-~\ref{blockchain:concerns} skyrelyje įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme.  Anonimiškumo klausimą galima spręsti šifruojant saugomus tapatybės duomenis,
+\hypertarget{blockchain:concerns}{~\ref{blockchain:concerns}} skyrelyje įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme.  Anonimiškumo klausimą galima spręsti šifruojant saugomus tapatybės duomenis,
 o raktus dešifravimui turint tik autorizuotoms paslaugoms. Blokų grandinės greitaveika neturėti kelti problemų
 standartinėms tapatybės valdymo sistemos operacijoms \cite{Lo2017}. Daugumos ataka decentralizuotoje viešoje blokų grandinėje išlieka kaip galimas pavojus,
 tačiau tapatybės sistemai pasirinkus tokią grandinę, kurioje šios atakos vykdymas reikalauja milžiniškų resursų, jos įvykdymo tikimybė išlieka gana maža.

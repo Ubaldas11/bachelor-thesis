@@ -7,6 +7,7 @@
 \usepackage{bm}
 \usepackage{caption}
 \usepackage{color}
+\usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -20,6 +21,7 @@
 \usepackage{bigstrut}
 \usepackage{import}
 
+
 %PAKEISTA, tarpai tarp sąrašo elementų
 \setitemize{noitemsep,parsep=0.7pt,partopsep=0.7pt}
 \setenumerate{noitemsep,parsep=0.7pt,partopsep=0.7pt}
@@ -31,6 +33,9 @@
 \input{chapters/titlePage}
 
 \begin{document}
+\pdfstringdefDisableCommands{%
+\let\MakeUppercase\relax
+}
 \maketitle
 
 \input{chapters/summary}
