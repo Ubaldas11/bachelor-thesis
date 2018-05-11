@@ -1,18 +1,14 @@
 \sectionnonum{Sąvokų apibrėžimai}
-\textbf{Atributas} - charakteristika, susieta su esybe (pvz. fiziniu asmeniu). Galimi fizinio asmens atributai: gimimo data,
-vardas, ūgis, pirštų antspaudai \cite{Camp2004}. Atributas gali būti laikinas (pvz. adresas) arba nuolatinis (pvz. asmens kodas).
 
-\textbf{Identifikatorius} - tai atributas, kuris vienareikšmiškai susiejamas su jį pateikiančiu asmeniu ir kurį
-sunku arba neįmanoma pakeisti. Fizinio asmens identifikatoriaus pavyzdys galėtų būti gimimo data
-(žmogus gali apie ją meluoti, tačiau gimimo datos pakeisti neįmanoma) \cite{Camp2004}. Skaitmeninio identifikatoriaus
-pavyzdys yra naudotojo elektroninio pašto adresas.
+\textbf{Adresas} - blokų grandinės kontekste tai identifikatorius, blokų grandinėje identifikuojantis paskyrą.
+Paskyra gali būti asmens arba išmaniojo kontrakto.
 
-\textbf{Atpažinimo duomenys} (angl. \textit{credentials}) - tai duomenys, skirti asmens autentifikavimui. Jie gali būti ir asmens atributai
-(pvz. biometriniai duomenys, tokie kaip pirštų antspaudai ar balsas), gali būti ir sugalvoti duomenys (pvz. slapyvardis ir slaptažodis). Dažniausiai internete naudojami
+\textbf{Atpažinimo duomenys} (angl. \textit{credentials}) - tai duomenys, skirti asmens autentifikavimui. Jie gali būti asmens atributai
+(pvz. biometriniai duomenys, tokie kaip pirštų antspaudai ar balsas) ar sugalvota informacija (pvz. slapyvardis ir slaptažodis). Dažniausiai internete naudojami
 atpažinimo duomenys yra identifikatoriaus (slapyvardžio ar el. pašto) ir slaptažodžio pora \cite{Maler2008}.
 
-\textbf{Identifikavimas} - tai procesas, kurio metu asmuo susiejamas su jo identifikatoriumi \cite{Camp2004}. Identifikavimo
-pavyzdys yra asmens ir jo vardo susiejimas: \textit{tu esi Jonas Jonaitis}.
+\textbf{Atributas} - charakteristika, susieta su esybe (pvz. fiziniu asmeniu). Galimi fizinio asmens atributai: gimimo data,
+vardas, ūgis, pirštų antspaudai \cite{Camp2004}. Atributas gali būti laikinas (pvz. adresas) arba nuolatinis (pvz. asmens kodas).
 
 \textbf{Autentifikavimas} - tai procesas, kurio metu patvirtinama sąsaja tarp tapatybės ir jos identifikatoriaus (t.y., įrodoma,
 kad asmuo iš tikrųjų yra tas, kas sakosi esąs) \cite{Camp2004, Strictest2011}. Šiam patvirtinimui naudojami atpažinimo duomenys. Autentifikavimo pavyzdys:
@@ -21,6 +17,24 @@ kad asmuo iš tikrųjų yra tas, kas sakosi esąs) \cite{Camp2004, Strictest2011
 \textbf{Autorizavimas} - tai procesas, kurio metu leidžiama arba draudžiama asmeniui atlikti konkretų veiksmą, priklausomai
 nuo jo identifikatoriaus ar atributo \cite{Camp2004}. Pavyzdys: \textit{kadangi tau yra daugiau nei 18 metų, tu gali nusipirkti
 energetinį gėrimą}. 
+
+\textbf{Identifikatorius} - tai atributas, kuris vienareikšmiškai susiejamas su jį pateikiančiu asmeniu ir kurį
+sunku arba neįmanoma pakeisti. Fizinio asmens identifikatoriaus pavyzdys galėtų būti gimimo data
+(žmogus gali apie ją meluoti, tačiau gimimo datos pakeisti neįmanoma) \cite{Camp2004}. Skaitmeninio identifikatoriaus
+pavyzdys yra naudotojo elektroninio pašto adresas.
+
+\textbf{Identifikavimas} - tai procesas, kurio metu asmuo susiejamas su jo identifikatoriumi \cite{Camp2004}. Identifikavimo
+pavyzdys yra asmens ir jo vardo susiejimas: \textit{tu esi Jonas Jonaitis}.
+
+\textbf{Paslaugų tiekėjas} (angl. \textit{service provider}) - tai betkokia taikomoji programa, kuri suteikia naudotojui tam tikrą paslaugą ar
+norimą turinį. Galimi paslaugų tiekėjai yra interneto tinklapiai, susirašinėjimo programos ar kitos taikomosios programos,
+į kurias kreipiasi naudotojas \cite{Pashalidis2003, Samar1999}. Paslaugų tiekėjas gali turėti vieną ar kelias paslaugas,
+kurioms reikia tapatybės valdymo funkcijų. Darbe paslaugų tiekėjas dar gali būti vadinamas pasikliaujančiąja šalimi (angl.
+\textit{relying party}).
+
+\textbf{Prieigos raktas} (angl. \textit{token}) - tai objektas, identifikuojantis skaitmeninę tapatybę \cite{TokenDefinition}.
+Šis raktas būna išduodamas tapatybės tiekėjo ir skirtas identifikuoti naudotoją. Raktas
+būna prisegtas prie visų autentifikuoto naudotojo užklausų ir leidžia paslaugos tiekėjui žinoti, koks naudotojas kreipiasi.
 
 \textbf{Skaitmeninė tapatybė} - abstrakti fizinės esybės reprezentacija, sudaryta iš aibės esybės nuolatinių ar laikinų atributų,
 kurie susiejami su fizine esybe \cite{Glasser2009, Camp2004}. Fizinė esybė gali būti fizinis arba juridinis asmuo.
@@ -31,21 +45,10 @@ tapatybę ir su ja susijusius procesus, visuma \cite{Dabrowski2008}. Į tai įei
 prieigų kontrolė, tapatybės gyvavimo ciklo
 valdymas bei saugus tapatybės atributų perdavimas trečiosioms šalims \cite{Cao2010}.
 
-\textbf{Paslaugų tiekėjas} (angl. \textit{service provider}) - tai betkokia taikomoji programa, kuri suteikia naudotojui tam tikrą paslaugą ar
-norimą turinį. Galimi paslaugų tiekėjai yra interneto tinklapiai, susirašinėjimo programos ar kitos taikomosios programos,
-į kurias kreipiasi naudotojas \cite{Pashalidis2003, Samar1999}. Paslaugų tiekėjas gali turėti vieną ar kelias paslaugas,
-kurioms reikia tapatybės valdymo funkcijų. Darbe paslaugų tiekėjas dar gali būti vadinamas pasikliaujančiąja šalimi (angl.
-\textit{relying party}).
-
 \textbf{Tapatybės tiekėjas} (angl. \textit{identity provider}) - servisas ar taikomoji programa, skirta koordinuoti su tapatybe
 susijusius duomenis tarp naudotojų, jų naršyklių bei paslaugų tiekėjų \cite{Strictest2011}. Pagrindinės tapatybės tiekėjo funkcijos:
 infrastruktūros naudotojų tapatybės duomenims apdoroti sukūrimas ir užklausų iš paslaugų tiekėjų bei naudotojų apdorojimas \cite{Cao2010}.
 
-\textbf{Prieigos raktas} (angl. \textit{token}) - tai objektas, identifikuojantis skaitmeninę tapatybę \cite{TokenDefinition}.
-Šis raktas būna išduodamas tapatybės tiekėjo ir skirtas identifikuoti naudotoją. Raktas
-būna prisegtas prie visų autentifikuoto naudotojo užklausų ir leidžia paslaugos tiekėjui žinoti, koks naudotojas kreipiasi.
-
-\textbf{Adresas} - identifikatorius, blokų grandinėje identifikuojantis paskyrą. Paskyra gali būti asmens arba
-išmaniojo kontrakto.
-
-\textbf{Vienkartinis prisijungimas} (angl. \textit{single sign on}) - \textcolor{red}{to be added}.
+\textbf{Vienkartinis prisijungimas} (angl. \textit{single sign on}) - tai mechanizmas, kuris naudoja vieną tapatybės patvirtinimo veiksmą suteikti naudotojui prieigą
+prie susijusių, bet nepriklausomų taikomųjų programų ar interneto svetainių, neprašant naudototojo
+iš naujo prisijungti prie kiekvienos iš jų konkrečios sesijos metu \cite{Radha2012}.
