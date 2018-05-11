@@ -234,7 +234,7 @@ autentifikuotas visose paslaugose, kurios palaiko šį tapatybės tiekėją \cit
 \subsubsubsection*{Realizacijos bei įgalinančios technologijos}
 
 Kadangi jungtiniame tapatybės valdyme tapatybės tiekėjas bei paslaugų tiekėjas yra skirtingų kūrėjų sistemos,
-duomenų apsikeitimui tarp jų sukurti technologiniai standartai. Trys šiuo metu labiausiai paplitę protokolai: \textit{SAML}, \textit{OAuth} bei \textit{OpenID}
+duomenų apsikeitimui tarp jų sukurti technologiniai standartai. Trys šiuo metu labiausiai paplitę protokolai: \enquote{SAML}, \enquote{OAuth} bei \enquote{OpenID}
 \cite{OIDvsOAuthvsSAML}. Šių technologijų
 apžvalga pateikiama \hypertarget{tab:SSOProtocols}{~\ref{tab:SSOProtocols}}-oje lentelėje.
 
@@ -242,8 +242,8 @@ apžvalga pateikiama \hypertarget{tab:SSOProtocols}{~\ref{tab:SSOProtocols}}-oje
 
 Kiekviena iš minimų technologijų šiandien yra gana plačiai naudojama internete - jų svarbą parodo
 ir didžiųjų kompanijų (\enquote{Google}, \enquote{GitHub}, \enquote{Microsoft}) sprendimai pritaikyti jas savo
-programinėje įrangoje. Pagrindinis šių standartų skirtumas - jų panaudojimo apimtis. SAML pritaikytas visiems tapatybės valdymo
-veiksmams, OAuth skirtas naudotojui autorizuoti trečiąją šalį pasiekti jo atributus tapatybės tiekėjo platformoje,
+programinėje įrangoje. Pagrindinis šių standartų skirtumas - jų panaudojimo apimtis. \enquote{SAML} pritaikytas visiems tapatybės valdymo
+veiksmams, \enquote{OAuth} skirtas naudotojui autorizuoti trečiąją šalį pasiekti jo atributus tapatybės tiekėjo platformoje,
 o OpenID skirtas naudotojų autentifikavimui.
 
 \subsubsubsection*{Naudotojų poreikių įgyvendinimas}
@@ -269,7 +269,7 @@ Naudotojo duomenų kontrolė jungtiniame
 modelyje turi tiek privalumų, tiek trūkumų. Viena vertus, naudotojas savo asmens duomenis suteikia mažesniam kiekiui sistemų (tik tapatybės tiekėjams,
 vietoj visų paslaugų tiekėjų). Tačiau taip paslaugų tiekėjas tampa vieninteliu nesekmės tašku (angl. \textit{single point of failure}) - programišiams įsilaužus
 į tapatybės tiekėjo sistemą, asmens paskyros visose paslaugose tampa prieinamos \cite{Pashalidis2003}. Taip pat, naudotojui gali būti sunku kontroliuoti
-savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}. Nors OpenID Connect bei OAuth 2.0
+savo duomenų sklaidą tarp tapatybės tiekėjo ir skirtingų paslaugų, ką rodo ir \textit{Cambridge Analytica} incidentas \cite{CambridgeAnalytica}. Nors \enquote{OpenID Connect} bei \enquote{OAuth 2.0}
 standartai suteikia galimybes naudotojui išreikštinai patvirtinti, kokius duomenis jis sutinka perduoti trečiosios šalies paslaugai, kai
 jis pradeda ja naudotis (pavyzdys pateikiamas priede \hypertarget{appendix:SSOUserConsent}{~\ref{appendix:SSOUserConsent}}), tačiau tapatybės tiekėjai ne visada tinkamai informuoja,
 kokie naudotojo veiksmai gali neišreikštai suteikti leidimą tapatybės tiekėjui perduoti duomenis kitai sistemai.
@@ -301,7 +301,7 @@ reikiamų prisijungimų kiekis. Nepaisant to, nemažai problemų naudotojams iš
 
     \item kontrolės trūkumas. Organizacijos renka didžiulius kiekius asmens duomenų - \enquote{Facebook} nuo sukūrimo
     jau sukaupė 300 petabaitų duomenų apie naudotojus \cite{Vagata2014}, tačiau naudotojai nėra pakankamai informuoti,
-    kur perduodami jų duomenys. Nors naudojamos technologijos, tokios kaip OAuth, išreikštinai prašo naudotojų
+    kur perduodami jų duomenys. Nors naudojamos technologijos, tokios kaip \enquote{OAuth}, išreikštinai prašo naudotojų
     sutikimo perduodant duomenis naujai paslaugai (žr. priedą \hypertarget{appendix:SSOUserConsent}{~\ref{appendix:SSOUserConsent}}), tai atliekama tik pradedant naudotis tam tikra paslauga. Taip pat,
     \textit{CambridgeAnalytica} incidentas \cite{CambridgeAnalytica} rodo, kad šio sutikimo gali neužtekti.
     Visa tai veda prie to, kad naudotojai jaučiasi nekontroliuojantys savo asmens duomenų internete, norėtų lengviau keisti bei trinti juos, o

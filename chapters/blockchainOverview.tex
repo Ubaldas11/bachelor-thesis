@@ -2,7 +2,7 @@
 
 Blokų grandinė - tai vieno su kitu susijusių blokų grandinė, kurios blokuose saugomi
 nekeičiami įrašai \cite{SatoshiNakamoto}. Šią technologiją galima apibūdinti kaip daugybę paskirstytų nekintamų skaitmeninių įrašų 
-(angl. \textit{immutable distributed ledger}), tarpusavyje susietų taikant kriptografiją (blokų grandinės pavyzdys pateikiamas\hypertarget{fig:blockchain}{~\ref{fig:blockchain}} paveiksle). Technologija geriausiai žinoma dėl jos panaudojimo Bitcoin kriptovaliutoje.
+(angl. \textit{immutable distributed ledger}), tarpusavyje susietų taikant kriptografiją (blokų grandinės pavyzdys pateikiamas\hypertarget{fig:blockchain}{~\ref{fig:blockchain}} paveiksle). Technologija geriausiai žinoma dėl jos panaudojimo \enquote{Bitcoin} kriptovaliutoje.
 Šiame skyriuje apžvelgiami pagrindiniai blokų grandinės techniniai aspektai, savybės bei galimi skirtingi variantai.
 
 \begin{figure}[H]
@@ -68,7 +68,7 @@ asmenų vieši raktai \cite{SatoshiNakamoto}.
 Privačios bei konsorciumo blokų grandinės yra tik dalinai decentralizuotos - jose blokų validavimą ir priėmimą į grandinę atlieka vienas
 ar dalis tinklo dalyvių. Šios grandinės privalumai: visi validuotojai yra žinomi, grandinės efektyvesnės dėl greičiau priimamų blokų, apribotos blokų skaitymo teisės suteikia didesnį
 privatumo lygį, o iškilus poreikiui, tinklo dalyviai gali pakeisti ar atšaukti įvykusias transakcijas \cite{Buterin2015}. Konsorciumo ir privačios blokų grandinės labiau tinkamos įmonių vidiniam (ar jungtiniam,
-pvz. tarp kelių finansinių institucijų) naudojimui. Blokų grandinių karkasų sprendimus įmonėms siūlo IBM, Microsoft, Hyperledger \cite{Zheng2017}.
+pvz. tarp kelių finansinių institucijų) naudojimui. Blokų grandinių karkasų sprendimus įmonėms siūlo \enquote{IBM}, \enquote{Microsoft}, \enquote{Amazon} \cite{Zheng2017}.
 
 \subsection{Konsensuso strategijos} \label{blockchain:consensus}
 
@@ -99,7 +99,7 @@ tačiau išsaugo kitą gautą bloką kaip šaką. Po to, kai bus gautas dar vien
 ilgesnė šaka paskelbiama aktyviąja grandine, visi su trumpesniąja šaka dirbę mazgai turi pereiti prie aktyviosios grandinės, o atmesto bloko (vadinamo \textit{bloku-našlaičiu}) transakcijos
 grąžinamos į bendrą transakcijų sankaupą (angl. \textit{transaction pool}) \cite{SatoshiNakamoto}.
 Realiuose blokų grandinės taikymuose, dažnai laukiama keleto iš eilės einančių naujų blokų, kad būtų galima atmesti \textit{bloką-našlaitį}. Pavyzdžiui,
-Bitcoin blokų grandinėje laukiama apytiksliai 6 blokų, kad \textit{bloką-našlaitį} būtų galima atmesti \cite{Zheng2017}.
+\enquote{Bitcoin} blokų grandinėje laukiama apytiksliai 6 blokų iš eilės, kad \textit{bloką-našlaitį} būtų galima atmesti \cite{Zheng2017}.
 
 \begin{figure}[H]
     \centering
@@ -109,7 +109,7 @@ Bitcoin blokų grandinėje laukiama apytiksliai 6 blokų, kad \textit{bloką-na�
 \end{figure}
 
 Pagrindinis šios konsensuso strategijos privalumas yra tas, kad dideli kasimo kaštai gali atgrasyti programišius nuo potencialių atakų. Tačiau,
-taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas Bitcoin ir Ethereum blokų grandinėms kartu sudėjus per dieną
+taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas \enquote{Bitcoin} ir \enquote{Ethereum} blokų grandinėms kartu sudėjus per dieną
 sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
 gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
@@ -119,7 +119,7 @@ Turto įrodymo konsensuso strategija remiasi principu, kad daug blokų grandinė
 bus sąžiningas, nes išaiškinus jo nesąžiningumą jis rizikuoja prarasti savo turimą turtą \cite{Baars2016}. Šis algoritmas patiki sprendimą priimti
 tiems tinklo dalyviams, kurie įrodo kad turi daugiausia turto (pvz. blokų grandinės kriptovaliutos). Tai gali pasirodyti kaip nesąžiningas sprendimas,
 nes turtingiausias tinklo dalyvis gali būti vienvaldžiu sprendimų priėmėju. Dėl to blokų grandinės tinklai neretai taiko šios strategijos
-variantus: Peercoin papildomai vertina turto amžių, Blackcoin kitą patvirtintoją paskiria pagal atsitiktinę funkciją, kuri atsižvelgia ir į turimą turtą \cite{Zheng2017}.
+variantus: \enquote{Peercoin} papildomai vertina turto amžių, \enquote{Blackcoin} kitą patvirtintoją paskiria pagal atsitiktinę funkciją, kuri atsižvelgia ir į turimą turtą \cite{Zheng2017}.
 
 Ši strategija leidžia nebeeikvoti didžiulių elektros kiekių, skirtingai nei darbo įrodymo strategija \cite{Ethereum}. Algoritmo efektyvumas
 taip pat sutaupo laiko ir blokai būna greičiau patvirtinami ir pridedami į grandinę. Tačiau, dėl praktiškai nulinių bloko \textit{kasimo} sąnaudų,
@@ -157,17 +157,17 @@ Taip nebelieka vienintelio nesekmės taško situacijos, kai kodą vykdytų viena
 kodas butų nebevykdomas tik tada, jei visi tinklo mazgai išeitų iš tinklo. Už tai, kad tinklo dalyviai naudoja savo kompiuterių
 resursus išmaniųjų kontraktų kodui vykdyti, jiems dažniausiai suteikiamas piniginis paskatinimas.
 
-Egzistuoja kelios platformos, pritaikytos išmaniųjų kontraktų kūrimui. Bene žymiausia iš jų - Ethereum.
+Egzistuoja kelios platformos, pritaikytos išmaniųjų kontraktų kūrimui. Bene žymiausia iš jų - \enquote{Ethereum}.
 2015-aisias pradėjusi veikta platforma pristatė blokų grandinę, kuri pritaikyta kurti būseną galinčius keisti
-išmaniuosius kontraktus su visaverte
-(angl. \textit{Turing complete}) programavimo kalba \cite{EthereumWhitePaper}. Ethereum kontraktai vykdomi visų tinklo
-dalyvių Ethereum virtualiosios mašinos pagalba. Dalyviai už kontraktų kodo vykdymą apdovanojami šios platformos kriptovaliuta - eteriu.\\
-Ethereum apibrėžia dviejų tipų paskyras, skirtas tinklo dalyviams atlikti transakcijas. Išorinės paskyros
+išmaniuosius kontraktus su išbaigta
+(angl. \textit{turing complete}) programavimo kalba \cite{EthereumWhitePaper}. \enquote{Ethereum} kontraktai vykdomi visų tinklo
+dalyvių, \enquote{Ethereum} virtualiosios mašinos pagalba. Dalyviai už kontraktų kodo vykdymą apdovanojami šios platformos kriptovaliuta - eteriu.\\
+\enquote{Ethereum} apibrėžia dviejų tipų paskyras, skirtas tinklo dalyviams atlikti transakcijas. Išorinės paskyros
 (angl. \textit{externally owned accounts}), savininkų valdomos privačiais raktais, neturi kodo, o iš jų galima
 siųsti žinutes kitai išorinei paskyrai sukūrus ir pasirašius transakciją. Kontraktų paskyros (angl. \textit{contract accounts})
 turi kodą bei būseną, o priėmusios žinutę iš kitos paskyros gali keisti būseną ar siųsti žinutes kitiems kontraktams.\\
-Ethereum išmanieji kontraktai gali saugoti bei keisti būseną (kontrakto apibrėžtus duomenis) ar kviesti kitų kontraktų funkcijas siunčiant jiems žinutes.
-Kontrakto vykdymas yra apmokestinamas Ethereum kuru. Kontrakte apibrėžtos funkcijos kvietėjas už kiekvieną
+\enquote{Ethereum} išmanieji kontraktai gali saugoti bei keisti būseną (kontrakto apibrėžtus duomenis) ar kviesti kitų kontraktų funkcijas siunčiant jiems žinutes.
+Kontrakto vykdymas yra apmokestinamas \enquote{Ethereum} kuru. Kontrakte apibrėžtos funkcijos kvietėjas už kiekvieną
 vykdytą operaciją, priklausomai nuo jos skaičiavimo sudėtingumo, turi susimokėti tam tikrą kuro kiekį. Kuro sistema padeda apsisaugoti nuo begalinių ciklų vykdymų - jei vykdant
 funkciją baigiasi kuras, vykdymas nutraukiamas, o kuras nėra grąžinamas \cite{EthereumWhitePaper}.\\
 
@@ -190,14 +190,14 @@ buvo įvykdyta prieš Verge blokų grandinę \cite{Sedgwick2018}.
 
 Blokų grandinės plečiamumas matuojamas pagal du kriterijus: transakcijų pralaidumą ir saugojimo reikalavimus mazgams. Transakcijų pralaidumas, kuris priklauso nuo to,
 kaip greitai nauji blokai su transakcijomi yra pridedami į blokų grandinę, susijęs su taikoma konsensuso strategija.
-Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. Bitcoin kriptovaliutos blokų grandinėje, taikančioje darbo įrodymo konsensusą,
-apdorojoma apie 7 transakcijas per sekundę \cite{Zheng2017}, kai Tendermint blokų grandinė, taikanti
+Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. \enquote{Bitcoin} kriptovaliutos blokų grandinėje, taikančioje darbo įrodymo konsensusą,
+apdorojoma apie 7 transakcijas per sekundę \cite{Zheng2017}, kai \enquote{Tendermint} blokų grandinė, taikanti
 atsparumo klaidoms konsensusą, teigia galinti apdoroti tūkstančius transakcijų per sekundę \cite{Tendermint2017}. Dėl darbo įrodymo strategijos neefektyvumo
-blokų grandinės dažnai keičia ją į kitą konsensuso strategiją - Ethereum blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{Ethereum}.
+blokų grandinės dažnai keičia ją į kitą konsensuso strategiją - \enquote{Ethereum} blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{Ethereum}.
 
 Kita priežastis, dėl ko transakcijos tvirtinamos gana lėtai - blokai turi dydžio apribojimus. Dėl šių apribojimų, tik dalis susikaupusių transakcijų gali būti priimtos
 į naują bloką, o likusios turi laukti, kol pateks į kitą bloką. Tam spręsti pasitelktos šalutinės blokų grandinės. Jos dalį bloko duomenų iškelia į šalutinę grandinę,
-taip palikdamos daugiau vietos pagrindinės grandinės bloke. Tokį sprendimą priėmė Bitcoin blokų grandinė, į tinklą pristatydama SegWit protokolą, kuris iškelia skaitmeninių
+taip palikdamos daugiau vietos pagrindinės grandinės bloke. Tokį sprendimą priėmė \enquote{Bitcoin} blokų grandinė, į tinklą pristatydama \enquote{SegWit} protokolą, kuris iškelia skaitmeninių
 parašų duomenis į atskirą grandinę \cite{Segwit}.
 
 Visos blokų grandinės dydis taip pat gali sukelti plečiamumo problemų. Šiuo metu Bitcoin blokų grandinė užima per 100 gigabaitų \cite{Zheng2017}. Siekiant sumažinti blokų grandinės

@@ -85,7 +85,7 @@ Nors adresas yra viešas ir unikaliai identifikuoja kiekvieną blokų grandinės
 pats adresas nėra tiesiogiai susiejamas su tikru asmens identifikatoriumi (pvz. asmens kodu ar paslaugos įmonės kodu).
 Tokiu būdu, atributų valdymo programoje matant tik paslaugos adresą dalyvis gali nežinoti, kokią paslaugą jis autorizuoja.
 
-Šiai problemai spręsti modelyje yra atskiras išmanųsis kontraktas, kuris funkcionuoja kaip \textit{paslaugų registras}. Kiekviena
+Šiai problemai spręsti modelyje yra atskiras išmanusis kontraktas, kuris funkcionuoja kaip \textit{paslaugų registras}. Kiekviena
 paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, nusiunčiant savo vardą ir taip kontraktas išsaugo, iš kokio adreso į jį kreiptąsi (nes
 transakcija yra pasirašyta kontrakto kvietėjo ir tik jis gali atlikti transakcijas iš jo paskyros). Tuomet, paslaugai viešai
 atskleidus savo adresą (pvz. pateikus savo tinklalapyje prieigos tašką (angl. \textit{endpoint}), kuris jį grąžina), būtų galima
@@ -103,7 +103,7 @@ Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo 
 atributų valdymo programoje),
 kuris yra viešas naudotojo identifikatorius blokų grandinėje.
 Gavus šį adresą, paslauga iš atributų valdymo programos prašo šifro rakto, su kuriuo galės dešifruoti iš blokų grandinės gautus atributus.
-Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.\hypertarget{fig:userGivesAddress}{~\ref{fig:userGivesAddress pav.}}).
+Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.\hypertarget{fig:userGivesAddress}{~\ref{fig:userGivesAddress} pav.}).
 
 Modelis neapibrėžia, kada naudotojas N privalo pateikti adresą paslaugai P. Svarbu, kad paslauga P gautų šį adresą ir unikalų šifro raktą tarp N ir P,
 nes be jų P negalės gauti ir perskaityti norimų tapatybės duomenų. Šis suteikimas galėtų būti atliekamas prisijungimo metu, įtraukiant
