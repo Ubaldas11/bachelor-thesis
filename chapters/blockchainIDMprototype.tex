@@ -20,9 +20,45 @@ kalbą išmaniesiems kontraktams rašyti. Priežastys tam:
 
 Išmaniosios programėlės maketai kurti su X prototipavimo įrankiu.
 
-\subsection{Išmaniųjų kontraktų funkcijos}
+\subsection{Atributų saugojimo bei autorizavimo kontraktas}
 
-Šaunios funkcijos.
+Kontraktas skirtas naudotojų atributų saugojimui bei prieigų suteikimui realizuoti. Kontraktas sudarytas iš kontrakto saugyklos,
+kurioje saugomos koduotos atributų reikšmės ir jų prieigos, įvykių bei funkcijų. Kontrakto kodas pateikiamas priede \hypertarget{appendix:attributeSmartContract}{\ref{appendix:attributeSmartContract}}.
+
+Kontraktas kurtas naudojant \enquote{Solidity} programavimui skirtą \enquote{Truffle} kūrimo karkasą,
+taikant \enquote{ganache-cli} lokalią blokų grandinę testavimui. Kontrakto funkcijos išbandytos jas kviečiant iš sukurto testinio
+\enquote{React} puslapio. Kodas pasiekiamas \enquote{GitHub} repozitorijoje
+\url{https://github.com/Ubaldas11/blockchain-attribute-management}.
+
+Kontrakte apibrėžti šie įvykiai:
+
+\begin{enumerate}
+    \item \textit{AccessRequested}. Skirtas pranešti, kad paslauga P prašo prieigos prie naudotojo N atributo A. Šio įvykio laukia
+    atributų valdymo programa ir jį gavusi, gali pranešti naudotojui N apie naują paslaugos P užklausą.
+    \item \textit{AccessChanged}. Skirtas pranešti, kad naudotojas N pakeitė paslaugos P prieigą prie atributo A. Paslaugos, 
+    laukiančios šio įvykio, jį gavusios sužino apie galimai suteiktą arba panaikintą prieigą prie atributo A.
+\end{enumerate}
+
+Kontrakte apibrėžtos šios viešos funkcijos:
+
+\begin{enumerate}
+    \item \textit{grantAccess}. Skirta naudotojui N suteikti paslaugai P prieigą prie atributo A. Į funkciją paduodamas A identifikatorius,
+    P adresas bei N ir P šifro raktu užkoduota A reikšmė. Funkcijoje keičiama siuntėjo atributo reikšmė - taip užtikrinama, kad naudotojas N
+    negalės pakeisti naudotojo N1 atributo. Funkcija paskelbia \textit{AccessChanged} įvykį;
+    \item \textit{removeAccess}. Skirta naudotojui N panaikinti paslaugos P prieigą prie atributo A. Į funkciją paduodamas A identifikatorius ir P
+    adresas. Kaip ir \textit{grantAccess} atveju, keičiama siuntėjo atributo prieiga. Funkcija paskelbia \textit{AccessChanged} įvykį;
+    \item \textit{requestAccess}. Skirta paslaugai P pranešti, kad ji nori prieigos prie naudotojo N atributo A reikšmės. Į funkciją paduodamas A identifikatorius
+    bei N adresas. Funkcija paskelbia \textit{AccessRequested} įvykį;
+    \item \textit{getAttribute}. Skirta gauti naudotojo N paslaugai P skirtą atributą A. Į funkciją paduodamas A identifikatorius, N adresas bei
+    P adresas. Jei funkciją iškvietė N (t.y., pats naudotojas kreipiasi gauti suteiktą atributą A), grąžinamas siekiamas atributas. Jei kreipiasi paslauga,
+    galimos 3 grąžinamos reikšmės. Jei prieiga naudotojo suteikta - grąžinama A reikšmė. Jei prieiga atmesta - pranešama, kad paslauga neautorizuota. Jei
+    prieiga naudotojo dar nebuvo svarstyta, prašoma pirma kreiptis į \textit{requestAttributeAccess} funkciją.\\
+    Funkcija realizuota kaip vaizdo (angl. \textit{view}) funkcija - ji nekeičia kontrakto būsenos, todėl jos kvietimas yra nemokamas.
+\end{enumerate}
+
+Kadangi įvykių paskelbimas yra pigesnis nei kontrakto būsenos keitimas, tai išnaudota paskelbiant apie naują prieigos užklausą (vietoj alternatyvos pakeisti
+kontrakto būseną ir nurodyti, kad paslauga kreipėsi). Jei paslauga arba atributų valdymo programa realiu laiku \enquote{neišgirdo} įvykio, ji gali
+pasiekti visą įvykių sąrašą (angl. \textit{log)}.
 
 \subsection{Atributų valdymo programos maketai}
 
