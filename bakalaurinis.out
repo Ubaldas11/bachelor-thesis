@@ -40,11 +40,12 @@
 \BOOKMARK [2][-]{subsection.4.3}{Pritaikymo\040barjerai}{section.4}% 40
 \BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio prototipas}{}% 41
 \BOOKMARK [2][-]{subsection.5.1}{Pasirinktos\040technologijos}{section.5}% 42
-\BOOKMARK [2][-]{subsection.5.2}{Atributų saugojimo bei autorizavimo kontraktas}{section.5}% 43
-\BOOKMARK [2][-]{subsection.5.3}{Atributų valdymo programos maketai}{section.5}% 44
+\BOOKMARK [2][-]{subsection.5.2}{Atributų saugyklos kontraktas}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.3}{Paslaugų registro kontraktas}{section.5}% 44
 \BOOKMARK [1][-]{section.6}{Kiti blokų grandinės projektai tapatybės valdymo srityje}{}% 45
 \BOOKMARK [1][-]{section*.28}{Rezultatai ir išvados}{}% 46
 \BOOKMARK [1][-]{section*.29}{Sąvokų apibrėžimai}{}% 47
 \BOOKMARK [1][-]{section*.29}{Priedai}{}% 48
 \BOOKMARK [2][-]{appendix.A}{1 priedas. OAuth prašymas naudotojui autorizuoti paslaugą}{section*.29}% 49
 \BOOKMARK [2][-]{appendix.B}{2 priedas. Atributų saugojimo ir autorizavimo kontraktas}{section*.29}% 50
+\BOOKMARK [2][-]{appendix.C}{3 priedas. Paslaugų registro kontraktas}{section*.29}% 51

@@ -1,12 +1,13 @@
 \section{Tapatybės atributų valdymo modelio prototipas}
 
-Tapatybės atributų valdymo modelis sudarytas iš 3 dalių (žr. \hypertarget{BCIDM:blockchainFunctions}{\ref{BCIDM:blockchainFunctions}} sk.). Siekiant įgyvendinti
-aprašytą autorizavimo logiką išmaniuosiuose kontraktuose bei pamatyti galimą atributų programos vaizdą, suprogramuota autorizavimo
-logikos dalis \enquote{Solidity} programavimo kalba \enquote{Ethereum} tinklui bei sukurti atributų programos maketai išmaniajai programėlei.
+Tapatybės atributų valdymo modelis sudarytas iš 3 dalių: atributų saugyklos kontrakto, paslaugų registro kontrakto bei
+atributų valdymo programos (žr. \hypertarget{BCIDM:blockchainFunctions}{\ref{BCIDM:blockchainFunctions}} sk.).
+Siekiant patvirtinti galimą modelio veikimą, \enquote{Solidity} programavimo kalba \enquote{Ethereum} blokų grandinei
+realizuoti atributų saugyklos bei paslaugų registrų kontraktai. 
 
 \subsection{Pasirinktos technologijos}
 
-Išmaniesiems kontraktams programuoti pasirinkta naudoti \enquote{Ethereum} technologiją ir \enquote{Solidity} programavimo
+Išmaniesiems kontraktams programuoti pasirinkta naudoti \enquote{Ethereum} platformą ir \enquote{Solidity} programavimo
 kalbą išmaniesiems kontraktams rašyti. Priežastys tam:
 
 \begin{itemize}
@@ -18,17 +19,18 @@ kalbą išmaniesiems kontraktams rašyti. Priežastys tam:
     \enquote{Solidity} \cite{Ethereum} turi keletą skirtingų kūrimo karkasų programavimo aplinkai paruošti \cite{SolidityDocumentation}.
 \end{itemize}
 
-Išmaniosios programėlės maketai kurti su X prototipavimo įrankiu.
-
-\subsection{Atributų saugojimo bei autorizavimo kontraktas}
-
-Kontraktas skirtas naudotojų atributų saugojimui bei prieigų suteikimui realizuoti. Kontraktas sudarytas iš kontrakto saugyklos,
-kurioje saugomos koduotos atributų reikšmės ir jų prieigos, įvykių bei funkcijų. Kontrakto kodas pateikiamas priede \hypertarget{appendix:attributeSmartContract}{\ref{appendix:attributeSmartContract}}.
-
-Kontraktas kurtas naudojant \enquote{Solidity} programavimui skirtą \enquote{Truffle} kūrimo karkasą,
-taikant \enquote{ganache-cli} lokalią blokų grandinę testavimui. Kontrakto funkcijos išbandytos jas kviečiant iš sukurto testinio
+Išmanieji kontraktai kurti naudojant \enquote{Solidity} programavimui skirtą \enquote{Truffle} kūrimo karkasą,
+taikant \enquote{ganache-cli} lokalią blokų grandinę testavimui. Kontraktų funkcijos išbandytos jas kviečiant iš sukurto testinio
 \enquote{React} puslapio. Kodas pasiekiamas \enquote{GitHub} repozitorijoje
 \url{https://github.com/Ubaldas11/blockchain-attribute-management}.
+
+Išmaniosios programėlės maketai kurti su X prototipavimo įrankiu.
+
+\subsection{Atributų saugyklos kontraktas}
+
+Kontraktas skirtas naudotojų atributų saugojimui bei prieigų suteikimui realizuoti. Kontraktas sudarytas iš kontrakto saugyklos,
+kurioje saugomos koduotos atributų reikšmės ir jų prieigos, įvykių bei funkcijų.
+Kontrakto kodas pateikiamas priede \hypertarget{appendix:attributeSmartContract}{\ref{appendix:attributeSmartContract}}.
 
 Kontrakte apibrėžti šie įvykiai:
 
@@ -57,9 +59,23 @@ Kontrakte apibrėžtos šios viešos funkcijos:
 \end{enumerate}
 
 Kadangi įvykių paskelbimas yra pigesnis nei kontrakto būsenos keitimas, tai išnaudota paskelbiant apie naują prieigos užklausą (vietoj alternatyvos pakeisti
-kontrakto būseną ir nurodyti, kad paslauga kreipėsi). Jei paslauga arba atributų valdymo programa realiu laiku \enquote{neišgirdo} įvykio, ji gali
+kontrakto būseną ir nurodyti, kad paslauga kreipėsi). Jei paslauga arba atributų valdymo programa realiu laiku \enquote{neišgirdo} įvykio, ji vėliau gali
 pasiekti visą įvykių sąrašą (angl. \textit{log)}.
 
-\subsection{Atributų valdymo programos maketai}
+\subsection{Paslaugų registro kontraktas}
 
-Šauni programėlė.
+Kontraktas skirtas užsiregistravusių paslaugų sąrašui saugoti. Paslaugų siųstuose įrašuose laikomas
+registracijos kodas bei paslaugos pavadinimas.
+Kontrakto kodas pateikiamas priede\hypertarget{appendix:serviceRegisterContract}{~\ref{appendix:serviceRegisterContract}}.
+
+Kontraktą sudaro dvi funkcijos:
+
+\begin{enumerate}
+    \item \textit{register}. Skirta paslaugai užsiregistruoti. Į funkciją paduodamas registracijos kodas bei paslaugos pavadinimas, kurie išsaugomi kontrakto būsenoje.
+    \item \textit{getService}. Skirta atributų valdymo programai išgauti duomenis apie besikreipusią paslaugą. Funkcijai paduodamas paslaugos adresas.
+    Funkcija realizuota kaip vaizdo (angl. \textit{view}) funkcija - ji nekeičia kontrakto būsenos, todėl jos kvietimas yra nemokamas. \\ 
+    Atributų valdymo programa kreipiasi į šią funkciją tuomet, kai gauta nauja paslaugos P atributo A užklausa.
+    Iš gauto kodo programa gali atskirti, ar ši paslauga nėra apsimetelė
+    (žr.\hypertarget{BCIDM:serviceRegister}{~\ref{BCIDM:serviceRegister} skyrelį}). Jei kodas nesutampa, atributo prieigos užklausą galima ignoruoti. Jei kodas sutampa,
+    gautą pavadinimą galima rodyti atributų valdymo programoje ir pranešti apie prieigos užklausą naudotojui.
+\end{enumerate}
