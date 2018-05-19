@@ -1,4 +1,4 @@
-\section{Blokų grandinės technologija}
+\section{Blokų grandinės technologija} \label{section:blockchainOverview}
 
 Blokų grandinė - tai vieno su kitu susijusių blokų grandinė, kurios blokuose saugomi
 nekeičiami įrašai \cite{SatoshiNakamoto}. Šią technologiją galima apibūdinti kaip daugybę paskirstytų nekintamų skaitmeninių įrašų 
@@ -241,34 +241,4 @@ Galimi skirtingi sprendimai didesniam anonimiškumui pasiekti. Pirmiausia, reiki
 blokų skaitymo teisės būtų apribotos. Kitas variantas - blokų grandinėje saugoti užšifruotus duomenis, kurių skaitymui
 reikia turėti dešifravimo raktą. Jeigu tai netinkama išeitis, tuomet transakcijas galima atlikti per tarpininką, kuris išskaidys vieną transakciją
 į keletą, vykdomų su skirtingais viešaisiais raktais, ir taip bus sunkiau atsekti transakcijos autorių \cite{Zheng2017}.
-
-\subsection{Pritaikymas tapatybės valdyme} \label{blockchain:suitabilityForIDM}
-
-Blokų grandinės savybės atveria įvairių galimybių skaitmeninių tapatybių valdyme:
-
-\begin{enumerate}
-    \item Decentralizuota sistema eliminuoja vienintelio nesekmės taško situaciją. Pritaikius decentralizuotą blokų grandinę
-    tapatybės valdymo sistemoje, dėl blokų grandinės išskirstymo po skirtingus mazgus 
-    tapatybės tiekėjas nebebūtų vienintelis nesekmės taškas identiteto valdymo infrastruktūroje. Tokiu būdu tapatybės informacija būtų prieinama ir tada,
-    kai tapatybės tiekėjas yra nepasiekiamas.
-
-    \item Visiems prieinami grandinės įrašai ir sistemos veikimas padidina skaidrumą. Blokų grandinėje saugant naudotojo suteiktas prieigas skirtingoms paslaugoms,
-    naudotojas betkada galėtų matyti paslaugoms suteiktas teises. Prieigų suteikimą aprašius išmaniuosiuose kontraktuose, paslaugų užklausos duomenimis
-    pasiekti galėtų būti suteiktos tik tada, kai naudotojas jas patvirtina.
-
-    \item Nekintamumas apsaugo nuo galimų įsilaužimų siekiant pakeisti įrašus.
-    Blokų grandinėje saugant naudotojo atributus ar paslaugų prieigos teises,
-    o rašymo teises į grandinę turint tik naudotojui ar jo pasirinktoms programoms, naudotojas būtų užtikrintas, kad
-    neįvyko jo paties neautorizuotų pakeitimų.
-
-\end{enumerate}
-
-\hypertarget{blockchain:concerns}{~\ref{blockchain:concerns}} skyrelyje įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme.  Anonimiškumo klausimą galima spręsti šifruojant saugomus tapatybės duomenis,
-o raktus dešifravimui turint tik autorizuotoms paslaugoms. Blokų grandinės greitaveika neturėti kelti problemų
-standartinėms tapatybės valdymo sistemos operacijoms \cite{Lo2017}. Daugumos ataka decentralizuotoje viešoje blokų grandinėje išlieka kaip galimas pavojus,
-tačiau tapatybės sistemai pasirinkus tokią grandinę, kurioje šios atakos vykdymas reikalauja milžiniškų resursų, jos įvykdymo tikimybė išlieka gana maža.
-
-Apžvelgus blokų grandinės technologiją galima teigti, kad jos savybės tinkamos naudotojų problemoms skaitmeniniame tapatybės
-valdyme spręsti. Blokų grandine paremta decentralizuota, skaidri ir apsauganti nuo neleistino įrašų keitimo sistema gali padėti
-įveikti kontrolės, pasitikėjimo trūkumo bei vienintelio nesekmės taško iššūkius tapatybės valdyme.
 

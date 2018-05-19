@@ -23,40 +23,42 @@
 \BOOKMARK [3][-]{subsubsection.2.6.1}{Daugumos\040ataka}{subsection.2.6}% 23
 \BOOKMARK [3][-]{subsubsection.2.6.2}{Plečiamumas}{subsection.2.6}% 24
 \BOOKMARK [3][-]{subsubsection.2.6.3}{Anonimiškumas}{subsection.2.6}% 25
-\BOOKMARK [2][-]{subsection.2.7}{Pritaikymas tapatybės valdyme}{section.2}% 26
-\BOOKMARK [1][-]{section.3}{Blokų grandine paremtas tapatybės atributų valdymo modelis}{}% 27
-\BOOKMARK [2][-]{subsection.3.1}{Reikalavimai}{section.3}% 28
-\BOOKMARK [2][-]{subsection.3.2}{Modelio\040dalys}{section.3}% 29
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Išmanieji kontraktai paslaugų autorizavimo logikai}{subsection.3.2}% 30
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Atributų valdymo programa}{subsection.3.2}% 31
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Paslaugų registras}{subsection.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.3}{Pagrindiniai\040naudojimo\040atvejai}{section.3}% 33
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Naudotojo\040adreso\040suteikimas\040paslaugai}{subsection.3.3}% 34
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Paslaugos atliekama atributo užklausa}{subsection.3.3}% 35
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Naudotojo\040atliekamas\040paslaugos\040autorizavimas}{subsection.3.3}% 36
-\BOOKMARK [3][-]{subsubsection.3.3.4}{Atributų valdymo programos atliekamas blokų grandinės stebėjimas}{subsection.3.3}% 37
-\BOOKMARK [1][-]{section.4}{Tapatybės atributų valdymo modelio vertinimas}{}% 38
-\BOOKMARK [2][-]{subsection.4.1}{Privalumai}{section.4}% 39
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Naudotojui suteikta atributų valdymo kontrolė}{subsection.4.1}% 40
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Decentralizuoti tapatybės atributai}{subsection.4.1}% 41
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}{subsection.4.1}% 42
-\BOOKMARK [2][-]{subsection.4.2}{Trūkumai}{section.4}% 43
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Atributų reikšmių įvedimas}{subsection.4.2}% 44
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Nepatikimos atributų reikšmės}{subsection.4.2}% 45
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Kaina}{subsection.4.2}% 46
-\BOOKMARK [2][-]{subsection.4.3}{Pritaikymo\040barjerai}{section.4}% 47
-\BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio prototipas}{}% 48
-\BOOKMARK [2][-]{subsection.5.1}{Pasirinktos\040technologijos}{section.5}% 49
-\BOOKMARK [2][-]{subsection.5.2}{Atributų saugyklos kontraktas}{section.5}% 50
-\BOOKMARK [2][-]{subsection.5.3}{Paslaugų registro kontraktas}{section.5}% 51
-\BOOKMARK [1][-]{section.6}{Kiti blokų grandinės projektai tapatybės valdymo srityje}{}% 52
-\BOOKMARK [2][-]{subsection.6.1}{Blockstack}{section.6}% 53
-\BOOKMARK [2][-]{subsection.6.2}{UPort}{section.6}% 54
-\BOOKMARK [2][-]{subsection.6.3}{Tradle}{section.6}% 55
-\BOOKMARK [1][-]{section*.28}{Rezultatai ir išvados}{}% 56
-\BOOKMARK [1][-]{section*.29}{Literatūra}{}% 57
-\BOOKMARK [1][-]{section*.30}{Sąvokų apibrėžimai}{}% 58
-\BOOKMARK [1][-]{section*.30}{Priedai}{}% 59
-\BOOKMARK [2][-]{appendix.A}{1 priedas. OAuth prašymas naudotojui autorizuoti paslaugą}{section*.30}% 60
-\BOOKMARK [2][-]{appendix.B}{2 priedas. Atributų saugojimo ir autorizavimo kontraktas}{section*.30}% 61
-\BOOKMARK [2][-]{appendix.C}{3 priedas. Paslaugų registro kontraktas}{section*.30}% 62
+\BOOKMARK [1][-]{section.3}{Blokų grandinės panaudojimas skaitmeninės tapatybės valdyme}{}% 26
+\BOOKMARK [2][-]{subsection.3.1}{Blokų grandinės tinkamumas identiteto valdymui}{section.3}% 27
+\BOOKMARK [2][-]{subsection.3.2}{Blokų grandinės projektai tapatybės valdymo srityje}{section.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Blockstack}{subsection.3.2}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.2}{UPort}{subsection.3.2}% 30
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Tradle}{subsection.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.3}{Apibendrinimas}{section.3}% 32
+\BOOKMARK [1][-]{section.4}{Blokų grandine paremtas tapatybės atributų valdymo modelis}{}% 33
+\BOOKMARK [2][-]{subsection.4.1}{Reikalavimai}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.2}{Modelio\040dalys}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Išmanieji kontraktai paslaugų autorizavimo logikai}{subsection.4.2}% 36
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Atributų valdymo programa}{subsection.4.2}% 37
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Paslaugų registras}{subsection.4.2}% 38
+\BOOKMARK [2][-]{subsection.4.3}{Pagrindiniai\040naudojimo\040atvejai}{section.4}% 39
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Naudotojo\040adreso\040suteikimas\040paslaugai}{subsection.4.3}% 40
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Paslaugos atliekama atributo užklausa}{subsection.4.3}% 41
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Naudotojo\040atliekamas\040paslaugos\040autorizavimas}{subsection.4.3}% 42
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Atributų valdymo programos atliekamas blokų grandinės stebėjimas}{subsection.4.3}% 43
+\BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio vertinimas}{}% 44
+\BOOKMARK [2][-]{subsection.5.1}{Privalumai}{section.5}% 45
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Naudotojui suteikta atributų valdymo kontrolė}{subsection.5.1}% 46
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Decentralizuoti tapatybės atributai}{subsection.5.1}% 47
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}{subsection.5.1}% 48
+\BOOKMARK [2][-]{subsection.5.2}{Trūkumai}{section.5}% 49
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Atributų reikšmių įvedimas}{subsection.5.2}% 50
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Nepatikimos atributų reikšmės}{subsection.5.2}% 51
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Kaina}{subsection.5.2}% 52
+\BOOKMARK [2][-]{subsection.5.3}{Pritaikymo\040barjerai}{section.5}% 53
+\BOOKMARK [1][-]{section.6}{Tapatybės atributų valdymo modelio prototipas}{}% 54
+\BOOKMARK [2][-]{subsection.6.1}{Pasirinktos\040technologijos}{section.6}% 55
+\BOOKMARK [2][-]{subsection.6.2}{Atributų saugyklos kontraktas}{section.6}% 56
+\BOOKMARK [2][-]{subsection.6.3}{Paslaugų registro kontraktas}{section.6}% 57
+\BOOKMARK [1][-]{section*.28}{Rezultatai ir išvados}{}% 58
+\BOOKMARK [1][-]{section*.29}{Literatūra}{}% 59
+\BOOKMARK [1][-]{section*.30}{Sąvokų apibrėžimai}{}% 60
+\BOOKMARK [1][-]{section*.30}{Priedai}{}% 61
+\BOOKMARK [2][-]{appendix.A}{1 priedas. OAuth prašymas naudotojui autorizuoti paslaugą}{section*.30}% 62
+\BOOKMARK [2][-]{appendix.B}{2 priedas. Atributų saugojimo ir autorizavimo kontraktas}{section*.30}% 63
+\BOOKMARK [2][-]{appendix.C}{3 priedas. Paslaugų registro kontraktas}{section*.30}% 64

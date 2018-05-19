@@ -1,0 +1,83 @@
+\section{Blokų grandinės panaudojimas skaitmeninės tapatybės valdyme}
+
+Šiame skyriuje nagrinėjamas blokų grandinės technologijos panaudojimas tapatybės valdyme.
+Tiriama, kaip blokų grandinės savybės gali padėti išspręsti egzistuojančias
+naudotojų problemas, apžvelgiami technologiją identiteto valdyme jau taikantys projektai.
+
+
+\subsection{Blokų grandinės tinkamumas identiteto valdymui} \label{blockchain:suitabilityForIDM}
+
+\hypertarget{section:blockchainOverview}{\ref{section:blockchainOverview}} skyriuje apibendrintos naudotojų problemos
+tapatybės valdyme rodo, kad naudotojams internete trūksta savo asmens duomenų kontrolės, jie turi pasitikėti paslaugų programų veikimu
+bei tapatybės tiekėjo pasiekiamumu. Viešos blokų grandinės savybės atveria įvairių galimybių, kaip spręsti susidariusias problemas:
+
+\begin{enumerate}
+    \item Decentralizuota sistema eliminuoja vienintelio nesekmės taško situaciją. Pritaikius decentralizuotą blokų grandinę
+    tapatybės valdymo sistemoje, dėl blokų grandinės išskirstymo po skirtingus mazgus 
+    tapatybės tiekėjas nebebūtų vienintelis nesekmės taškas identiteto valdymo infrastruktūroje. Tokiu būdu tapatybės informacija būtų prieinama ir tada,
+    kai tapatybės tiekėjas yra nepasiekiamas.
+
+    \item Visiems prieinami grandinės įrašai ir sistemos veikimas padidina skaidrumą. Blokų grandinėje saugant naudotojo suteiktas prieigas skirtingoms paslaugoms,
+    naudotojas betkada galėtų matyti paslaugoms suteiktas teises. Prieigų suteikimą aprašius išmaniuosiuose kontraktuose, paslaugos duomenis
+    pasiekti galėtų tik tada, kai naudotojas išreikštinai tai patvirtina.
+
+    \item Nekintamumas apsaugo nuo galimų įsilaužimų siekiant pakeisti įrašus.
+    Blokų grandinėje saugant naudotojo atributus ar paslaugų prieigos teises,
+    o rašymo teises į grandinę turint tik naudotojui ar jo pasirinktoms programoms, naudotojas būtų užtikrintas, kad
+    neįvyko jo paties neautorizuotų pakeitimų.
+
+\end{enumerate}
+
+Įvardyti blokų grandinės pranašumai būtų sunkiau įgyvendinami taikant įprastą centralizuotą duomenų bazę. Tokia duomenų bazė
+būtų kontroliuojama vienos organizacijos ar asmens, tad išliktų vienintelis nesekmės taškas. Įrašų prieinamumu ir nekintamumu bei veikimo
+skaidrumu
+turėtų išreikštinai rūpintis duombazės kūrėjai, kai šias savybės užtikrina pati blokų grandinės technologija. Pranašumas, kurį
+šiuo atveju turi duomenų bazė, yra plečiamumas - saugoti didžiulius kiekius tapatybės duomenų blokų grandinėje yra gana brangu.
+
+\hypertarget{blockchain:concerns}{~\ref{blockchain:concerns}} skyrelyje įvardyti pagrindiniai blokų grandinės apribojimai nesudaro didelių kliūčių šią technologiją taikyti skaitmeninės tapatybės valdyme.
+Anonimiškumo klausimą galima spręsti šifruojant saugomus tapatybės duomenis,
+o raktus dešifravimui suteikiant tik norimiems asmenims. Blokų grandinės greitaveika neturėti kelti problemų
+standartinėms tapatybės valdymo sistemos operacijoms \cite{Lo2017}, o didėjant įrašų kiekiui dalį jų būtų galima iškelti į
+šalutinę grandinę (angl. \textit{off-chain}). Daugumos ataka decentralizuotoje viešoje blokų grandinėje išlieka kaip galimas pavojus,
+tačiau šią riziką galima sumažinti pasirenkant tokią blokų grandinę, kurioje tokios atakos vykdymo kaina būtų per didelė.
+
+\subsection{Blokų grandinės projektai tapatybės valdymo srityje}
+
+Tiriant blokų grandinės panaudojimą skaitmeninės tapatybės valdymo srityje, rasta įvairių
+technologiją bandančių pritaikyti projektų. Šis skyrius skirtas trumpai apžvelgti autoriaus nuomone
+įdomiausius projektus, susijusius su tapatybe bei blokų grandinės technologija.
+
+\subsubsection{Blockstack}
+
+\enquote{Blockstack} projektas yra kompiuterių tinklas, kolektyviai saugantis globalų
+domenų vardų bei jų viešų raktų registrą. Su šiuo registru, \enquote{Blockstack} įgyvendiną
+decentralizuotą domenų vardų sistemą, kur kiekvienas norintis gali užregistruoti savo domeną \cite{BlockstackWhitepaper}.
+\enquote{OneName} projektas, naudojantis \enquote{Blockstack} sistemą, siekia sukurti decentralizuotą tapatybę,
+kurią susikūręs naudotojas galėtų atsisakyti visų kitų turimų socialinių tinklų (\enquote{Facebook},
+\enquote{Google}) tapatybių.
+
+\subsubsection{UPort}
+
+\enquote{Consensys} įmonės \enquote{UPort} projektas panašus į \enquote{OneName} - jis skirtas naudotojams turėti decentralizuotas
+skaitmenines tapatybes, registruotas \enquote{Ethereum} tinkle, su kuriomis galėtų atlikti \enquote{Ethereum} transakcijas.
+Naudotojai su \enquote{UPort} paskyra
+galėtų prisijungti prie paslaugų bei valdyti savo atributus. Šio darbo rašymo metu \enquote{UPort} turi
+parengę integracijas paslaugoms ir elektroninę piniginę, skirtą \enquote{Ethereum} raktų
+ir transakcijų valdymui, tačiau mobilioji programėlė \enquote{UPort} skaitmeninei tapatybei valdyti vis dar ruošiama (angl.
+\textit{under development}) \cite{UPort}.
+
+\subsubsection{Tradle}
+
+\enquote{Tradle} yra blokų grandine paremtas projektas, skirtas finansinėms institucijoms (bankams,
+draudimo įmonėms) įgyvendinti \enquote{pažink savo klientą} (angl. \textit{Know Your Customer - KYC}) procesus,
+suteikiant klientams didesnę asmens duomenų kontrolę. \enquote{Tradle} suteikia
+klientams programinę įrangą, kuri padės integruoti \enquote{Tradle} platformą su jų įmonėse jau egzistuojančia klientų duomenų saugojimo
+infrastruktūra. Klientams išreikštinai sutikus, \enquote{Tradle} taip pat suteikia galimybę perduoti asmenų duomenis iš vienos
+finansinės įmonės į kitą \cite{Baars2016}.
+
+\subsection{Apibendrinimas}
+
+Blokų grandinės savybės suteikia pagrindo naudoti šią technologiją skaitmeninės tapatybės valdyme. Decentralizuotumas, skaidrumas
+bei nekintamumas gali padėti grąžinti naudotojams jų pačių asmens duomenų kontrolę bei panaikinti didžiulę
+priklausomybę nuo tapatybės ar paslaugų tiekėjų. Jau egzistuojantys projektai, taikantys blokų grandinę identiteto valdyme,
+įrodo technologijos galimą potencialą šioje srityje.
