@@ -38,7 +38,7 @@ sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problem
 Modelis sudarytas iš trijų dalių: išmaniųjų kontraktų paslaugų autorizavimo logikai bei atributų saugojimui,
 atributų valdymo programos bei paslaugų registro.
 
-\tocless{\subsubsection{Išmanieji kontraktai paslaugų autorizavimo logikai} \label{BCIDM:blockchainFunctions}}
+\subsubsection{Išmanieji kontraktai paslaugų autorizavimo logikai} \label{BCIDM:blockchainFunctions}
 
 Pagrindinė blokų grandinės paskirtis yra pagal išmaniuosiuose kontraktuose aprašytą logiką suteikti arba nesuteikti
 prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai yra atsakingi už:
@@ -58,7 +58,7 @@ prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai
     paslaugai atributą, praneša apie atmestą prieigą arba išsaugo užklausą, laukiančią naudotojo sprendimo.
 \end{itemize}
 
-\tocless{\subsubsection{Atributų valdymo programa}}
+\subsubsection{Atributų valdymo programa}
 
 Atributų valdymo programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats formuoti užklausas
 bei sugeneruoti simetriško šifro raktą ir perduoti jį paslaugai, tačiau tai nėra patogu. Dėl šių priežasčių, ši atributų valdymo
@@ -75,7 +75,7 @@ Atributų valdymo programa saugo naudotojo privatų raktą, praneša apie naujas
 į blokų grandinę saugomus atributus su paslaugos viešuoju raktu. Taip pat, joje naudotojas
 matytų suteiktų prieigų apžvalgą ir betkada galėtų pakeisti konkrečių paslaugų pasiekiamus atributus.
 
-\tocless{\subsubsection{Paslaugų registras} \label{BCIDM:serviceRegister}}
+\subsubsection{Paslaugų registras} \label{BCIDM:serviceRegister}
 
 Šiame modelyje paslaugos yra identifikuojamos pagal jų blokų grandinės paskyros adresą. Atributų valdymo programa,
 skaitanti išmaniajame kontrakte laukiančias užklausas, jose mato išsaugotą besikreipusios paslaugos adresą.
@@ -96,7 +96,7 @@ pavadinimą.
 
 Šiame skyriuje UML sekų diagramomis pateikiami pagrindiniai modelio panaudos atvejai (angl. \textit{use cases}).
 
-\tocless{\subsubsection{Naudotojo adreso suteikimas paslaugai}}
+\subsubsection{Naudotojo adreso suteikimas paslaugai}
 
 Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo pateikti jo adresą (naudotojo patogumui, adresas rodomas
 atributų valdymo programoje),
@@ -115,7 +115,7 @@ papildomą žingsnį.
     \label{fig:userGivesAddress}
 \end{figure}
 
-\tocless{\subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}}
+\subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}
 
 Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą)\footnote{ Paslaugai kreipiantis į kontraktą, ji turi žinoti, koks yra norimo atributo identifikatorius, kurį reikia perduoti į kontrakto funkciją. 
 Atributų identifikatoriai gali būti pateikiami atskirame išmaniajame kontrakte arba kuriamo modelio interneto puslapyje.}
@@ -133,7 +133,7 @@ atributų valdymo programoje ir ten atlikti sprendimą.
     \label{fig:askForAttributeSequence}
 \end{figure}
 
-\tocless{\subsubsection{Naudotojo atliekamas paslaugos autorizavimas}}
+\subsubsection{Naudotojo atliekamas paslaugos autorizavimas}
 
 Atributų valdymo programa, stebinti išmaniuosiuose kontraktuose naujas paslaugų užklausas, praneša naudotojui apie dar
 neatliktus autorizavimus. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
@@ -160,7 +160,7 @@ jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieig
     \label{fig:givePermissions}
 \end{figure}
 
-\tocless{\subsubsection{Atributų valdymo programos atliekamas blokų grandinės stebėjimas} \label{BCIDM:blockchainMonitoring}}
+\subsubsection{Atributų valdymo programos atliekamas blokų grandinės stebėjimas} \label{BCIDM:blockchainMonitoring}
 
 Blokų grandinės išmanusis kontraktas negali tiesiogiai pranešti išorinei (ne išmaniajame kontrakte esančiai) programai
 apie įvykusius pasikeitimus. Todėl išmanusis kontraktas gali saugoti būseną, o ją vėliau pasiekia norinti taikomoji programa.

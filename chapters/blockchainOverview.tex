@@ -76,7 +76,7 @@ Kadangi blokų grandinės sistema yra decentralizuota, nėra centrinės instituc
 yra validus (be transakcijų su falsifikuotais duomenimis). Todėl blokų grandinės tinkle taikoma konsensuso strategija,
 pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Apžvelgiamos trys dažnai naudojamos strategijos: darbo, įtakos bei autoriteto įrodymo.
 
-\tocless{\subsubsection{Darbo įrodymo strategija}}
+\subsubsection{Darbo įrodymo strategija}
 
 Darbo įrodymo konsensuso strategija remiasi principu, kad daug pastangų ir resursų į bloko validumo įrodymą įdėjęs tinklo
 dalyvis nebus linkęs sukčiauti. Šioje strategijoje tinklo dalyvis, norėdamas pridėti bloką į blokų grandinę, turi išspręsti laikui ir resursams
@@ -114,7 +114,7 @@ taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasima
 sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
 gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
-\tocless{\subsubsection{Turto įrodymo strategija}}
+\subsubsection{Turto įrodymo strategija}
 
 Turto įrodymo konsensuso strategija remiasi principu, kad daug blokų grandinės turto turintis kasėjas
 bus sąžiningas, nes išaiškinus jo nesąžiningumą jis rizikuoja prarasti savo turimą turtą \cite{Baars2016}. Šis algoritmas patiki sprendimą priimti
@@ -126,10 +126,9 @@ variantus: \enquote{Peercoin} papildomai vertina turto amžių, \enquote{Blackco
 taip pat sutaupo laiko ir blokai būna greičiau patvirtinami ir pridedami į grandinę. Tačiau, dėl praktiškai nulinių bloko \textit{kasimo} sąnaudų,
 galimos dažnesnės tinklo atakos \cite{Zheng2017}. 
 
+\subsubsection{Autoriteto įrodymo strategija}
 
-\tocless{\subsubsection{Autoriteto įrodymo statregija}}
-
-Autoriteto įrodymo strategija remiasi keletu tinklo dalyvių, kuriems suteikta teisė validuoti naujus blokus, priimamais sprendimais. Ši strategija nebėra tinkama visiškai
+Autoriteto įrodymo strategija remiasi keleto tinklo dalyvių, kuriems suteikta teisė validuoti naujus blokus, priimamais sprendimais. Ši strategija nebėra tinkama visiškai
 decentralizuotai blokų grandinei, kurioje būtinas pilnas pasitikėjimo padalinimas \cite{ProofOfAuthority}. Tačiau ši strategija tinkama privačioms
 ar konsorciumo blokų grandinėms.
 
@@ -144,7 +143,7 @@ taiko \enquote{Parity} blokų grandinė \cite{ProofOfAuthority}.
 \subsection{Išmanieji kontraktai}
 
 Išmanusis kontraktas (angl. \textit{smart contract}) - tai kompiuterizuotas transakcijos protokolas, kuris
-išpildo kontrakto sąlygas, jei patenkinami numatyti kriterijai \cite{Szabo1997}.
+išpildo kontrakto sąlygas, jei patenkinami numatyti kriterij \cite{Szabo1997}.
 Išmanųjį kontraktą galima apibūdinti kaip tam tikras sąlygas (išreikštas kodu), kurios, patenkinus reikalavimus, bus įvykdytos automatiškai,
 be trečiosios šalies priežiūros.
 
@@ -164,7 +163,7 @@ Bene žinomiausia išmaniųjų kontraktų kūrimui pritaikyta platforma - \enquo
 \hypertarget{section:ethereumIntro}{\ref{section:ethereumIntro}} skyrelyje apžvelgiamos pagrindinės išmaniųjų kontraktų
 veikimo sąlygos.
 
-\tocless{\subsubsection{\enquote{Ethereum} išmanieji kontraktai} \label{section:ethereumIntro}}
+\subsubsection{\enquote{Ethereum} išmanieji kontraktai} \label{section:ethereumIntro}
 
 2015-aisias pradėjusi veikti \enquote{Ethereum} platforma pristatė blokų grandinę, kuri pritaikyta kurti būseną galinčius keisti
 išmaniuosius kontraktus su išbaigta
@@ -178,7 +177,7 @@ kontraktų funkcijas. Paskyros identifikuojamos pagal unikalų adresą. \enquote
 
 \begin{enumerate}
     \item išorinės paskyros (angl. \textit{externally owned accounts}). Jos savininkų valdomos privačiais raktais ir turi eterio
-    balansą.
+    balansą;
     \item kontraktų paskyros (angl. \textit{contract accounts}). Šios paskyros be balanso turi kodą bei būseną, kuri gali keistis,
     jei įvykdomos kode aprašytos sąlygos. Kontraktų paskyros yra valdomos kontrakto kodo.
 \end{enumerate}
@@ -202,7 +201,7 @@ Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant p
 Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų ar saugumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų,
 kurių galimą poveikį būtina įvertinti prieš taikant šią technologiją konkrečioje sferoje. Pagrindinės grėsmės ir trūkumai aptariami šiame skyriuje.
 
-\tocless{\subsubsection{Daugumos ataka}}
+\subsubsection{Daugumos ataka}
 
 Viešose blokų grandinėse dauguma (>50\%) mazgų tinkle turi patvirtinti bloką, kad jis būtų priimtas į grandinę. Potencialus įsilaužėlis gali pateikti
 falsifikuotą blokų grandinės bloką (pvz. su netikromis transakcijomis), tačiau kol jis neturi daugumos skaičiavimo galios tinkle, šis blokas bus
@@ -211,7 +210,7 @@ turi daugumą skaičiavimo galios, jis gali dirbti su falsifikuota blokų grandi
 pereis visi dalyviai, taps jo sukurta grandinė su falsifikuotais blokais \cite{Zheng2017}. Ši ataka nebuvo įgyvendinta prieš žinomiausias \enquote{Bitcoin} bei \enquote{Ethereum} blokų grandines, tačiau
 buvo įvykdyta prieš \enquote{Verge} blokų grandinę \cite{Sedgwick2018}.
 
-\tocless{\subsubsection{Plečiamumas}}
+\subsubsection{Plečiamumas}
 
 Blokų grandinės plečiamumas matuojamas pagal du kriterijus: transakcijų pralaidumą ir saugojimo reikalavimus mazgams. Transakcijų pralaidumas, kuris priklauso nuo to,
 kaip greitai nauji blokai yra pridedami į blokų grandinę, susijęs su taikoma konsensuso strategija.
@@ -231,7 +230,7 @@ siūlomi įvairūs sprendimai. Vienas variantas yra mazgams neturėti seniausių
 Kitas sprendimo būdas - pagrindinėje blokų grandinėje laikyti tik transakcijų maišos rezultatus, o pačius transakcijų duomenis
 iškelti už grandinės ribų (angl. \textit{off-chain}) \cite{Lo2017}.
 
-\tocless{\subsubsection{Anonimiškumas}}
+\subsubsection{Anonimiškumas}
 
 Manoma, kad blokų grandinės išsaugo naudotojų privatumą dėl to, kad transakcijose atskleidžiamas tik naudotojų
 viešas raktos vietoj tikrosios tapatybės \cite{Zheng2017}. Tačiau, tyrimai rodo, kad iš viešojo rakto galima
