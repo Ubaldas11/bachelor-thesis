@@ -1,7 +1,7 @@
-\section{Blokų grandine paremtas tapatybės atributų valdymo modelis} \label{section:BCIDM}
+\section{Tapatybės atributų valdymo modelis} \label{section:BCIDM}
 
 Atsižvelgus į blokų grandinės savybes, tinkamas tapatybės valdymo problemoms spręsti, šiame skyriuje pateikiamas
-blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti\hypertarget{IDM:problemsSummarized}{~\ref{IDM:problemsSummarized}} skyrelyje
+vieša blokų grandine paremtas skaitmeninės tapatybės valdymo modelis. Modelis skirtas spręsti\hypertarget{IDM:problemsSummarized}{~\ref{IDM:problemsSummarized}} skyrelyje
 apibendrintoms naudotojų problemoms. Kadangi tapatybės valdymas apima
 daug skirtingų procesų, aprašomas modelis apsiriboja asmens tapatybės atributų valdymu, saugojimu ir perdavimu.
 
@@ -27,7 +27,8 @@ Taikant į asmenis orientuotos skaitmeninės tapatybės principus, reikalavimai 
 
 \begin{enumerate}
     \item Kaip interneto naudotojas, aš noriu žinoti, kurios programos turi prieigą prie kurių mano asmens duomenų.
-    \item Kaip interneto naudotojas, aš noriu kontroliuoti savo asmens duomenis ir pats suteikti arba atmesti prieigą paslaugų tiekėjams pasiekti mano duomenis.
+    \item Kaip interneto naudotojas, aš noriu kontroliuoti savo asmens duomenis ir pats pasirinkti, kurios mano naudojamos paslaugos gali pasiekti mano
+    asmens duomenis.
     \item Kaip interneto naudotojas, aš noriu galimybės lengvai atnaujinti savo asmens duomenis vienoje vietoje.
     \item Kaip interneto naudotojas, aš nenoriu, jog mano asmens duomenų pasiekiamumas priklausytų tik nuo vienos trečiosios šalies pasiekiamumo.
 \end{enumerate}
@@ -38,47 +39,55 @@ sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problem
 
 \subsection{Modelio dalys}
 
-Modelis sudarytas iš trijų dalių: išmaniųjų kontraktų paslaugų autorizavimo logikai bei atributų saugojimui,
-atributų valdymo programos bei paslaugų registro.
+Modelis sudarytas iš trijų dalių: atributų saugyklos išmaniojo kontrakto, paslaugų registro išmaniojo kontrakto
+bei atributų valdymo programos.
 
-\subsubsection{Išmanieji kontraktai paslaugų autorizavimo logikai} \label{BCIDM:blockchainFunctions}
+\subsubsection{Atributų saugyklos išmanusis kontraktas} \label{BCIDM:blockchainFunctions}
 
-Pagrindinė blokų grandinės paskirtis yra pagal išmaniuosiuose kontraktuose aprašytą logiką suteikti arba nesuteikti
-prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai yra atsakingi už:
+Atributų saugyklos išmaniajame kontrakte yra saugomi šifruoti naudotojų atributai bei jų suteikimo logika. Šis kontraktas atsakingas už:
 
 \begin{itemize}
-    \item naudotojo atliekamą prieigų suteikimą. Naudotojas, kviesdamas išmanaus kontrakto funkciją, gali pasirinkti,
+    \item naudotojo atliekamą prieigų suteikimą. Naudotojas, kviesdamas kontrakto funkciją, gali pasirinkti,
     ar suteikti konkrečiai paslaugai prieigą prie jos norimo atributo. Prieigos yra valdomos ne visos tapatybės, o
-    atskirų atributų lygmenyje.
+    atskirų atributų lygmenyje;
 
-    \item šifruotų atributų saugojimą. Išmaniuosiuose kontraktuose saugomi naudotojo tapatybės atributai. Jeigu naudotojas N
-    yra autorizavęs paslaugą P pasiekti atributą A, tuomet kontrakte išsaugomas N ir P simetriškų šifro raktu (angl.
+    \item šifruotų atributų saugojimą. Kontrakte saugomi naudotojo tapatybės atributai. Kadangi modelyje naudojama vieša blokų
+    grandinė, joje esantys duomenys prieinami visiems - dėl to saugomi šifruoti atributai. Jeigu naudotojas N
+    yra autorizavęs paslaugą P pasiekti atributą A, tuomet kontrakte išsaugomas N ir P simetrišku šifro raktu (angl.
     \textit{symmetric encryption key}) užšifruotas atributas A. Taip tik paslauga P
-    ir naudotojas N galės perskaityti viešame išmaniajame kontrakte esantį atributą.
+    ir naudotojas N, turintys šifro raktus, galės perskaityti viešame išmaniajame kontrakte esantį atributą;
 
-    \item pateikiamas funkcijas paslaugoms pasiekti atributus. Išmanusis kontraktas atsižvelgia į tai, kokia paslauga kreipiasi (iš
-    jos adreso) bei kokio atributo prašo. Tuomet, patikrinęs, ar ši paslauga turi prieigą, atitinkamai persiunčia
-    paslaugai atributą, praneša apie atmestą prieigą arba išsaugo užklausą, laukiančią naudotojo sprendimo.
+    \item pateikiamas funkcijas paslaugoms bei naudotojui pasiekti atributus. Išmanusis kontraktas pirmiausia atsižvelgia
+    į funkcijos kvietėją. Jei kreipiasi naudotojas, jam grąžinama šifruota atributo reikšmė. Jei kreipiasi paslauga, tikrinama,
+    ar naudotojas yra patvirtinęs jos prieigą norimam atributui. Jei taip, grąžinama šifruota reikšmė. Jei ne, grąžinamas pranešimas,
+    kad prieiga atmesta. Jeigu naudotojas šios paslaugos prieigos dar nesvarstęs, apie paslaugos P siekį gauti naudotojo N atributą A
+    pranešama naudotojui. Kai jis prieigą patvirtins arba atmes, paslauga galės pasiekti atributą A.
 \end{itemize}
 
 \subsubsection{Atributų valdymo programa}
 
-Atributų valdymo programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats formuoti užklausas
-bei sugeneruoti simetriško šifro raktą ir perduoti jį paslaugai, tačiau tai nėra patogu. Dėl šių priežasčių, ši atributų valdymo
-programa padeda naudotojui matyti bei keisti suteiktas išmaniajame kontrakte esančias prieigas, užšifruoti ir persiųsti atributus į blokų grandinę
-bei sugeneruoti šifro raktą, unikalų kiekvienai naudotojo N ir paslaugos P porai.
+Atributų valdymo programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats formuoti užklausas,
+generuoti šifro raktus, perduoti jos paslaugoms, užšifruoti ir dešifruoti siunčiamas reikšmes, tačiau tai nėra patogu. Dėl to ši
+programa padeda atlikti \enquote{nematomą darbą} bei supaprastina naudotojo sąsają su bloko grandine. Programoje naudotojas gali:
+
+\begin{itemize}
+    \item suteikti arba atmesti paslaugai P prieigą prie atributo A,
+    \item peržvelgti suteiktas prieigas ir keisti jas,
+    \item įvesti, keisti ar trinti atributų reikšmes.
+\end{itemize}
+
+Atributų valdymo programos veikimas panašus į kriptovaliutos piniginės veikimą. Kaip tokia piniginė leidžia naudotojui per vartotojo sąsają
+pervesti pinigus iš naudotojo sąskaitos į kitą sąskaitą, taip atributų valdymo programa leidžia naudotojui
+valdyti savo paskyros atributus blokų grandinės išmaniajame kontrakte. Programa veikia naudotojo vardu (angl. \textit{on user's behalf}),
+turėdama jo privatų raktą
+- taip ji gali kreiptis į blokų grandinę
+iš naudotojo paskyros, o išmanusis kontraktas, gavęs užklausą iš atributų valdymo programos,
+žino, koks naudotojas kreipiasi į funkciją.
 
 Modelyje nėra apibrėžiama, kaip turi būti įgyvendinta ši programa - tai gali būti kompiuterio darbalaukio programa,
-mobilioji programėlė ar 
-interneto tinklapis. Jos įgyvendinimas būtų panašus į centralizuotos kriptovaliutos piniginės kūrimą (pvz. \enquote{Coinbase}), nes ši
-programa skirta palengvinti naudotojo bendravimą su blokų grandine, kuris aprašytas\hypertarget{BCIDM:blockchainFunctions}{~\ref{BCIDM:blockchainFunctions}} skyrelyje ir
-stebėti jau suteiktas prieigas.
+mobilioji programėlė ar interneto tinklapis. 
 
-Atributų valdymo programa saugo naudotojo privatų raktą, praneša apie naujas paslaugų užklausas, padeda šifruoti
-į blokų grandinę saugomus atributus su paslaugos viešuoju raktu. Taip pat, joje naudotojas
-matytų suteiktų prieigų apžvalgą ir betkada galėtų pakeisti konkrečių paslaugų pasiekiamus atributus.
-
-\subsubsection{Paslaugų registras} \label{BCIDM:serviceRegister}
+\subsubsection{Paslaugų registro išmanusis kontraktas} \label{BCIDM:serviceRegister}
 
 Šiame modelyje paslaugos yra identifikuojamos pagal jų blokų grandinės paskyros adresą. Atributų valdymo programa,
 skaitanti išmaniajame kontrakte laukiančias užklausas, jose mato išsaugotą besikreipusios paslaugos adresą.
@@ -87,13 +96,17 @@ Nors adresas yra viešas ir unikaliai identifikuoja kiekvieną blokų grandinės
 pats adresas nėra tiesiogiai susiejamas su tikru asmens identifikatoriumi (pvz. asmens kodu ar paslaugos įmonės kodu).
 Tokiu būdu, atributų valdymo programoje matant tik paslaugos adresą dalyvis gali nežinoti, kokią paslaugą jis autorizuoja.
 
-Šiai problemai spręsti modelyje yra atskiras išmanusis kontraktas, kuris funkcionuoja kaip \textit{paslaugų registras}. Kiekviena
-paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, nusiunčiant savo vardą ir taip kontraktas išsaugo, iš kokio adreso į jį kreiptąsi (nes
-transakcija yra pasirašyta kontrakto kvietėjo ir tik jis gali atlikti transakcijas iš jo paskyros). Tuomet, paslaugai viešai
-atskleidus savo adresą (pvz. pateikus savo tinklalapyje prieigos tašką (angl. \textit{endpoint}), kuris jį grąžina), būtų galima
-nesunkiai patikrinti, ar paslauga, besiskelbianti adresu X, iš tikrųjų yra užsiregistravusi \textit{paslaugų registre}. Tokiu būdu
-atributų valdymo programa galėtų kreiptis į \textit{paslaugų registro} išmanųjį kontraktą, patikrinti, ar paslauga jame užsiregistravusi ir iš jo sužinoti paslaugos
-pavadinimą. 
+Šiai problemai spręsti modelyje yra atskiras išmanusis kontraktas, kuris funkcionuoja kaip paslaugų registras. Kiekviena
+paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, joje nusiųsdama savo pavadinimą bei slaptą kodą,
+suteiktą naudotojo arba sugeneruotą atributų valdymo programos. Kai atributų saugyklos kontrakte bus išsaugota nauja paslaugos
+P užklausa pasiekti atributą, atributų valdymo programa pagal P viešą raktą gali kreiptis
+į šį registrą ir įsitikinti, ar P tikrai užsiregistravo (rasti iš P paskyros atliktą transakciją) ir iš kodo
+nuspręsti, ar tai tikrai yra paslauga, kuria asmuo naudojasi (taip užsiregistravę, bet kodo neturintys programišiai negali
+apsimesti kita įmone). Atributų valdymo programa, remdamasi paslaugų registru, gali atfiltruoti ir naudotojui pateikti tik
+validžias paslaugų užklausas.
+
+Verta pastebėti, kad paslaugų registras nėra vienintelis įmanomas būdas autentifikuoti paslaugas. Galimos alternatyvos plačiau apžvelgiamos
+modelio vertinimo \hypertarget{section:blockchainIDMevaluation}{skyriuje}.
 
 \subsection{Pagrindiniai naudojimo atvejai}
 

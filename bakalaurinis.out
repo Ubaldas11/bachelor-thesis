@@ -30,12 +30,12 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{UPort}{subsection.3.2}% 30
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Tradle}{subsection.3.2}% 31
 \BOOKMARK [2][-]{subsection.3.3}{Apibendrinimas}{section.3}% 32
-\BOOKMARK [1][-]{section.4}{Blokų grandine paremtas tapatybės atributų valdymo modelis}{}% 33
+\BOOKMARK [1][-]{section.4}{Tapatybės atributų valdymo modelis}{}% 33
 \BOOKMARK [2][-]{subsection.4.1}{Reikalavimai}{section.4}% 34
 \BOOKMARK [2][-]{subsection.4.2}{Modelio\040dalys}{section.4}% 35
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Išmanieji kontraktai paslaugų autorizavimo logikai}{subsection.4.2}% 36
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Atributų saugyklos išmanusis kontraktas}{subsection.4.2}% 36
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Atributų valdymo programa}{subsection.4.2}% 37
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Paslaugų registras}{subsection.4.2}% 38
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Paslaugų registro išmanusis kontraktas}{subsection.4.2}% 38
 \BOOKMARK [2][-]{subsection.4.3}{Pagrindiniai\040naudojimo\040atvejai}{section.4}% 39
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Naudotojo\040adreso\040suteikimas\040paslaugai}{subsection.4.3}% 40
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Paslaugos atliekama atributo užklausa}{subsection.4.3}% 41
@@ -47,7 +47,7 @@
 \BOOKMARK [3][-]{subsubsection.5.1.2}{Decentralizuoti tapatybės atributai}{subsection.5.1}% 47
 \BOOKMARK [3][-]{subsubsection.5.1.3}{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}{subsection.5.1}% 48
 \BOOKMARK [2][-]{subsection.5.2}{Trūkumai}{section.5}% 49
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Atributų reikšmių įvedimas}{subsection.5.2}% 50
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Pakeist į paslaugų registro alternatyvas}{subsection.5.2}% 50
 \BOOKMARK [3][-]{subsubsection.5.2.2}{Nepatikimos atributų reikšmės}{subsection.5.2}% 51
 \BOOKMARK [3][-]{subsubsection.5.2.3}{Kaina}{subsection.5.2}% 52
 \BOOKMARK [2][-]{subsection.5.3}{Pritaikymo\040barjerai}{section.5}% 53
