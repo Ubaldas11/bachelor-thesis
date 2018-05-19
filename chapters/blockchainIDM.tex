@@ -30,27 +30,26 @@ Taikant į asmenis orientuotos skaitmeninės tapatybės principus, reikalavimai 
 \end{enumerate}
 
 Pateiktos naudotojų istorijos padengia 1 skyriuje apibrėžtus asmenų poreikius tapatybės valdymo
-sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problemas. Interneto tapatybių valdymo sistemo saugumo atakos (angl.
-\textit{cross site scripting}, \textit{phishing}) yra plati tema, verta atskiro tyrimo, tad ji šiame modelyje nebus nagrinėjama. \textcolor{red}{ar užtenka tokio sakinio pasakymui kad čia \textit{out of scope}? nes saugumui užtikrint reik
-kad naudojamos paslaugos SSL turėtų, ir šiaip plati tema labai, kurios vien blockchain neišspręs}
+sistemoms bei išskirtas kontrolės, pasitikėjimo ir skaidrumo trūkumo problemas. Interneto tapatybių valdymo sistemų saugumo atakos (angl.
+\textit{cross site scripting}, \textit{phishing}) yra plati tema, verta atskiro tyrimo, tad ji šiame modelyje nebus nagrinėjama.
 
 \subsection{Modelio dalys}
 
 Modelis sudarytas iš trijų dalių: išmaniųjų kontraktų paslaugų autorizavimo logikai bei atributų saugojimui,
 atributų valdymo programos bei paslaugų registro.
 
-\subsubsection{Išmanieji kontraktai paslaugų autorizavimo logikai} \label{BCIDM:blockchainFunctions}
+\tocless{\subsubsection{Išmanieji kontraktai paslaugų autorizavimo logikai} \label{BCIDM:blockchainFunctions}}
 
 Pagrindinė blokų grandinės paskirtis yra pagal išmaniuosiuose kontraktuose aprašytą logiką suteikti arba nesuteikti
 prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai yra atsakingi už:
 
 \begin{itemize}
-    \item naudotojo atliekamą paslaugų autorizavimą. Naudotojas, kviesdamas išmanaus kontrakto funkciją, gali pasirinkti,
+    \item naudotojo atliekamą prieigų suteikimą. Naudotojas, kviesdamas išmanaus kontrakto funkciją, gali pasirinkti,
     ar suteikti konkrečiai paslaugai prieigą prie jos norimo atributo. Prieigos yra valdomos ne visos tapatybės, o
     atskirų atributų lygmenyje.
 
-    \item šifruotų atributų saugojimą. Išmaniuosiuose kontraktuose saugomi naudotojo tapatybės atributai. Jeigu paslaugą P
-    naudotojas N yra autorizavęs atributui A, tuomet kontrakte išsaugomas N ir P simetriškų šifro raktu (angl.
+    \item šifruotų atributų saugojimą. Išmaniuosiuose kontraktuose saugomi naudotojo tapatybės atributai. Jeigu naudotojas N
+    yra autorizavęs paslaugą P pasiekti atributą A, tuomet kontrakte išsaugomas N ir P simetriškų šifro raktu (angl.
     \textit{symmetric encryption key}) užšifruotas atributas A. Taip tik paslauga P
     ir naudotojas N galės perskaityti viešame išmaniajame kontrakte esantį atributą.
 
@@ -59,7 +58,7 @@ prašančioms paslaugoms jų norimus tapatybės atributus. Išmanieji kontraktai
     paslaugai atributą, praneša apie atmestą prieigą arba išsaugo užklausą, laukiančią naudotojo sprendimo.
 \end{itemize}
 
-\subsubsection{Atributų valdymo programa}
+\tocless{\subsubsection{Atributų valdymo programa}}
 
 Atributų valdymo programa yra skirta palengvinti naudotojo bendravimą su blokų grandine. Teoriškai, naudotojas galėtų pats formuoti užklausas
 bei sugeneruoti simetriško šifro raktą ir perduoti jį paslaugai, tačiau tai nėra patogu. Dėl šių priežasčių, ši atributų valdymo
@@ -76,7 +75,7 @@ Atributų valdymo programa saugo naudotojo privatų raktą, praneša apie naujas
 į blokų grandinę saugomus atributus su paslaugos viešuoju raktu. Taip pat, joje naudotojas
 matytų suteiktų prieigų apžvalgą ir betkada galėtų pakeisti konkrečių paslaugų pasiekiamus atributus.
 
-\subsubsection{Paslaugų registras} \label{BCIDM:serviceRegister}
+\tocless{\subsubsection{Paslaugų registras} \label{BCIDM:serviceRegister}}
 
 Šiame modelyje paslaugos yra identifikuojamos pagal jų blokų grandinės paskyros adresą. Atributų valdymo programa,
 skaitanti išmaniajame kontrakte laukiančias užklausas, jose mato išsaugotą besikreipusios paslaugos adresą.
@@ -90,14 +89,14 @@ paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą,
 transakcija yra pasirašyta kontrakto kvietėjo ir tik jis gali atlikti transakcijas iš jo paskyros). Tuomet, paslaugai viešai
 atskleidus savo adresą (pvz. pateikus savo tinklalapyje prieigos tašką (angl. \textit{endpoint}), kuris jį grąžina), būtų galima
 nesunkiai patikrinti, ar paslauga, besiskelbianti adresu X, iš tikrųjų yra užsiregistravusi \textit{paslaugų registre}. Tokiu būdu
-atributų valdymo programa galėtų kreiptis į \textit{paslaugų registro} išmanųjį kontraktą, patikrinti ar paslauga jame užsiregistravusi ir iš jo sužinoti paslaugos
+atributų valdymo programa galėtų kreiptis į \textit{paslaugų registro} išmanųjį kontraktą, patikrinti, ar paslauga jame užsiregistravusi ir iš jo sužinoti paslaugos
 pavadinimą. 
 
 \subsection{Pagrindiniai naudojimo atvejai}
 
-Šiame skyriuje UMl sekų diagramomis pateikiami pagrindiniai modelio panaudos atvejai (angl. \textit{use cases}).
+Šiame skyriuje UML sekų diagramomis pateikiami pagrindiniai modelio panaudos atvejai (angl. \textit{use cases}).
 
-\subsubsection{Naudotojo adreso suteikimas paslaugai}
+\tocless{\subsubsection{Naudotojo adreso suteikimas paslaugai}}
 
 Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo pateikti jo adresą (naudotojo patogumui, adresas rodomas
 atributų valdymo programoje),
@@ -112,11 +111,11 @@ papildomą žingsnį.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{img/userGivesAddress}
-    \caption{Naudotojas adreso suteikimas paslaugai}
+    \caption{Naudotojo adreso suteikimas paslaugai}
     \label{fig:userGivesAddress}
 \end{figure}
 
-\subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}
+\tocless{\subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}}
 
 Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą)\footnote{ Paslaugai kreipiantis į kontraktą, ji turi žinoti, koks yra norimo atributo identifikatorius, kurį reikia perduoti į kontrakto funkciją. 
 Atributų identifikatoriai gali būti pateikiami atskirame išmaniajame kontrakte arba kuriamo modelio interneto puslapyje.}
@@ -134,7 +133,7 @@ atributų valdymo programoje ir ten atlikti sprendimą.
     \label{fig:askForAttributeSequence}
 \end{figure}
 
-\subsubsection{Naudotojo atliekamas paslaugos autorizavimas}
+\tocless{\subsubsection{Naudotojo atliekamas paslaugos autorizavimas}}
 
 Atributų valdymo programa, stebinti išmaniuosiuose kontraktuose naujas paslaugų užklausas, praneša naudotojui apie dar
 neatliktus autorizavimus. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
@@ -161,7 +160,7 @@ jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieig
     \label{fig:givePermissions}
 \end{figure}
 
-\subsubsection{Atributų valdymo programos atliekamas blokų grandinės stebėjimas} \label{BCIDM:blockchainMonitoring}
+\tocless{\subsubsection{Atributų valdymo programos atliekamas blokų grandinės stebėjimas} \label{BCIDM:blockchainMonitoring}}
 
 Blokų grandinės išmanusis kontraktas negali tiesiogiai pranešti išorinei (ne išmaniajame kontrakte esančiai) programai
 apie įvykusius pasikeitimus. Todėl išmanusis kontraktas gali saugoti būseną, o ją vėliau pasiekia norinti taikomoji programa.

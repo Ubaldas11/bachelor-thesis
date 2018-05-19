@@ -76,7 +76,7 @@ Kadangi blokų grandinės sistema yra decentralizuota, nėra centrinės instituc
 yra validus (be transakcijų su falsifikuotais duomenimis). Todėl blokų grandinės tinkle taikoma konsensuso strategija,
 pagal kurią nusprendžiama, ar pridėti naują bloką į grandinę. Apžvelgiamos trys dažnai naudojamos strategijos: darbo, įtakos bei autoriteto įrodymo.
 
-\subsubsection{Darbo įrodymo (angl. \textit{proof of work})}
+\tocless{\subsubsection{Darbo įrodymo strategija}
 
 Darbo įrodymo konsensuso strategija remiasi principu, kad daug pastangų ir resursų į bloko validumo įrodymą įdėjęs tinklo
 dalyvis nebus linkęs sukčiauti. Šioje strategijoje tinklo dalyvis, norėdamas pridėti bloką į blokų grandinę, turi išspręsti laikui ir resursams
@@ -113,7 +113,7 @@ taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasima
 sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
 gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
-\subsubsection{Turto įrodymo (angl. \textit{proof of stake})}
+\tocless{\subsubsection{Turto įrodymo strategija}
 
 Turto įrodymo konsensuso strategija remiasi principu, kad daug blokų grandinės turto turintis kasėjas
 bus sąžiningas, nes išaiškinus jo nesąžiningumą jis rizikuoja prarasti savo turimą turtą \cite{Baars2016}. Šis algoritmas patiki sprendimą priimti
@@ -125,7 +125,7 @@ variantus: \enquote{Peercoin} papildomai vertina turto amžių, \enquote{Blackco
 taip pat sutaupo laiko ir blokai būna greičiau patvirtinami ir pridedami į grandinę. Tačiau, dėl praktiškai nulinių bloko \textit{kasimo} sąnaudų,
 galimos dažnesnės tinklo atakos \cite{Zheng2017}. 
 
-\subsubsection{Autoriteto įrodymo (angl. \textit{proof of authority})}
+\tocless{\subsubsection{Autoriteto įrodymo statregija}
 
 Autoriteto įrodymo strategija remiasi keletu tinklo dalyvių, kuriems suteikta teisė validuoti naujus blokus. Ši strategija nebėra tinkama visiškai
 decentralizuotai blokų grandinei, kurioje būtinas pilnas pasitikėjimo padalinimas \cite{ProofOfAuthority}. Tačiau ši strategija tinkama privačioms
@@ -177,7 +177,7 @@ Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant p
 Tai atveria įvairių galimybių finansų, daiktų interneto, reputacijos sistemų ar saugumo srityse \cite{Zheng2017}, tačiau ši technologija turi ir trūkumų,
 kurių galimą poveikį būtina įvertinti prieš taikant šią technologiją konkrečioje srityje. Pagrindinės grėsmės ir trūkumai aptariami šiame skyriuje.
 
-\subsubsection{Daugumos ataka}
+\tocless{\subsubsection{Daugumos ataka}}
 
 Viešose blokų grandinėse dauguma (>50\%) mazgų tinkle turi patvirtinti bloką, kad jis būtų priimtas į grandinę. Potencialus įsilaužėlis gali pateikti
 falsifikuotą blokų grandinės bloką (pvz. su netikromis transakcijomis), tačiau kol jis neturi daugumos skaičiavimo galios tinkle, šis blokas bus
@@ -186,7 +186,7 @@ turi daugumą skaičiavimo galios, jis gali dirbti su falsifikuota blokų grandi
 pereis visi dalyviai, taps jo sukurta grandinė su falsifikuotais blokai \cite{Zheng2017}. Ši ataka neištiko dviejų žinomiausių blokų grandinių Bitcoin bei Ethereum, tačiau
 buvo įvykdyta prieš Verge blokų grandinę \cite{Sedgwick2018}.
 
-\subsubsection{Plečiamumas}
+\tocless{\subsubsection{Plečiamumas}}
 
 Blokų grandinės plečiamumas matuojamas pagal du kriterijus: transakcijų pralaidumą ir saugojimo reikalavimus mazgams. Transakcijų pralaidumas, kuris priklauso nuo to,
 kaip greitai nauji blokai su transakcijomi yra pridedami į blokų grandinę, susijęs su taikoma konsensuso strategija.
@@ -206,7 +206,7 @@ siūlomi įvairūs sprendimai. Vienas variantas yra mazgams neturėti seniausių
 Kitas sprendimo būdas - pagrindinėje blokų grandinėje laikyti tik transakcijų maišos rezultatą, o pačius transakcijų duomenis
 iškelti už grandinės ribų (angl. \textit{off-chain}) \cite{Lo2017}.
 
-\subsubsection{Anonimiškumas}
+\tocless{\subsubsection{Anonimiškumas}}
 
 Manoma, kad blokų grandinės išsaugo naudotojų privatumą dėl to, kad transakcijose atskleidžiamas tik naudotojų
 viešas raktos vietoj tikrosios tapatybės \cite{Zheng2017}. Tačiau, tyrimai rodo, kad iš viešojo rakto galima
@@ -221,7 +221,7 @@ reikia turėti dešifravimo raktą. Jeigu tai netinkama išeitis, tuomet transak
 
 \subsection{Pritaikymas tapatybės valdyme} \label{blockchain:suitabilityForIDM}
 
-Blokų grandinės savybės atveria įdomių galimybių skaitmeninių tapatybių valdyme:
+Blokų grandinės savybės atveria įvairių galimybių skaitmeninių tapatybių valdyme:
 
 \begin{enumerate}
     \item Decentralizuota sistema eliminuoja vienintelio nesekmės taško situaciją. Pritaikius decentralizuotą blokų grandinę
