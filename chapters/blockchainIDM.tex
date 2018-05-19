@@ -61,7 +61,11 @@ Atributų saugyklos išmaniajame kontrakte yra saugomi šifruoti naudotojų atri
     į funkcijos kvietėją. Jei kreipiasi naudotojas, jam grąžinama šifruota atributo reikšmė. Jei kreipiasi paslauga, tikrinama,
     ar naudotojas yra patvirtinęs jos prieigą norimam atributui. Jei taip, grąžinama šifruota reikšmė. Jei ne, grąžinamas pranešimas,
     kad prieiga atmesta. Jeigu naudotojas šios paslaugos prieigos dar nesvarstęs, apie paslaugos P siekį gauti naudotojo N atributą A
-    pranešama naudotojui. Kai jis prieigą patvirtins arba atmes, paslauga galės pasiekti atributą A.
+    pranešama naudotojui. Kai jis prieigą patvirtins arba atmes, paslauga galės pasiekti atributą A;
+
+    \item atributų identifikatorių saugojimą. Kreipiantis į kontraktą norint pasiekti atributą, reikia nurodyti jo identifikatorių.
+    Šiame kontrakte yra saugomas visiems viešai prieinamas žodynas, iš kurio paslaugos gali sužinoti, koks numeris atitinka norimą
+    atributą.
 \end{itemize}
 
 \subsubsection{Atributų valdymo programa}
@@ -98,7 +102,7 @@ Tokiu būdu, atributų valdymo programoje matant tik paslaugos adresą dalyvis g
 
 Šiai problemai spręsti modelyje yra atskiras išmanusis kontraktas, kuris funkcionuoja kaip paslaugų registras. Kiekviena
 paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, joje nusiųsdama savo pavadinimą bei slaptą kodą,
-suteiktą naudotojo arba sugeneruotą atributų valdymo programos. Kai atributų saugyklos kontrakte bus išsaugota nauja paslaugos
+sugeneruotą atributų valdymo programos. Kai atributų saugyklos kontrakte bus išsaugota nauja paslaugos
 P užklausa pasiekti atributą, atributų valdymo programa pagal P viešą raktą gali kreiptis
 į šį registrą ir įsitikinti, ar P tikrai užsiregistravo (rasti iš P paskyros atliktą transakciją) ir iš kodo
 nuspręsti, ar tai tikrai yra paslauga, kuria asmuo naudojasi (taip užsiregistravę, bet kodo neturintys programišiai negali
@@ -114,13 +118,15 @@ modelio vertinimo \hypertarget{section:blockchainIDMevaluation}{skyriuje}.
 
 \subsubsection{Naudotojo adreso suteikimas paslaugai}
 
-Kai paslauga bei asmuo naudojasi aprašomu modeliu, paslauga paprašo naudotojo pateikti jo adresą (naudotojo patogumui, adresas rodomas
+Kai paslauga nori pasiekti naudotojo asmens duomenis, ji paprašo naudotojo pateikti jo paskyros adresą (naudotojo patogumui, adresas rodomas
 atributų valdymo programoje),
 kuris yra viešas naudotojo identifikatorius blokų grandinėje.
-Gavus šį adresą, paslauga iš atributų valdymo programos prašo šifro rakto, su kuriuo galės dešifruoti iš blokų grandinės gautus atributus.
-Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir prašyti norimų naudotojo atributų (žr.\hypertarget{fig:userGivesAddress}{~\ref{fig:userGivesAddress} pav.}).
+Su gautu adresu paslauga P gali kreiptis į blokų grandinę ir 
+prašyti norimų naudotojo atributų (žr.\hypertarget{fig:userGivesAddress}{~\ref{fig:userGivesAddress} pav.}).
+Gavusi šį adresą, paslauga kreipiasi į atributų valdymo programą gauti šifro raktą, kurio reikės norint
+dešifruoti iš blokų grandinės gautas atributų reikšmes.
 
-Modelis neapibrėžia, kada naudotojas N privalo pateikti adresą paslaugai P. Svarbu, kad paslauga P gautų šį adresą ir unikalų šifro raktą tarp N ir P,
+Modelis neapibrėžia, kada naudotojas N pateikia adresą paslaugai P. Svarbu, kad paslauga P gautų šį adresą ir unikalų šifro raktą tarp N ir P,
 nes be jų P negalės gauti ir perskaityti norimų tapatybės duomenų. Šis suteikimas galėtų būti atliekamas prisijungimo metu, įtraukiant
 papildomą žingsnį.
 
@@ -133,16 +139,15 @@ papildomą žingsnį.
 
 \subsubsection{Paslaugos atliekama atributo užklausa} \label{BCIDM:askForAttribute}
 
-Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą)\footnote{ Paslaugai kreipiantis į kontraktą, ji turi žinoti, koks yra norimo atributo identifikatorius, kurį reikia perduoti į kontrakto funkciją. 
-Atributų identifikatoriai gali būti pateikiami atskirame išmaniajame kontrakte arba kuriamo modelio interneto puslapyje.}
-, kreipiasi į blokų grandinės išmanųjį kontraktą (žr.\hypertarget{fig:askForAttributeSequence}{~\ref{fig:askForAttributeSequence} pav.}).
+Paslauga P, norinti gauti tam tikrą asmens atributą (pvz. gimimo datą),
+kreipiasi į atributų saugyklos išmanųjį kontraktą (žr.\hypertarget{fig:askForAttributeSequence}{~\ref{fig:askForAttributeSequence} pav.}).
 Kontraktas tuomet patikrina, ar ši paslauga turi prieigą prie pageidaujamo atributo. Jei turi, tuomet grąžina šį atributą. Jis
 užšifruotas paslaugos P turimu šifro raktu, tad paslauga gali jį dešifruoti ir perskaityti duomenis. Jei
 naudotojas atmetęs prieigą, apie tai pranešama paslaugai. Jei naudotojas dar nesvarstęs šios prieigos, išsaugoma laukianti
 (angl. \textit{pending}) paslaugos P atributo A užklausa ir laukiama naudotojo sprendimo. Naudotojas šią laukiančią užklausą galės pamatyti savo 
 atributų valdymo programoje ir ten atlikti sprendimą.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{img/askForAttributeSequence}
     \caption{Paslaugos atliekama atributo užklausa}

@@ -195,6 +195,15 @@ kviečiamos funkcijos išlaidas. Norint neversti kvietėjo apmokėti, kontrakto 
 pervesti jo išeikvotą eterį. Tolimesnėse \enquote{Ethereum} versijose svarstoma įdiegti funkcionalumą,
 kuris standartizuotų būdą, leisiantį kontraktams patiems apmokėti iškviestų funkcijų išlaidas \cite{ContractPays}.
 
+Bendravimui su vartotojui skirtomis klientinėmis programomis, komunikuojančiomis su blokų grandine (neretai vadinamoms \textit{dapp}), \enquote{Ethereum} platformoje dažniausiai naudojami
+įvykiai (angl. \textit{events}). Išmaniajame kontrakte galima apibrėžti įvykį ir jo grąžinamus duomenis. Į kontrakto funkcijas tuomet
+pridedamas kodas, kuris paskelbs įvykį su pasirinktais duomenimis. Visos klientinės programos,
+besiklausančios šio įvykio, bus informuotos ir gaus įvykyje perduotus duomenis. Taip klientinė programa gali reaguoti į išmaniajame
+kontrakte įvykusius pokyčius.\\
+Įvykiai \enquote{Ethereum} blokų grandinėje saugomi kaip registrai (angl. \textit{logs}), o paskelbti įvykius kainuoja gerokai mažiau kuro,
+nei keisti kontrakto būseną. Dėl šios priežasties įvykius galima naudoti kaip pigesnę alternatyvą duomenims blokų grandinėje saugoti. Tačiau, įvykiuose paskelbti
+duomenys nėra prieinami iš išmaniojo kontrakto kodo \cite{EthereumWhitePaper}.
+
 \subsection{Pavojai ir trūkumai} \label{blockchain:concerns}
 
 Blokų grandinės technologija sukuria sąlygas decentralizuotai, nesuteikiant pasitikėjimo vienam ar keliems dalyviams, laikyti nekeičiamus duomenis.
