@@ -4,9 +4,9 @@
 \BOOKMARK [2][-]{subsection.1.2}{Skaitmeninės tapatybės valdymo samprata}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.3}{Naudotojų poreikiai skaitmeninės tapatybės valdymo sistemoms}{section.1}% 5
 \BOOKMARK [2][-]{subsection.1.4}{Skaitmeninės tapatybės valdymo modeliai}{section.1}% 6
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Izoliuotas tapatybių valdymas}{subsection.1.4}% 7
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Izoliuotas tapatybės valdymas}{subsection.1.4}% 7
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Centralizuotas tapatybių valdymas}{subsection.1.4}% 8
-\BOOKMARK [3][-]{subsubsection.1.4.3}{Jungtinis tapatybių valdymas}{subsection.1.4}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Jungtinis tapatybės valdymas}{subsection.1.4}% 9
 \BOOKMARK [3][-]{subsubsection.1.4.4}{Skaitmeninės tapatybės valdymo modelių palyginimas}{subsection.1.4}% 10
 \BOOKMARK [2][-]{subsection.1.5}{Naudotojų problemų tapatybės valdyme apibendrinimas}{section.1}% 11
 \BOOKMARK [1][-]{section.2}{Blokų grandinės technologija}{}% 12
@@ -23,7 +23,7 @@
 \BOOKMARK [3][-]{subsubsection.2.6.1}{Daugumos\040ataka}{subsection.2.6}% 23
 \BOOKMARK [3][-]{subsubsection.2.6.2}{Plečiamumas}{subsection.2.6}% 24
 \BOOKMARK [3][-]{subsubsection.2.6.3}{Anonimiškumas}{subsection.2.6}% 25
-\BOOKMARK [1][-]{section.3}{Blokų grandinės panaudojimas skaitmeninės tapatybės valdyme}{}% 26
+\BOOKMARK [1][-]{section.3}{Blokų grandinės naudojimas skaitmeninės tapatybės valdyme}{}% 26
 \BOOKMARK [2][-]{subsection.3.1}{Blokų grandinės tinkamumas identiteto valdymui}{section.3}% 27
 \BOOKMARK [2][-]{subsection.3.2}{Blokų grandinės projektai tapatybės valdymo srityje}{section.3}% 28
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Blockstack}{subsection.3.2}% 29
@@ -55,10 +55,9 @@
 \BOOKMARK [3][-]{subsubsection.6.2.2}{Nepatikimos atributų reikšmės}{subsection.6.2}% 55
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Kaina}{subsection.6.2}% 56
 \BOOKMARK [2][-]{subsection.6.3}{Pritaikymo\040barjerai}{section.6}% 57
-\BOOKMARK [1][-]{section*.28}{Rezultatai ir išvados}{}% 58
-\BOOKMARK [1][-]{section*.29}{Literatūra}{}% 59
-\BOOKMARK [1][-]{section*.30}{Sąvokų apibrėžimai}{}% 60
-\BOOKMARK [1][-]{section*.30}{Priedai}{}% 61
-\BOOKMARK [2][-]{appendix.A}{1 priedas. OAuth prašymas naudotojui autorizuoti paslaugą}{section*.30}% 62
-\BOOKMARK [2][-]{appendix.B}{2 priedas. Atributų saugojimo ir autorizavimo kontraktas}{section*.30}% 63
-\BOOKMARK [2][-]{appendix.C}{3 priedas. Paslaugų registro kontraktas}{section*.30}% 64
+\BOOKMARK [1][-]{section*.19}{Rezultatai ir išvados}{}% 58
+\BOOKMARK [1][-]{section*.20}{Literatūra}{}% 59
+\BOOKMARK [1][-]{section*.21}{Sąvokų apibrėžimai}{}% 60
+\BOOKMARK [1][-]{section*.21}{Priedai}{}% 61
+\BOOKMARK [2][-]{appendix.A}{1 priedas. Atributų saugojimo ir autorizavimo kontraktas}{section*.21}% 62
+\BOOKMARK [2][-]{appendix.B}{2 priedas. Paslaugų registro kontraktas}{section*.21}% 63
