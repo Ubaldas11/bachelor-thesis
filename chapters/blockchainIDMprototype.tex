@@ -2,7 +2,7 @@
 
 Tapatybės atributų valdymo modelis sudarytas iš 3 dalių: atributų saugyklos kontrakto, paslaugų registro kontrakto bei
 atributų valdymo programos (žr. \hypertarget{BCIDM:blockchainFunctions}{\ref{BCIDM:blockchainFunctions}} sk.).
-Siekiant patvirtinti galimą modelio veikimą, \enquote{Solidity} programavimo kalba \enquote{Ethereum} blokų grandinei
+Siekiant patvirtinti galimą modelio veikimą ir įvertinti jo kainą, \enquote{Solidity} programavimo kalba \enquote{Ethereum} blokų grandinei
 realizuoti atributų saugyklos bei paslaugų registrų kontraktai. 
 
 \subsection{Pasirinktos technologijos}
@@ -24,9 +24,9 @@ taikant \enquote{ganache-cli} lokalią blokų grandinę testavimui. Kontraktų f
 \enquote{React} puslapio. Kodas pasiekiamas \enquote{GitHub} repozitorijoje
 \url{https://github.com/Ubaldas11/blockchain-attribute-management}.
 
-\subsection{Atributų saugyklos kontraktas}
+\subsection{Išmanieji kontraktai}
 
-Kontraktas skirtas naudotojų atributų saugojimui bei prieigų suteikimui realizuoti. Kontraktas sudarytas iš kontrakto saugyklos,
+\textbf{Atributų saugyklos kontraktas} skirtas naudotojų atributų saugojimui bei prieigų suteikimui realizuoti. Kontraktas sudarytas iš kontrakto saugyklos,
 kurioje saugomos koduotos atributų reikšmės ir jų prieigos, įvykių bei funkcijų.
 Kontrakto kodas pateikiamas priede \hypertarget{appendix:attributeSmartContract}{\ref{appendix:attributeSmartContract}}.
 
@@ -58,11 +58,9 @@ Kontrakte apibrėžtos šios viešos funkcijos:
 
 Kadangi įvykių paskelbimas yra pigesnis nei kontrakto būsenos keitimas, tai išnaudota paskelbiant apie naują prieigos užklausą (vietoj alternatyvos pakeisti
 kontrakto būseną ir nurodyti, kad paslauga kreipėsi). Jei paslauga arba atributų valdymo programa realiu laiku \enquote{neišgirdo} įvykio, ji vėliau gali
-pasiekti visą įvykių sąrašą (angl. \textit{log)}.
+pasiekti visą įvykių sąrašą (angl. \textit{log)}.\\
 
-\subsection{Paslaugų registro kontraktas}
-
-Kontraktas skirtas užsiregistravusių paslaugų sąrašui saugoti. Paslaugų siųstuose įrašuose laikomas
+\textbf{Paslaugų registro kontraktas} skirtas užsiregistravusių paslaugų sąrašui saugoti. Paslaugų siųstuose įrašuose laikomas
 registracijos kodas bei paslaugos pavadinimas.
 Kontrakto kodas pateikiamas priede\hypertarget{appendix:serviceRegisterContract}{~\ref{appendix:serviceRegisterContract}}.
 
@@ -77,3 +75,11 @@ Kontraktą sudaro dvi funkcijos:
     (žr.\hypertarget{BCIDM:serviceRegister}{~\ref{BCIDM:serviceRegister} skyrelį}). Jei kodas nesutampa, atributo prieigos užklausą galima ignoruoti. Jei kodas sutampa,
     gautą pavadinimą galima rodyti atributų valdymo programoje ir pranešti apie prieigos užklausą naudotojui.
 \end{enumerate}
+
+Suprogramuotų kontraktų kainos pateikiamos \hypertarget{tab:contractPrices}{\ref{tab:contractPrices}} lentelėje. Kadangi eterio kriptovaliutos kaina
+nuolat keičiasi, verta atsižvelgti, kad kainos gali kisti - čia pateikiamos kainos, matuotos 2018 gegužės 20-ą dieną. Kainos nustatytos
+pasitelkus \enquote{Truffle} karkaso pateikiamą \textit{estimateGas} funkciją bei \url{https://ethgasstation.info/} skaičiuoklę.
+Į visas eilutės tipo reikšmes paduotos 20 simbolių eilutės (priklausomai nuo kontrakte saugomų duomenų kiekio, kaina gali kisti), išskyrus
+į \textit{removeAccess} funkciją, kur įrašomas \enquote{X}, pažymint panaikintą prieigą.
+
+\input{tables/contractPrices}

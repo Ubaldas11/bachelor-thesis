@@ -94,20 +94,13 @@ nes radimas būna paremtas duomenų perrinkimu (angl. \textit{brute force}). Dė
 
 Kadangi blokų grandinės tinklas yra decentralizuotas, įmanoma situacija, kad labai panašiu metu į grandinę skirtingų mazgų pridėti du validūs blokai.
 Taip dalis tinklo dalyvių gaus vieną mazgą, o dalis - kitą, o abu jie bus susieti su tuo pačiu prieš tai buvusiu bloku.
-Tokiu atveju, taikoma ilgiausios grandinės taisyklė (žr.\hypertarget{fig:blockchainLongestRule}{~\ref{fig:blockchainLongestRule}} pav.). Mazgai dirba prie pirmiau gauto bloko,
+Tokiu atveju, taikoma ilgiausios grandinės taisyklė. Mazgai dirba prie pirmiau gauto bloko,
 tačiau išsaugo kitą gautą bloką kaip šaką. Po to, kai bus gautas dar vienas blokas, jis bus susietas tik su viena iš šakų - taip ši šaka taps ilgesnė. Tuomet
 ilgesnė šaka paskelbiama aktyviąja grandine, visi su trumpesniąja šaka dirbę mazgai turi pereiti prie aktyviosios grandinės, o atmesto bloko (vadinamo \textit{bloku-našlaičiu}) transakcijos
 grąžinamos į bendrą transakcijų sankaupą (angl. \textit{transaction pool}) \cite{SatoshiNakamoto}.
 Realiuose blokų grandinės taikymuose, dažnai laukiama keleto iš eilės einančių naujų blokų, kol \textit{blokas-našlaitis}
 yra atmetamas. Pavyzdžiui,
 \enquote{Bitcoin} blokų grandinėje tik sulaukus apytiksliai 6 blokų iš eilės \textit{blokas-našlaitis} gali būti atmestas\cite{Zheng2017}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.6]{img/blockchainLongestRule}
-    \caption{Ilgiausios grandinės taisyklės taikymas}
-    \label{fig:blockchainLongestRule}
-\end{figure}
 
 Pagrindinis šios konsensuso strategijos privalumas yra tas, kad dideli kasimo kaštai gali atgrasyti programišius nuo potencialių atakų. Tačiau,
 taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas \enquote{Bitcoin} ir \enquote{Ethereum} blokų grandinėms kartu sudėjus per dieną

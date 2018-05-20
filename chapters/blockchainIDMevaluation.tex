@@ -71,17 +71,30 @@ nagrinėjamas \cite{Baars2016} tyrime.
 
 \subsubsection{Kaina}
 
-Blokų grandinės išmaniųjų kontraktų funkcijų kvietimai kainuoja pinigus. Įprastu atveju, funkcijos vykdymą apmoka
-funkcijos kvietėjas.
-Aprašytame modelyje kvietimus į blokų grandinę vykdo tiek paslaugų tiekėjas, tiek atributų valdymo programa. Kai naudotojas dėl didesnės kontrolės
-gali sutikti mokėti už atributų valdymo programos naudojimą, nėra aišku, ar paslaugų tiekėjai būtų pasiryžę mokėti už funkcijų kvietimus.
+Blokų grandinės išmaniųjų kontraktų funkcijų kvietimai kainuoja pinigus. Pagal nutylėjimą, už funkcijos kvietimą sumoką kvietėjas.
+Naudojant \hypertarget{tab:contractPrices}{\ref{tab:contractPrices}} lentelėje pateiktas kainas, galima įvertinti
+preliminarią modelio naudojimo kainą \enquote{Ethereum} blokų grandinėje.
+Vienkartinis kontraktų sukūrimo mokestis: 5,76€ (3,72 + 2,04). Daromos modelio naudojimo prielaidos:
 
-Vienas iš galimų sprendimų - kviečiant funkciją paslaugai, ją apmokėtų ne paslaugos tiekėjas, o pats kontraktas. Taip
-kontraktas būtų apmokamas iš naudotojo lėšų, o jos naudojamos paslaugai kviečiant kontrakto funkcijas.
+\begin{itemize}
+    \item naudotojas per mėnesį pradeda naudotis 3-imis naujomis paslaugomis,
+    \item naudotojas per mėnesį atmeta 5-ias paslaugų atributų užklausas,
+    \item naudotojas per mėnesį pakeičia 3-is paslaugų prieigas,
+    \item naudotojas per mėnesį pakeičia 1-o atributo reikšmę,
+    \item paslaugai vidutiniškai reikia 5-ių atributų reikšmių,
+    \item paslauga per mėnesį įgauna 500 naujų naudotojų.
+\end{itemize}
+
+Tuomet mėnesinė kaina naudotojui: 6,5€ (3*5*0,25 + 5*0,25 + 5*0,25 + 1*0,25). Mėnesinė kaina paslaugai: 300€ (500*5*0,12).
+Kai naudotojas gali būti linkęs mokėti mėnesinį mokestį už didesnę tapatybės atributų kontrolę ir decentralizuotus asmens duomenis,
+išlieka klausimas, ar paslaugos tiekėjas sutiks mokėti naudojimosi kainą už jo naudotojams suteiktą didesnę kontrolę bei pašalintą poreikį
+pačiam saugoti atributus.
+
+Vienas iš galimų sprendimų - kviečiant funkciją paslaugai, ją apmokėtų ne paslaugos tiekėjas, o pats išmanusis kontraktas. Kontrakto lėšas
+galima būtų pildyti iš mėnesinio naudotojų mokesčio.
 Tačiau, tokį mechanizmą turi palaikyti pasirinkta blokų grandinė, taikant jį reiktų apsisaugoti ir nuo
-galimų pavojingų pakartotinių kvietimų, kurie būtų skirti tik išeikvoti kontrakto lėšas.
-
-\textcolor{red}{kai prototipą pakodinsiu, pažiūrėsiu kiek kainuoja kuro funkcijos, jas gal reiks įmest}
+galimų pavojingų pakartotinių kvietimų, kurie būtų skirti tik išeikvoti kontrakto lėšas. Kitas galimas būdas - mažinti saugomų duomenų kiekį
+pačioje blokų grandinėje (taip išmaniųjų kontraktų išlaikymo kainos taptų mažesnės) iškeliant atributų reikšmes į šalutinę grandinę (angl. \textit{off-chain}).
 
 \subsection{Pritaikymo barjerai}
 
