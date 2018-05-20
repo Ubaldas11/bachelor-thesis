@@ -1,37 +1,34 @@
 \sectionnonum{Rezultatai ir išvados}
 
-\textbf{Darbo rezultatai:}
+\subsection*{Rezultatai}
 
 \begin{enumerate}
-    \item Apžvelgti pagrindiniai skaitmeninės tapatybės valdymo būdai internete.
-    \item Įvardytos esminės naudotojams kylančios problemos tapatybės valdyme: nepakankama asmens duomenų
-    kontrolė, mažėjantis pasitikėjimas paslaugų duomenų valdymu ir didelė priklausomybė nuo tapatybės tiekėjų.
-    \item Pristatyta blokų grandinės technologija. Nustatyta, kad galimybė kurti
-    decentralizuotus, veikimą atskleidžiančius išmaniuosius kontraktus blokų grandinėje suteikia pagrindo
-    naudoti blokų grandines ir išmaniuosius kontraktus skaitmeninės tapatybės valdymo srityje. 
-    \item Remiantis į naudotoją orientuotos tapatybės (angl. \textit{user-centric identity}) principais,
+    \item Įvardyti naudotojų poreikiai skaitmeninės tapatybės valdymui internete ir apžvelgti
+    pagrindiniai naudojami identiteto valdymo modeliai.
+    \item Apibendrintos esminės naudotojams kylančios problemos tapatybės valdyme: nepakankama asmens duomenų
+    kontrolė, mažėjantis pasitikėjimas paslaugų gebėjimu saugiai valdyti asmens duomenis, didelė priklausomybė nuo tapatybės tiekėjų.
+    \item Pristatyta blokų grandinės technologija ir ją naudojantys skaitmeninės tapatybės projektai.
+    Nustatyta, kad galimybė
+    decentralizuotai saugoti asmens duomenis bei aprašyti duomenų suteikimo taisykles viešuose, nekintančiuose
+    ir veikimą atskleidžiančiuose išmaniuosiusiuose
+    kontraktuose suteikia pagrindo
+    naudoti šią technologiją skaitmeninės tapatybės valdymo srityje. 
+    \item Remiantis į naudotoją orientuotos tapatybės principais,
     parengti reikalavimai skaitmeninės tapatybės atributų valdymo modeliui, akcentuojantys įvardytas naudotojų problemas.
-    \item Paruoštas blokų grandine paremtas tapatybės atributų valdymo modelis, įgyvendinantis iškeltus reikalavimus
-    ir suteikiantis asmeniui galimybę kontroliuoti savo asmens duomenis
-    bei autorizuoti paslaugų prieigą prie jų. Modelis įvertintas išskiriant jo
-    privalumus, trūkumus bei galimus pritaikymo barjerus.
+    \item Pagal iškeltus reikalavimus paruoštas blokų grandine paremtas tapatybės atributų valdymo modelis, suteikiantis asmeniui galimybę kontroliuoti savo asmens duomenis
+    bei autorizuoti paslaugų prieigą prie jų.
     \item Sukurtas pristatyto modelio prototipas. \enquote{Solidity} programavimo kalba realizuoti \enquote{Ethereum} blokų grandinei pritaikyti
-    išmanieji kontraktai, įgyvendinantys paslaugų autorizavimo ir atributų saugojimo logiką. Paruošti mobiliosios programėlės, skirtos
-    naudotojui palengvinti sąveiką su blokų grandine, maketai.
+    tapatybės saugyklos bei paslaugų registro kontraktai. Paruošti atributų valdymo mobiliosios programėlės maketai.
+    \item Įvertintas pristatytas atributų valdymo modelis. Įvardyti jo privalumai, trūkumai,
+    galima eksploatavimo kaina bei pritaikymo barjerai.
 \end{enumerate}
 
-\textbf{Darbo išvados:}
+\subsection*{Išvados}
 
-Skaitmeninės tapatybės valdymas yra sritis, kurioje naudotojai neturi pakankamai kontrolės.
-Dideli kiekiai asmens duomenų yra perduodami tarp programų neinformuojant naudotojų
-ar nutekinami dėl programišių įsilaužimų. Skaitmeninio identiteto centralizavimas tapatybės tiekėjų sistemose
-sukuria situaciją, kurioje naudotojas tampa visiškai priklausomas nuo tapatybės tiekėjo bei yra priverstas
-pasitikėti juo.
-
-Blokų grandinės technologija gali padėti išspręsti susidariusias problemas. Decentralizuotai saugant asmens duomenis,
+Blokų grandinės technologija gali būti pritaikyta skaitmeninės tapatybės valdyme. Decentralizuotai saugant asmens duomenis,
 panaikinama priklausomybė nuo tapatybės tiekėjo. Viešuose, visiems prieinamuose
 išmaniuosiuose kontraktuose aprašius paslaugų autorizavimo logiką, naudotojas gali įsitikinti,
-kad jis geba kontroliuoti paslaugų turimas prieigas prie jo asmens duomenų. Dėl kontrakto kodo
+kad jis geba kontroliuoti paslaugų turimas prieigas prie jo asmens duomenų. Dėl blokų grandinės įrašų ir išmaniųjų kontraktų kodo
 nekintamumo, asmuo gali būti tikras, kad laikui bėgant sąlygos nepasikeis ir naudotojo priimti
 autorizavimo sprendimai išliks.
 
