@@ -44,7 +44,8 @@ bei atributų valdymo programos.
 
 \subsubsection{Atributų saugyklos išmanusis kontraktas} \label{BCIDM:blockchainFunctions}
 
-Atributų saugyklos išmaniajame kontrakte yra saugomi šifruoti naudotojų atributai bei jų suteikimo logika. Šis kontraktas atsakingas už:
+Atributų saugyklos išmaniajame kontrakte yra saugomi šifruoti naudotojų atributai
+bei jų suteikimo logika. Šis kontraktas atsakingas už:
 
 \begin{itemize}
     \item naudotojo atliekamą prieigų suteikimą. Naudotojas, kviesdamas kontrakto funkciją, gali pasirinkti,
@@ -61,12 +62,14 @@ Atributų saugyklos išmaniajame kontrakte yra saugomi šifruoti naudotojų atri
     į funkcijos kvietėją. Jei kreipiasi naudotojas, jam grąžinama šifruota atributo reikšmė. Jei kreipiasi paslauga, tikrinama,
     ar naudotojas yra patvirtinęs jos prieigą norimam atributui. Jei taip, grąžinama šifruota reikšmė. Jei ne, grąžinamas pranešimas,
     kad prieiga atmesta. Jeigu naudotojas šios paslaugos prieigos dar nesvarstęs, apie paslaugos P siekį gauti naudotojo N atributą A
-    pranešama naudotojui. Kai jis prieigą patvirtins arba atmes, paslauga galės pasiekti atributą A;
-
-    \item atributų identifikatorių saugojimą. Kreipiantis į kontraktą norint pasiekti atributą, reikia nurodyti jo identifikatorių.
-    Šiame kontrakte yra saugomas visiems viešai prieinamas žodynas, iš kurio paslaugos gali sužinoti, koks numeris atitinka norimą
-    atributą.
+    pranešama naudotojui. Kai jis prieigą patvirtins arba atmes, paslauga galės pasiekti atributą A.
 \end{itemize}
+
+Atributai kontrakte atskiriami
+pagal jų identifikatorius (pvz. 1 - vardas, 2 - telefono numeris ir t.t.).
+Siekiant minimizuoti blokų grandinėje laikomą informaciją, atributų identifikatorių
+žodynas nesaugomas pačiame kontrakte. Svarbu, kad šis žodynas būtų viešai prieinamas visoms paslaugoms - jis
+galėtų būti pateikiamas modelio dokumentacijoje.
 
 \subsubsection{Atributų valdymo programa}
 

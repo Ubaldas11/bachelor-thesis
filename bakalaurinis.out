@@ -41,20 +41,20 @@
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Atributo užklausa}{subsection.4.3}% 41
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Paslaugos\040autorizavimas}{subsection.4.3}% 42
 \BOOKMARK [3][-]{subsubsection.4.3.4}{Pranešimas naudotojui apie naują atributo užklausą}{subsection.4.3}% 43
-\BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio vertinimas}{}% 44
-\BOOKMARK [2][-]{subsection.5.1}{Privalumai}{section.5}% 45
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Naudotojui suteikta atributų valdymo kontrolė}{subsection.5.1}% 46
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Decentralizuoti tapatybės atributai}{subsection.5.1}% 47
-\BOOKMARK [3][-]{subsubsection.5.1.3}{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}{subsection.5.1}% 48
-\BOOKMARK [2][-]{subsection.5.2}{Trūkumai}{section.5}% 49
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Pakeist į paslaugų registro alternatyvas}{subsection.5.2}% 50
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Nepatikimos atributų reikšmės}{subsection.5.2}% 51
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Kaina}{subsection.5.2}% 52
-\BOOKMARK [2][-]{subsection.5.3}{Pritaikymo\040barjerai}{section.5}% 53
-\BOOKMARK [1][-]{section.6}{Tapatybės atributų valdymo modelio prototipas}{}% 54
-\BOOKMARK [2][-]{subsection.6.1}{Pasirinktos\040technologijos}{section.6}% 55
-\BOOKMARK [2][-]{subsection.6.2}{Atributų saugyklos kontraktas}{section.6}% 56
-\BOOKMARK [2][-]{subsection.6.3}{Paslaugų registro kontraktas}{section.6}% 57
+\BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio prototipas}{}% 44
+\BOOKMARK [2][-]{subsection.5.1}{Pasirinktos\040technologijos}{section.5}% 45
+\BOOKMARK [2][-]{subsection.5.2}{Atributų saugyklos kontraktas}{section.5}% 46
+\BOOKMARK [2][-]{subsection.5.3}{Paslaugų registro kontraktas}{section.5}% 47
+\BOOKMARK [1][-]{section.6}{Tapatybės atributų valdymo modelio vertinimas}{}% 48
+\BOOKMARK [2][-]{subsection.6.1}{Privalumai}{section.6}% 49
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Naudotojui suteikta atributų valdymo kontrolė}{subsection.6.1}% 50
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Decentralizuoti\040asmens\040duomenys}{subsection.6.1}% 51
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}{subsection.6.1}% 52
+\BOOKMARK [2][-]{subsection.6.2}{Trūkumai}{section.6}% 53
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Paslaugų autentiškumo tikrinimas}{subsection.6.2}% 54
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Nepatikimos atributų reikšmės}{subsection.6.2}% 55
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Kaina}{subsection.6.2}% 56
+\BOOKMARK [2][-]{subsection.6.3}{Pritaikymo\040barjerai}{section.6}% 57
 \BOOKMARK [1][-]{section*.28}{Rezultatai ir išvados}{}% 58
 \BOOKMARK [1][-]{section*.29}{Literatūra}{}% 59
 \BOOKMARK [1][-]{section*.30}{Sąvokų apibrėžimai}{}% 60

@@ -14,11 +14,12 @@ atributo reikšmę, jis tai padaro atributų valdymo programoje, o ši kreipiasi
 galėtų atrodyti tokia atributų valdymo programa pateikiama priede\hypertarget{appendix:attributeManagementApp}{~\ref{appendix:attributeManagementApp}}.\\
 Išvardytos funkcijos padengia\hypertarget{BCIDM:requirements}{~\ref{BCIDM:requirements}} skyrelio 1, 2 ir 3 reikalavimus.
 
-\subsubsection{Decentralizuoti tapatybės atributai}
+\subsubsection{Decentralizuoti asmens duomenys}
 
-Tapatybės atributus saugant blokų grandinėje, atributai tampa pasiekiami nepriklausomai nuo vienos trečiosios šalies pasiekiamumo.
+Tapatybės duomenis saugant blokų grandinėje, atributai tampa pasiekiami nepriklausomai nuo vienos trečiosios šalies pasiekiamumo.
 Taip tiek paslaugų tiekėjai, tiek naudotojas gali betkada pamatyti suteiktus atributus tol, kol bent vienas blokų grandinės mazgas
-yra pasiekiamas.
+yra pasiekiamas. Taip pat, nors duomenys decentralizuoti, dėl jų šifravimo jie išlieka prieinami tik naudotojui ir jo pasirinktoms
+paslaugoms.
 Šis privalumas įgyvendina\hypertarget{BCIDM:requirements}{~\ref{BCIDM:requirements}} skyrelio 4-ą reikalavimą.
 
 \subsubsection{Sumažintas reikalingas pasitikėjimas trečiosiomis šalimis}
@@ -27,22 +28,33 @@ Kadangi tapatybės atributai yra saugomi viešoje, decentralizuotoje blokų gran
 logika prieinama visiems, naudotojams nebereikia pasitikėti vien tik paslaugų bei tapatybės tiekėjais - jų
 atributai šiuo atveju priklauso nuo korektiško išmaniųjų kontraktų veikimo.
 
-Verta pastebėti, kad pristatytame modelyje naudotojui vis dar reikia pasitikėti atributų valdymo programa. Šiam pasitikėjimui
-padidinti ši programa turėtų būti atviro kodo, kuris viešai prienamas. Taip pat, paslaugų tiekėjai parsisiuntę atributą
+Verta pastebėti, kad
+pristatytame modelyje naudotojui vis dar reikia pasitikėti atributų valdymo programos veikimu. Tačiau, ši programa pati
+asmens duomenų nesaugo (tik persiunčia įvestas ir grąžina blokų grandinėje esančias reikšmes). Pasitikėjimui
+padidinti ši programa taip pat turėtų būti viešai prieinamo atviro kodo.
+
+Taip pat, paslaugų tiekėjai, parsisiuntę atributą
 iš blokų grandinės, vis dar gali jį išsisaugoti. Tačiau, galimybė paslaugai pačiai nesaugoti naudotojo duomenų turėtų būti pagrindinė paskata
 naudotis šiuo modeliu - taip naudotojai labiau pasitikės šia paslauga. Galimas išsisaugojimo pavojus pastebimas ir
 \cite{MITPaper} tyrime, kurio autoriai aptaria ir galimybę neleisti paslaugai pasiekti pačio duomens, o atlikti
-reikalingus skaičiavimus pačiame tinkle.
+reikalingus skaičiavimus pačiame blokų grandinės tinkle.
 
 \subsection{Trūkumai}
 
-\subsubsection{\textcolor{red}{Pakeist į paslaugų registro alternatyvas}}
+\subsubsection{Paslaugų autentiškumo tikrinimas}
 
-Norint naudotis aprašytu modeliu, asmuo turi į atributų valdymo programą įvesti norimų atributų reikšmes. Taip daroma todėl,
-kad naudotojui nereiktų vesti atributo kiekvieną kartą, kai nori autorizuoti tam tikrą paslaugą. Tačiau, tokiu būdu,
-naudotojas suteikia savo duomenis dar vienai paslaugai - pačiai atributų valdymo programai. Tai suteikia patogumo (nereik
-daugybę kartų vesti atributo), tačiau naudotojui reikia pasitikėti atributų valdymo programa. Norint to išvengti,
-galima būtų naudotojo prašyti įvesti atributą kiekvieną kartą, kai paslauga prašo autorizuoti prieigą prie pasirinkto atributo.
+Modelyje aprašytas paslaugų registras padeda apsisaugoti nuo programišių, galinčių apsimesti paslaugomis. Šio registro veikimas
+nėra itin patogus, nes kiekviena paslauga turi gauti sugeneruotą kodą iš atributų valdymo programos ir įrašyti jį į atskirą išmanųjį kontraktą.
+Tai reikalauja daugiau integracijų (tarp paslaugos, atributų valdymo programos ir papildomo išmaniojo kontrakto)
+bei papildomo naudotojo pasitikėjimo atributų valdymo programa: jai patikėta generuoti kodą bei atlikti paslaugos registracijos
+tikrinimą.
+
+Galimos kelios alternatyvos paslaugų identifikavimui užtikrinti. Galima būtų naudotis jau egzistuojančiais identiteto
+registravimo projektais, kuriuose paslaugos užregistruotų savo tapatybę (pvz. \enquote{NameCoin} ar \hypertarget{section:relatedWork}{\ref{section:relatedWork}}
+skyrelyje minimu \enquote{Blockstack}). Kitas būdas, aptariamas \cite{Baars2016} tyrime, būtų turėti registrą, kuriame paslaugų autentiškumą
+patvirtintų patikima trečioji šalis (pvz. bankas ar valdžios įstaiga). Tokiu atveju, paslaugos turėtų autentifikuotis šios institucijos
+sistemoje, o ji įrašytų į paslaugų registrą apie sėkmingą paslaugos registraciją. Tokiu atveju pasitikėjimas būtų perkeliamas
+pasirinktoms institucijoms.
 
 \subsubsection{Nepatikimos atributų reikšmės}
 
@@ -61,8 +73,8 @@ nagrinėjamas \cite{Baars2016} tyrime.
 
 Blokų grandinės išmaniųjų kontraktų funkcijų kvietimai kainuoja pinigus. Įprastu atveju, funkcijos vykdymą apmoka
 funkcijos kvietėjas.
-Aprašytame modelyje kvietimus į blokų grandinę vykdo tiek paslaugų tiekėjas, tiek atributų valdymo programa. Kai atributų valdymo
-programa gali būti mokama naudotojui, nėra aišku, ar paslaugų tiekėjai būtų pasiryžę mokėti už funkcijų kvietimus.
+Aprašytame modelyje kvietimus į blokų grandinę vykdo tiek paslaugų tiekėjas, tiek atributų valdymo programa. Kai naudotojas dėl didesnės kontrolės
+gali sutikti mokėti už atributų valdymo programos naudojimą, nėra aišku, ar paslaugų tiekėjai būtų pasiryžę mokėti už funkcijų kvietimus.
 
 Vienas iš galimų sprendimų - kviečiant funkciją paslaugai, ją apmokėtų ne paslaugos tiekėjas, o pats kontraktas. Taip
 kontraktas būtų apmokamas iš naudotojo lėšų, o jos naudojamos paslaugai kviečiant kontrakto funkcijas.
@@ -77,15 +89,16 @@ Pagrindiniai sunkumai, kurie kiltų tokį modelį taikant praktikoje, yra galima
 technologijos branda.
 
 Paslaugų tiekėjams, norint pradėti naudoti šį modelį savo paslaugose, reikia susikurti blokų grandinės paskyrą bei suintegruoti
-savo sistemą su blokų grandine. Tai gali būti palengvinta sukuriant viešai prieinamą programinę įrangą, paruoštą naudoti paslaugų
+savo sistemas su blokų grandinės išmaniaisiais kontraktais bei atributų valdymo programa.
+Tai gali būti palengvinta sukuriant viešai prieinamą programinę įrangą, paruoštą naudoti paslaugų
 tiekėjams, tačiau paslaugų kūrėjai vis tiek turi nuspręsti naudoti šį modelį. Pagrindinė paskata jiems yra didesnis naudotojų pasitikėjimas
 suteikiant jiems galimybę kontroliuoti savo duomenis bei pagerintas asmens duomenų pasiekiamumas juos iškėlus į decentralizuotą blokų grandinę.
 
-Blokų grandinė yra vis dar gana nauja technologija. Viešos blokų grandinės yra pažeidžiamos daugumos atakų, nemažai skeptikų
-teigia, kad pagrindinis technologijos panaudojimas išliks tik kriptovaliutoms, jų plečiamumas (angl. \textit{scalability}) aktyviai
+Blokų grandinė yra vis dar gana nauja technologija. Vieša blokų grandinė gali būti pažeista daugumos atakos, nemažai skeptikų
+teigia, kad pagrindinis technologijos panaudojimas išliks tik kriptovaliutoms, technologijos plečiamumas (angl. \textit{scalability}) aktyviai
 tiriamas. Taip pat, 2016-aisiais metais išmaniojo kontrakto \enquote{The DAO} trūkumą išnaudojusi ataka privertė \enquote{Ethereum} 
 blokų grandinę atlikti išsišakojimą (angl. \textit{hard fork}), kuris pakeitė transakcijų istoriją ir grąžino įsilaužėlio
-pavogtą kriptovaliutą jos savininkams \cite{TheDAO}.\\
+pavogtą kriptovaliutą jos savininkams \cite{TheDAO}. Tai rodo, kad ypatingomis sąlygomis blokų grandinės nekintamumas gali būti pažeistas\\
 Nepaisant išvardytų priežasčių, technologijos populiarumas neblėsta. Blokų grandinės technologiją pradeda naudoti didžiosios kompanijos
 (\enquote{Microsoft} bei \enquote{IBM} siūlo
 blokų grandinę kaip paslaugą \cite{Zheng2017}). Taip pat, vis daugiau programuotojų kuria išmaniuosius kontraktus
