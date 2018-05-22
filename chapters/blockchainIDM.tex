@@ -106,7 +106,7 @@ Tokiu būdu, atributų valdymo programoje matant tik paslaugos adresą dalyvis g
 Šiai problemai spręsti modelyje yra atskiras išmanusis kontraktas, kuris funkcionuoja kaip paslaugų registras. Kiekviena
 paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, joje nusiųsdama savo pavadinimą bei slaptą kodą,
 sugeneruotą atributų valdymo programos. Kai atributų saugyklos kontrakte bus išsaugota nauja paslaugos
-P užklausa pasiekti atributą, atributų valdymo programa pagal P viešą raktą gali kreiptis
+P užklausa pasiekti atributą, atributų valdymo programa pagal P adresą gali kreiptis
 į šį registrą ir įsitikinti, ar P tikrai užsiregistravo (rasti iš P paskyros atliktą transakciją) ir iš kodo
 nuspręsti, ar tai tikrai yra paslauga, kuria asmuo naudojasi (taip užsiregistravę, bet kodo neturintys programišiai negali
 apsimesti kita įmone). Atributų valdymo programa, remdamasi paslaugų registru, gali atfiltruoti ir naudotojui pateikti tik
@@ -189,8 +189,8 @@ apie ją iš atributų saugyklos kontrakto. Tai galima pasiekti klausantis kontr
 neturi įvykių mechanizmo, atributų valdymo programa gali periodiškai kreiptis į kontraktą ir tikrinti, ar jame yra naujų išsaugotų užklausų.}. Jeigu programa \enquote{neišgirdo}
 realiu laiku paskelbto įvykio, ji gali kreiptis į kontraktą ir pasiekti anksčiau paskelbtus įvykius.
 
-Paskelbtame užklausos įvykyje pateikiamas besikreipusios paslaugos P viešas raktas, norimo atributo A
-identifikatorius bei kurio naudotojo N atributo paslauga nori. Pagal P viešą raktą programa kreipiasi
+Paskelbtame užklausos įvykyje pateikiamas besikreipusios paslaugos P adresas, norimo atributo A
+identifikatorius bei kurio naudotojo N atributo paslauga nori. Pagal P adresą programa kreipiasi
 į paslaugų registro išmanųjį kontraktą ir gauna P registracijos duomenis (žr. \hypertarget{fig:checkForPendingPermissions}{\ref{fig:checkForPendingPermissions}} pav.).
 Validavus P registraciją (P paslaugų registro
 kontrakte įrašė tinkamą kodą), programa praneša naudotojui N apie naują P užklausą. Šioje užklausoje N
