@@ -205,3 +205,25 @@ ir tolimesnėse užklausose registracijos nebevaliduoti.
     \caption{Pranešimas naudotojui apie naują atributo užklausą}
     \label{fig:checkForPendingPermissions}
 \end{figure}
+
+\subsubsection{Paslaugos registracija} \label{BCIDM:serviceRegistration}
+
+Tapatybės saugyklos išmaniajame kontrakte yra saugomi besikreipusių paslaugų adresai. Kadangi kontraktas yra viešas,
+į jį kreiptis gali bet kas, turintis blokų grandinės paskyrą. Todėl, norint atskirti, kurios atliktos užklausos yra iš tikrųjų
+atliktos paslaugų, modelyje yra paslaugos registracijos žingsnis (žr. \hypertarget{fig:serviceRegistration}{\ref{fig:serviceRegistration}} pav.).
+
+Paslauga P, norinti naudotis modeliu, kreipiasi į atributų valdymo programą registracijos kodui. Gavusi šį kodą,
+P kreipiasi į paslaugų registro išmanųjį kontraktą ir į jo būseną įrašo gautą kodą K bei P pavadinimą X. Taip registro
+kontrakte būsenoje išsaugoma, kad iš P adreso įrašytas kodas K ir pavadinimas X.
+
+Kai P atliks užklausą į atributų
+saugyklos kontraktą, jame bus išsaugotas adresas, iš kurio P kreipėsi. Tuomet atributų valdymo programa pagal šį adresą
+galės patikrinti, ar paslaugų registro kontrakte iš P adreso įrašytas kodas K.
+Tik radus tokį įrašą, bus galima P atributo užklausą traktuoti kaip validžią ir naudoti registre įrašytą pavadinimą X.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/serviceRegistration}
+    \caption{Paslaugos registracija paslaugų registro išmaniajame kontrakte}
+    \label{fig:serviceRegistration}
+\end{figure}

@@ -88,19 +88,17 @@ pasitelkus \enquote{Truffle} karkaso pateikiamą \textit{estimateGas} funkciją 
 
 \input{tables/contractPrices}
 
-\subsection{Atributų valdymo mobiliosios programėlės maketai}
+\subsection{Atributų valdymo mobiliosios programėlės interaktyvusis prototipas}
 
-Priede \hypertarget{appendix:appSketches}{\ref{appendix:appSketches}} pateikiami svarbiausi atributų valdymo programėlės langai.
-Pirmajame lange matomas atributų sąrašas. Atributai, kurie turi laukiančių paslaugų užklausų, pažymėti pranešimo ikonėle. Pasirinkus norimą
-atributą, sekcijoje \textit{Active} matoma, kurioms paslaugoms yra suteikta (žymima žaliai) bei atmesta (žymima raudonai) šio
-atributo prieiga. Paspaudus ant paslaugos, rodoma į blokų grandinę įrašyta reikšmė
-bei mygtukas, leidžiantis pakeisti suteiktą prieigą. Sekcijoje \textit{Pending} matomos laukiančios atributų užklausos. Pasirinkus
-suteikti paslaugai prieigą, atsiveria langas, kuriame prašoma įvesti norimą reikšmę ir naudotojo perklausiama, ar tikrai suteikti 
-pasirinktai paslaugai šio atributo reikšmę.
+Priede \hypertarget{appendix:appSketches}{\ref{appendix:appSketches}} pateikiami atributų valdymo programėlės naudotojo sąsajos prototipavimo
+langai. Pats interaktyvus prototipas pasiekiamas \enquote{GitHub} repozitorijoje
+\url{https://github.com/Ubaldas11/blockchain-attribute-management}.
 
-Maketuose nėra pateikti prieigos atmetimo bei naudotojo paskyros langai, tačiau jie yra paprastai įgyvendinami. Prieigos atmetimo langas
-naudotojo perklaustų, ar jis tikrai nori atmesti prieigą. Naudotojo paskyros lange būtų galima pamatyti naudotojo blokų grandinės
-adresą bei pakeisti prisijungimo prie programėlės duomenis (pvz. slaptažodį).
+Naudotojo sąsajos prototipe asmuo nesunkiai gali apžvelgti visas suteiktas prieigas, pakeisti jas. Jau patvirtintos bei
+dar laukiančios užklausos atskiriamos sekcijomis. Atributai, turintys dar nepatvirtintų užklausų žymimi su pranešimo ikonėle.
+Esamą užklausų būseną galima atskirti iš naudojamų spalvų (žalia - suteikta
+prieiga, raudona - atmesta, pilka - dar nesvarstyta). Meniu lange rodomas naudotojo paskyros adresas, kurį asmuo gali suteikti paslaugoms, norinčioms pasiekti jo atributus blokų grandinės
+išmaniajame kontrakte.
 
-Iš pateiktų maketų galima teigti, kad naudojamasis šia programėle truėtų būti gana paprastas naudotojui. Pradiniame lange matomi visi
-atributai, ikonėlėmis atskirti laukiantys naudotojo patvirtinimo. Spalvų pagalba atskiriamos paslaugos, kurioms suteiktos arba atmestos prieigos.
+Sukurtas interaktyvus prototipas leidžia teigti, kad tokia mobilioji programėlė leistų naudotojui efektyviai ir patogiai valdyti savo
+asmens duomenis.
