@@ -5,7 +5,7 @@
 \BOOKMARK [2][-]{subsection.1.3}{Naudotojų poreikiai skaitmeninės tapatybės valdymo sistemoms}{section.1}% 5
 \BOOKMARK [2][-]{subsection.1.4}{Skaitmeninės tapatybės valdymo modeliai}{section.1}% 6
 \BOOKMARK [2][-]{subsection.1.5}{Naudotojų problemų tapatybės valdyme apibendrinimas}{section.1}% 7
-\BOOKMARK [1][-]{section.2}{Blokų grandinės technologija}{}% 8
+\BOOKMARK [1][-]{section.2}{Blokų grandinės apžvalga}{}% 8
 \BOOKMARK [2][-]{subsection.2.1}{Nekintamumas}{section.2}% 9
 \BOOKMARK [2][-]{subsection.2.2}{Decentralizuotumas}{section.2}% 10
 \BOOKMARK [2][-]{subsection.2.3}{Tipai}{section.2}% 11
@@ -17,7 +17,7 @@
 \BOOKMARK [2][-]{subsection.3.2}{Blokų grandinės projektai tapatybės valdymo srityje}{section.3}% 17
 \BOOKMARK [2][-]{subsection.3.3}{Apibendrinimas}{section.3}% 18
 \BOOKMARK [1][-]{section.4}{Tapatybės atributų valdymo modelis}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Reikalavimai}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Modeliui\040keliami\040reikalavimai}{section.4}% 20
 \BOOKMARK [2][-]{subsection.4.2}{Modelio\040dalys}{section.4}% 21
 \BOOKMARK [2][-]{subsection.4.3}{Pagrindiniai\040naudojimo\040atvejai}{section.4}% 22
 \BOOKMARK [1][-]{section.5}{Tapatybės atributų valdymo modelio prototipas}{}% 23
@@ -29,9 +29,8 @@
 \BOOKMARK [2][-]{subsection.6.2}{Trūkumai}{section.6}% 29
 \BOOKMARK [2][-]{subsection.6.3}{Pritaikymo\040barjerai}{section.6}% 30
 \BOOKMARK [1][-]{section*.19}{Rezultatai ir išvados}{}% 31
-\BOOKMARK [1][-]{section*.22}{Šaltiniai}{}% 32
-\BOOKMARK [1][-]{section*.23}{Sąvokų apibrėžimai}{}% 33
-\BOOKMARK [1][-]{section*.23}{Priedai}{}% 34
-\BOOKMARK [2][-]{appendix.A}{1 priedas. Atributų saugyklos išmanusis kontraktas}{section*.23}% 35
-\BOOKMARK [2][-]{appendix.B}{2 priedas. Paslaugų registro išmanusis kontraktas}{section*.23}% 36
-\BOOKMARK [2][-]{appendix.C}{3 priedas. Atributų valdymo mobiliosios programėlės maketai}{section*.23}% 37
+\BOOKMARK [1][-]{section*.22}{Sąvokų apibrėžimai}{}% 32
+\BOOKMARK [1][-]{section*.22}{Priedai}{}% 33
+\BOOKMARK [2][-]{appendix.A}{1 priedas. Atributų saugyklos išmanusis kontraktas}{section*.22}% 34
+\BOOKMARK [2][-]{appendix.B}{2 priedas. Paslaugų registro išmanusis kontraktas}{section*.22}% 35
+\BOOKMARK [2][-]{appendix.C}{3 priedas. Atributų valdymo mobiliosios programėlės maketai}{section*.22}% 36
