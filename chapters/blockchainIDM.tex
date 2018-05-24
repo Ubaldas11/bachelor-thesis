@@ -162,8 +162,8 @@ atributų valdymo programoje ir ten atlikti sprendimą.
 Atributų valdymo programa, stebinti atributų saugyklos kontraktą, praneša naudotojui apie naujas
 paslaugų užklausas. Tuomet naudotojas gali pasirinkti, ar suteikti, ar atmesti prieigą prie norimo atributo
 A paslaugai P. (žr.\hypertarget{fig:givePermissions}{~\ref{fig:givePermissions} pav.}). Atributų saugyklos kontraktas
-asmeniui leidžia autorizuoti tik savo naudojamas paslaugas\footnote{ ar naudotojo N1 įrašų nebando pakeisti N2, atskiriama iš
-to, kas kreipiasi į funkciją}.
+asmeniui leidžia autorizuoti tik savo naudojamas paslaugas\footnote{ Ar naudotojo N1 įrašų nebando pakeisti N2, atskiriama iš
+to, kas kreipiasi į funkciją.}.
 
 Jei naudotojas sutinka suteikti prieigą, tuomet jis įveda atributo reikšmę ir atributų valdymo programa užšifruoja ją.
 Užšifravus reikšmę, duomenys nusiunčiami į išmanųjį kontraktą ir jame pažymima, kad paslauga P naudotojo N autorizuota
@@ -185,7 +185,7 @@ jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieig
 \subsubsection{Pranešimas naudotojui apie naują atributo užklausą} \label{BCIDM:blockchainMonitoring}
 
 Norint išsaugoti naują atributo užklausą, kurią turės patvirtinti naudotojas, atributų valdymo programa turi sužinoti
-apie ją iš atributų saugyklos kontrakto. Tai galima pasiekti klausantis kontrakto paskelbiamų įvykių\footnote{ jei naudojama blokų grandinė
+apie ją iš atributų saugyklos kontrakto. Tai galima pasiekti klausantis kontrakto paskelbiamų įvykių\footnote{ Jei naudojama blokų grandinė
 neturi įvykių mechanizmo, atributų valdymo programa gali periodiškai kreiptis į kontraktą ir tikrinti, ar jame yra naujų išsaugotų užklausų.}. Jeigu programa \enquote{neišgirdo}
 realiu laiku paskelbto įvykio, ji gali kreiptis į kontraktą ir pasiekti anksčiau paskelbtus įvykius.
 

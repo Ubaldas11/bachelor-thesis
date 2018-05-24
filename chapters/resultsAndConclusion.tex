@@ -1,39 +1,60 @@
 \sectionnonum{Rezultatai ir išvados}
 
-\subsection*{Rezultatai}
+Darbe pasiekti \textbf{rezultatai}:
 
 \begin{enumerate}
-    \item Įvardyti naudotojų poreikiai skaitmeninės tapatybės valdymui internete ir apžvelgti
-    pagrindiniai naudojami identiteto valdymo modeliai.
+    \item Apžvelgti internete
+    naudojami skaitmeninės tapatybės valdymo modeliai ir jų gebėjimas įgyvendinti naudotojų lūkesčius;
     \item Apibendrintos esminės naudotojams kylančios problemos tapatybės valdyme: nepakankama asmens duomenų
-    kontrolė, mažėjantis pasitikėjimas paslaugų gebėjimu saugiai valdyti asmens duomenis, didelė priklausomybė nuo tapatybės tiekėjų.
+    kontrolė, mažėjantis pasitikėjimas paslaugų gebėjimu saugiai valdyti asmens duomenis, didelė priklausomybė nuo tapatybės tiekėjų;
     \item Pristatyta blokų grandinės technologija ir ją naudojantys skaitmeninės tapatybės projektai.
     Nustatyta, kad galimybė
     decentralizuotai saugoti asmens duomenis bei aprašyti duomenų suteikimo taisykles viešuose, nekintančiuose
     ir veikimą atskleidžiančiuose išmaniuosiusiuose
     kontraktuose suteikia pagrindo
-    naudoti šią technologiją skaitmeninės tapatybės valdymo srityje. 
+    naudoti šią technologiją skaitmeninės tapatybės valdymo srityje;
     \item Remiantis į naudotoją orientuotos tapatybės principais,
-    parengti reikalavimai skaitmeninės tapatybės atributų valdymo modeliui, akcentuojantys įvardytas naudotojų problemas.
-    \item Pagal iškeltus reikalavimus paruoštas blokų grandine paremtas tapatybės atributų valdymo modelis, suteikiantis asmeniui galimybę kontroliuoti savo asmens duomenis
-    bei autorizuoti paslaugų prieigą prie jų.
-    \item Sukurtas pristatyto modelio prototipas. \enquote{Solidity} programavimo kalba realizuoti \enquote{Ethereum} blokų grandinei pritaikyti
-    tapatybės saugyklos bei paslaugų registro kontraktai. Paruošti atributų valdymo mobiliosios programėlės maketai.
+    parengti reikalavimai skaitmeninės tapatybės atributų valdymo modeliui, akcentuojantys įvardytas naudotojų problemas;
+    \item Pagal iškeltus reikalavimus paruoštas blokų grandine paremtas tapatybės atributų valdymo modelis, suteikiantis naudotojui galimybę kontroliuoti savo asmens duomenis
+    bei autorizuoti paslaugų prieigą prie jų;
+    \item Realizuoti pristatyto modelio atributų saugyklos bei paslaugų registro išmanieji kontraktai, parašyti \enquote{Solidity} programavimo kalba \enquote{Ethereum} blokų grandinei.
+    Sukurtas atributų valdymo mobiliosios programėlės interaktyvus prototipas;
     \item Įvertintas pristatytas atributų valdymo modelis. Įvardyti jo privalumai, trūkumai,
     galima eksploatavimo kaina bei pritaikymo barjerai.
 \end{enumerate}
 
-\subsection*{Išvados}
+Išanalizavus rezultatus gautos darbo \textbf{išvados}:
 
-Blokų grandinės technologija gali būti pritaikyta skaitmeninės tapatybės valdyme. Decentralizuotai saugant asmens duomenis,
-panaikinama priklausomybė nuo tapatybės tiekėjo. Viešuose, visiems prieinamuose
-išmaniuosiuose kontraktuose aprašius paslaugų autorizavimo logiką, naudotojas gali įsitikinti,
-kad jis geba kontroliuoti paslaugų turimas prieigas prie jo asmens duomenų. Dėl blokų grandinės įrašų ir išmaniųjų kontraktų kodo
-nekintamumo, asmuo gali būti tikras, kad laikui bėgant sąlygos nepasikeis ir naudotojo priimti
-autorizavimo sprendimai išliks.
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+\begin{enumerate}
+    \item Blokų grandinės technologija gali būti panaudota skaitmeninės tapatybės atributų valdymo modeliui;
+    \item Blokų grandine paremto tapatybės atributų valdymo modelio pranašumai:
+    \begin{enumerate}
+        \item Decentralizuotai saugant asmens duomenis,
+        panaikinama priklausomybė nuo tapatybės tiekėjo;
+        \item Viešuose, visiems prieinamuose
+        išmaniuosiuose kontraktuose aprašius paslaugų autorizavimo logiką, naudotojas gali įsitikinti,
+        kad jis geba kontroliuoti paslaugų turimas prieigas prie jo asmens duomenų;
+        \item Dėl blokų grandinės įrašų ir išmaniųjų kontraktų kodo
+        nekintamumo, asmuo gali būti tikras, kad laikui bėgant sąlygos nepasikeis ir naudotojo priimti
+        autorizavimo sprendimai išliks.
+    \end{enumerate}
+    \item Blokų grandine paremto tapatybės atributų valdymo modelio trūkumai:
+    \begin{enumerate}
+        \item Decentralizuotas kodo vykdymas ir duomenų saugojimas išmaniuosiuose kontraktuose yra gana brangus,
+        o tai modelio naudojimą padaro mokamu naudotojams;
+        \item Norint naudotis modeliu, paslaugų tiekėjai yra priversti turėti papildomą integraciją su blokų grandine;
+        \item Įmanoma viešos blokų grandinės tinklo daugumos ataka gali atgrasyti potencialius naudotojus.
+    \end{enumerate}
+\end{enumerate}
 
-Aprašytas blokų grandinės taikymas tapatybės valdymo sistemoje turi iššūkių.
-Decentralizuotas kodo vykdymas yra gana brangus, įmanomos blokų grandinės tinklo daugumos
-atakos gali atgrasyti potencialius naudotojus, o tapatybės duomenų iškėlimas į blokų grandinę verčia
-paslaugų tiekėjus kurti papildomą integraciją. Nepaisant to, galimybė grąžinti asmenims jų duomenų kontrolę internete
-ir atgauti naudotojų pasitikėjimą gali būti pakankamos paskatos taikyti blokų grandinę skaitmeninės tapatybės valdyme.
+Tolimesni galimi darbai:
+
+\begin{enumerate}
+    \item Siekiant sumažinti modelio eksploatavimo kainą, ištirti alternatyvas duomenų saugojimui ne blokų grandinėje. Pačioje grandinėje
+    paliekant tik nuorodą į duomenų saugojimo vietą, modelio naudojimas taptų pigesnis;
+    \item Analizuoti paslaugų identifikavimo alternatyvas. Dabartinis būdas modelyje naudoti paslaugų registrą verčia paslaugų tiekėjus atlikti
+    papildomą žingsnį. Taip pat, naudotojas turi pasikliauti atributų valdymo programos atliekamu paslaugos atpažinimu bei registracijos kodo generavimu;
+    \item Ištirti paslaugų tiekėjų galimybes naudoti modelį. Supažindinus paslaugų tiekėjus su atributų valdymu modeliu,
+    atsižvelgti į jų nuomonę apie galimą naudojimą bei siūlomus patobulinimus.
+\end{enumerate}
