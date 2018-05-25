@@ -136,9 +136,32 @@ papildomą žingsnį.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{img/userGivesAddress}
+    \includegraphics[scale=0.8]{img/userGivesAddress}
     \caption{Naudotojo adreso suteikimas paslaugai}
     \label{fig:userGivesAddress}
+\end{figure}
+
+\subsubsection{Paslaugos registracija} \label{BCIDM:serviceRegistration}
+
+Tapatybės saugyklos išmaniajame kontrakte yra saugomi besikreipusių paslaugų adresai. Kadangi kontraktas yra viešas,
+į jį kreiptis gali bet kas, turintis blokų grandinės paskyrą. Todėl, norint atskirti, kurios užklausos yra iš tikrųjų
+atliktos paslaugų, modelyje yra paslaugos registracijos žingsnis (žr. \hypertarget{fig:serviceRegistration}{\ref{fig:serviceRegistration}} pav.).
+
+Paslauga P, norinti naudotis modeliu, kreipiasi į atributų valdymo programą registracijos kodui gauti. Atributų valdymo programa
+patikrina P autentiškumą ir tik įsitikinusi, kad tai nėra programišių atliekama ataka, suteikia šį kodą. Gavusi šį kodą,
+P kreipiasi į paslaugų registro išmanųjį kontraktą ir į jį įrašo gautą kodą K bei P pavadinimą X. Taip registro
+kontrakte būsenoje išsaugoma, kad iš P adreso įrašytas kodas K ir pavadinimas X.
+
+Kai P atliks užklausą į atributų
+saugyklos kontraktą, jame bus išsaugotas adresas, iš kurio P kreipėsi. Tuomet atributų valdymo programa pagal šį adresą
+galės patikrinti, ar paslaugų registro kontrakte iš P adreso įrašytas kodas K.
+Tik radus tokį įrašą, bus galima P atributo užklausą traktuoti kaip validžią ir naudoti registre įrašytą pavadinimą X.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/serviceRegistration}
+    \caption{Paslaugos registracija paslaugų registro išmaniajame kontrakte}
+    \label{fig:serviceRegistration}
 \end{figure}
 
 \subsubsection{Atributo užklausa} \label{BCIDM:askForAttribute}
@@ -153,7 +176,7 @@ atributų valdymo programoje ir ten atlikti sprendimą.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.7]{img/askForAttributeSequence}
+    \includegraphics[scale=0.85]{img/askForAttributeSequence}
     \caption{Paslaugos atliekama atributo užklausa}
     \label{fig:askForAttributeSequence}
 \end{figure}
@@ -178,7 +201,7 @@ jis šį paslaugos autorizavimo procesą galėtų pakartoti ir jau esamai prieig
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{img/givePermissions}
+    \includegraphics[scale=0.8]{img/givePermissions}
     \caption{Naudotojo atliekamas paslaugos autorizavimas}
     \label{fig:givePermissions}
 \end{figure}
@@ -202,30 +225,7 @@ ir tolimesnėse užklausose registracijos nebevaliduoti.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{img/checkForPendingPermissions}
+    \includegraphics[scale=0.9]{img/checkForPendingPermissions}
     \caption{Pranešimas naudotojui apie naują atributo užklausą}
     \label{fig:checkForPendingPermissions}
-\end{figure}
-
-\subsubsection{Paslaugos registracija} \label{BCIDM:serviceRegistration}
-
-Tapatybės saugyklos išmaniajame kontrakte yra saugomi besikreipusių paslaugų adresai. Kadangi kontraktas yra viešas,
-į jį kreiptis gali bet kas, turintis blokų grandinės paskyrą. Todėl, norint atskirti, kurios užklausos yra iš tikrųjų
-atliktos paslaugų, modelyje yra paslaugos registracijos žingsnis (žr. \hypertarget{fig:serviceRegistration}{\ref{fig:serviceRegistration}} pav.).
-
-Paslauga P, norinti naudotis modeliu, kreipiasi į atributų valdymo programą registracijos kodui gauti. Atributų valdymo programa
-patikrina P autentiškumą ir tik įsitikinusi, kad tai nėra programišių atliekama ataka, suteikia šį kodą. Gavusi šį kodą,
-P kreipiasi į paslaugų registro išmanųjį kontraktą ir į jį įrašo gautą kodą K bei P pavadinimą X. Taip registro
-kontrakte būsenoje išsaugoma, kad iš P adreso įrašytas kodas K ir pavadinimas X.
-
-Kai P atliks užklausą į atributų
-saugyklos kontraktą, jame bus išsaugotas adresas, iš kurio P kreipėsi. Tuomet atributų valdymo programa pagal šį adresą
-galės patikrinti, ar paslaugų registro kontrakte iš P adreso įrašytas kodas K.
-Tik radus tokį įrašą, bus galima P atributo užklausą traktuoti kaip validžią ir naudoti registre įrašytą pavadinimą X.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.6]{img/serviceRegistration}
-    \caption{Paslaugos registracija paslaugų registro išmaniajame kontrakte}
-    \label{fig:serviceRegistration}
 \end{figure}
