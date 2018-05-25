@@ -107,13 +107,14 @@ Tokiu būdu, atributų valdymo programoje matant tik paslaugos adresą dalyvis g
 paslauga, besinaudojanti modeliu, atlieka vieną transakciją į šį registrą, joje nusiųsdama savo pavadinimą bei slaptą kodą,
 sugeneruotą atributų valdymo programos. Kai atributų saugyklos kontrakte bus išsaugota nauja paslaugos
 P užklausa pasiekti atributą, atributų valdymo programa pagal P adresą gali kreiptis
-į šį registrą ir įsitikinti, ar P tikrai užsiregistravo (rasti iš P paskyros atliktą transakciją) ir iš kodo
-nuspręsti, ar tai tikrai yra paslauga, kuria asmuo naudojasi (taip užsiregistravę, bet kodo neturintys programišiai negali
-apsimesti kita įmone). Atributų valdymo programa, remdamasi paslaugų registru, gali atfiltruoti ir naudotojui pateikti tik
-validžias paslaugų užklausas.
+į šį registrą ir įsitikinti, ar P tikrai užsiregistravo (rasti iš P paskyros atliktą transakciją ir įrašytą unikalų P registracijos kodą).
+Taip paslaugų registro kontrakte yra saugomos tik patikimos paslaugos bei jų pavadinimai, kurie bus matomi naudotojui
+atributų valdymo programoje.
 
-Verta pastebėti, kad paslaugų registras nėra vienintelis įmanomas būdas autentifikuoti paslaugas. Galimos alternatyvos plačiau apžvelgiamos
-modelio vertinimo \hypertarget{section:blockchainIDMevaluation}{skyriuje}.
+Atributų valdymo programa registracijos kodą suteikia tik validžioms paslaugoms - t.y., ji turi užtikrinti,
+kad tik savo tapatybę įrodžiusios paslaugos gali naudotis modeliu, taip apsisaugant nuo galimų apsimetėlių. Kaip atributų valdymo
+programa tai atlieka, šiame darbe detaliai nenagrinėjama. Galimos alternatyvos pristatomos
+\hypertarget{section:blockchainIDMevaluation}{\ref{section:blockchainIDMevaluation}} skyrelyje.
 
 \subsection{Pagrindiniai naudojimo atvejai}
 
@@ -212,8 +213,9 @@ Tapatybės saugyklos išmaniajame kontrakte yra saugomi besikreipusių paslaugų
 į jį kreiptis gali bet kas, turintis blokų grandinės paskyrą. Todėl, norint atskirti, kurios užklausos yra iš tikrųjų
 atliktos paslaugų, modelyje yra paslaugos registracijos žingsnis (žr. \hypertarget{fig:serviceRegistration}{\ref{fig:serviceRegistration}} pav.).
 
-Paslauga P, norinti naudotis modeliu, kreipiasi į atributų valdymo programą registracijos kodui. Gavusi šį kodą,
-P kreipiasi į paslaugų registro išmanųjį kontraktą ir į jo būseną įrašo gautą kodą K bei P pavadinimą X. Taip registro
+Paslauga P, norinti naudotis modeliu, kreipiasi į atributų valdymo programą registracijos kodui gauti. Atributų valdymo programa
+patikrina P autentiškumą ir tik įsitikinusi, kad tai nėra programišių atliekama ataka, suteikia šį kodą. Gavusi šį kodą,
+P kreipiasi į paslaugų registro išmanųjį kontraktą ir į jį įrašo gautą kodą K bei P pavadinimą X. Taip registro
 kontrakte būsenoje išsaugoma, kad iš P adreso įrašytas kodas K ir pavadinimas X.
 
 Kai P atliks užklausą į atributų

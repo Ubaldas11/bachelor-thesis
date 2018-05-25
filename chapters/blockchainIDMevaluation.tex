@@ -43,14 +43,15 @@ reikalingus skaičiavimus pačiame blokų grandinės tinkle.
 
 \subsubsection{Paslaugų autentiškumo tikrinimas}
 
-Modelyje aprašytas paslaugų registras padeda apsisaugoti nuo programišių, galinčių apsimesti paslaugomis. Šio registro veikimas
-nėra itin patogus, nes kiekviena paslauga turi gauti sugeneruotą kodą iš atributų valdymo programos ir įrašyti jį į atskirą išmanųjį kontraktą.
-Tai reikalauja daugiau integracijų (tarp paslaugos, atributų valdymo programos ir papildomo išmaniojo kontrakto)
-bei papildomo naudotojo pasitikėjimo atributų valdymo programa: jai patikėta generuoti kodą bei atlikti paslaugos registracijos
-tikrinimą.
+Modelyje aptariama paslaugų registracija apsunkina modelį - paslaugos priverstos
+atlikti papildomas užklausas į blokų grandinę bei atributų valdymo programą. Taip pat, paslaugų registras padeda apsisaugoti nuo programišių
+ir atpažinti paslaugas tik tokiu atveju,
+jei registracijos kodai suteikiami tik patikimoms paslaugoms. Tai verčia naudotojus pasitikėti atributų valdymo programos gebėjimu
+atmesti galimas programišių užklausas. 
 
-Galimos kelios alternatyvos paslaugų identifikavimui užtikrinti. Galima būtų naudotis jau egzistuojančiais identiteto
-registravimo projektais, kuriuose paslaugos užregistruotų savo tapatybę (pvz. \enquote{NameCoin} ar \hypertarget{section:relatedWork}{\ref{section:relatedWork}}
+Galimos kelios alternatyvos paslaugų identifikavimui. Atributų valdymo programa galėtų tikrinti paslaugos registracijos užklausos
+kilmę (angl. \textit{HTTP Origin Header}) ir jkliautis ja, atpažįstant paslaugas. Būtų galima naudoti jau sukurtus identiteto
+registravimu projektus, kuriuose paslaugos užregistruotų savo tapatybę (pvz. \enquote{NameCoin} ar \hypertarget{section:relatedWork}{\ref{section:relatedWork}}
 skyrelyje minimu \enquote{Blockstack}). Kitas būdas, aptariamas \cite{Baars2016} tyrime, būtų turėti registrą, kuriame paslaugų autentiškumą
 patvirtintų patikima trečioji šalis (pvz. bankas ar valdžios įstaiga). Tokiu atveju, paslaugos turėtų autentifikuotis šios institucijos
 sistemoje, o ji įrašytų į paslaugų registrą apie sėkmingą paslaugos registraciją. Tokiu atveju pasitikėjimas būtų perkeliamas
