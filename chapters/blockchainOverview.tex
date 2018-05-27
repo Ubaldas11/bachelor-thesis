@@ -104,7 +104,7 @@ yra atmetamas. Pavyzdžiui,
 
 Pagrindinis šios konsensuso strategijos privalumas yra tas, kad dideli kasimo kaštai gali atgrasyti programišius nuo potencialių atakų. Tačiau,
 taip veltui išeikvojama daugybė elektros energijos - skaičiuojama, kad kasimas \enquote{Bitcoin} ir \enquote{Ethereum} blokų grandinėms kartu sudėjus per dieną
-sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{Ethereum}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
+sueikvoja elektros energijos, kurios vertė yra apie 1 milijoną dolerių \cite{EthereumWhitePaper}. Taip pat, dėl ilgo uždavinio sprendimo laiko vieno bloko priėmimas į grandinę
 gali užtrukti - Bitcoin blokų grandinėje tai užima apie 10 minučių \cite{Zheng2017}.
 
 \subsubsection{Turto įrodymo strategija}
@@ -115,9 +115,16 @@ tiems tinklo dalyviams, kurie įrodo kad turi daugiausia turto (pvz. blokų gran
 nes turtingiausias tinklo dalyvis gali būti vienvaldžiu sprendimų priėmėju. Dėl to blokų grandinės tinklai neretai taiko patobulintus šios strategijos
 variantus: \enquote{Peercoin} papildomai vertina turto amžių, \enquote{Blackcoin} kitą patvirtintoją paskiria pagal atsitiktinę funkciją, kuri atsižvelgia ir į turimą turtą \cite{Zheng2017}.
 
-Ši strategija leidžia nebeeikvoti didžiulių elektros kiekių, skirtingai nei darbo įrodymo strategija \cite{Ethereum}. Algoritmo efektyvumas
+Ši strategija leidžia nebeeikvoti didžiulių elektros kiekių, skirtingai nei darbo įrodymo strategija \cite{EthereumWhitePaper}. Algoritmo efektyvumas
 taip pat sutaupo laiko ir blokai būna greičiau patvirtinami ir pridedami į grandinę. Tačiau, dėl praktiškai nulinių bloko \textit{kasimo} sąnaudų,
-galimos dažnesnės tinklo atakos \cite{Zheng2017}. 
+galimos dažnesnės tinklo atakos \cite{Zheng2017}.
+
+Pagrindinės atakos turto įrodymo konsensusą taikančioms blokų grandinėms: \textit{nothing at stake} bei \textit{long-range} atakos. \textit{nothing at stake} ataka apibūdina situaciją,
+kai tinklo dalyviai neeikvodami išteklių gali balsuoti už skirtingas blokų grandinės
+versijas vienu metu. Taip gali būti patvirtintos nevalidžios, tam tikriems tinklo dalyviams palankios transakcijos bei mažėja blokų priėmimo greitis.
+\textit{Long-range} atakos metu tinklo dalyvis, grandinės sukūrimo pradžioje turėjęs nemažą dalį turto, gali kurti alternatyvią grandinės versiją. Kadangi
+toje versijoje šis dalyvis iš tiesų buvo turtingas, o naujų blokų kūrimo sąnaudos yra nedidelės, pridėjus pakankamai blokų į šią alternatyvią grandinę,
+ši gali tapti pagrindine grandinės versija \cite{POSAttacks}.
 
 \subsubsection{Autoriteto įrodymo strategija}
 
@@ -136,7 +143,7 @@ taiko \enquote{Parity} blokų grandinė \cite{ProofOfAuthority}.
 \subsection{Išmanieji kontraktai}
 
 Išmanusis kontraktas (angl. \textit{smart contract}) - tai kompiuterizuotas transakcijos protokolas, kuris
-išpildo kontrakto sąlygas, jei patenkinami numatyti kriterij \cite{Szabo1997}.
+išpildo kontrakto sąlygas, jei patenkinami numatyti kriterijai \cite{Szabo1997}.
 Išmanųjį kontraktą galima apibūdinti kaip tam tikras sąlygas (išreikštas kodu), kurios, patenkinus reikalavimus, bus įvykdytos automatiškai,
 be trečiosios šalies priežiūros.
 
@@ -162,17 +169,26 @@ veikimo sąlygos.
 išmaniuosius kontraktus su išbaigta
 (angl. \textit{turing complete}) programavimo kalba \cite{EthereumWhitePaper}. \enquote{Ethereum} kontraktai vykdomi tinklo
 dalyvių, \enquote{Ethereum} virtualiosios mašinos pagalba.  \enquote{Ethereum} virtualioji mašina gali būti suprantama kaip didelis decentralizuotas
-kompiuteris, saugantis milijonus objektų, vadinamų paskyromis, kurie turi galimybę turėti savo duomenis,
-vykdyti kodą bei bendrauti tarpusavyje \cite{Ethereum}.
+kompiuteris, saugantis milijonus objektų, vadinamų paskyromis, kurie gali turėti savo duomenis,
+vykdyti kodą bei apsikeisti informacija tarpusavyje naudojant transakcijas arba žinutes \cite{EthereumWhitePaper}.
 
-\enquote{Ethereum} platforma turi paskyras, kuriomis naudojantis, galima kurti transakcijas bei kviesti išmaniųjų
-kontraktų funkcijas. Paskyros identifikuojamos pagal unikalų adresą. \enquote{Ethereum} egzistuoja dviejų tipų paskyros \cite{Ethereum}:
+\enquote{Ethereum} blokų grandinėje esančias transakcijas galima išskaidyti į 3 tipus \cite{EthereumWhitePaper}:
 
 \begin{enumerate}
-    \item išorinės paskyros (angl. \textit{externally owned accounts}). Jos savininkų valdomos privačiais raktais ir turi eterio
-    balansą;
-    \item kontraktų paskyros (angl. \textit{contract accounts}). Šios paskyros be balanso turi kodą bei būseną, kuri gali keistis,
-    jei įvykdomos kode aprašytos sąlygos. Kontraktų paskyros yra valdomos kontrakto kodo.
+    \item Kriptovaliutos pervedimo. Skirta iš vienos paskyros pervesti nurodytą kiekį eterio į kitą paskyrą.
+    \item Kontrakto sukūrimo. Skirta sukurti naują išmaniojo kontrakto paskyrą.
+    \item Kontrakto būsenos keitimo. Skirta iškviesti išmaniojo kontrakto funkciją, kuri keičia jo būseną. 
+\end{enumerate}
+
+\enquote{Ethereum} tinkle paskyros identifikuojamos pagal unikalų adresą. Egzistuoja dviejų tipų paskyros \cite{EthereumWhitePaper}:
+
+\begin{enumerate}
+    \item Išorinės paskyros (angl. \textit{externally owned accounts}). Jos savininkų valdomos privačiais raktais ir turi eterio
+    balansą. Išorinės paskyros jų savininkams leidžia kurti ir pasirašyti transakcijas.
+    \item Kontraktų paskyros (angl. \textit{contract accounts}). Šios paskyros be balanso turi kodą bei būseną, kuri gali keistis,
+    jei įvykdomos kode aprašytos sąlygos. Kontraktų paskyros yra valdomos kontrakto kodo. Kontraktų paskyros negali
+    tiesiogiai sukurti transakcijos, tačiau iškvietus kontrakto funkciją, jos kodas gali sukurti žinutę, turinčią transakciją. Šios
+    žinutės leidžia kontraktams naudotis kitais kontraktais (pvz. iškviesti jų funkcijas).
 \end{enumerate}
 
 Skatinant tinklo dalyvius vykdyti kontraktų kodą, jiems už šį darbą skiriama piniginė premija - eterio kriptovaliuta. Kiek eterio
@@ -219,7 +235,7 @@ kaip greitai nauji blokai yra pridedami į blokų grandinę, susijęs su taikoma
 Kuo taikoma strategija leidžia greičiau priimti naują bloką, tuo greičiau transakcijos bus patvirtintos. \enquote{Bitcoin} kriptovaliutos blokų grandinėje, taikančioje darbo įrodymo konsensusą,
 apdorojoma apie 7 transakcijas per sekundę \cite{Zheng2017}, kai \enquote{Tendermint} blokų grandinė, taikanti
 atsparumo klaidoms konsensusą, teigia galinti apdoroti tūkstančius transakcijų per sekundę \cite{Tendermint2017}. Dėl darbo įrodymo strategijos neefektyvumo
-blokų grandinės neretai tampa priverstos iškeisti ją į efektyvesnį konsensuso būdą - \enquote{Ethereum} blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{Ethereum}.
+blokų grandinės neretai tampa priverstos iškeisti ją į efektyvesnį konsensuso būdą - \enquote{Ethereum} blokų grandinė ketina pereiti prie turto įrodymu grįsto konsensuso \cite{EthereumWhitePaper}.
 
 Kita priežastis, dėl ko transakcijos tvirtinamos gana lėtai - blokai turi dydžio apribojimus. Dėl šių apribojimų, tik dalis susikaupusių transakcijų gali būti priimtos
 į naują bloką, o likusios turi laukti, kol pateks į kitą bloką. Tam spręsti pasitelktos šalutinės blokų grandinės. Jos dalį bloko duomenų iškelia į šalutinę grandinę,

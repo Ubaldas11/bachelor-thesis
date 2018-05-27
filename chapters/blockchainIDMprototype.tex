@@ -17,7 +17,7 @@ kalbą. Priežastys tam:
     bei atsako į pradedančiųjų klausimus;
     \item technologijos branda. Kai išmaniųjų kontraktų programavimas yra vis dar gana nauja sritis,
     \enquote{Ethereum} technologija, veikianti nuo 2015-ųjų, yra gana gerai dokumentuota, o rekomenduojama kontraktams rašyti programavimo kalba
-    \enquote{Solidity} \cite{Ethereum} turi keletą skirtingų kūrimo karkasų programavimo aplinkai paruošti \cite{SolidityDocumentation}.
+    \enquote{Solidity} \cite{EthereumWhitePaper} turi keletą skirtingų kūrimo karkasų programavimo aplinkai paruošti \cite{SolidityDocumentation}.
 \end{itemize}
 
 Išmanieji kontraktai kurti naudojant \enquote{Solidity} programavimui skirtą \enquote{Truffle} kūrimo karkasą,
@@ -48,11 +48,11 @@ Kontrakte apibrėžtos šios viešos funkcijos:
 \begin{enumerate}
     \item \textit{grantAccess}. Skirta naudotojui N suteikti paslaugai P prieigą prie atributo A. Į funkciją paduodamas A identifikatorius,
     P adresas bei N ir P šifro raktu užkoduota A reikšmė. Funkcijoje keičiama siuntėjo atributo reikšmė - taip užtikrinama, kad naudotojas N
-    negalės pakeisti naudotojo N1 atributo. Funkcija paskelbia \textit{AccessChanged} įvykį;
+    negalės pakeisti naudotojo N1 atributo. Funkcija paskelbia \textit{AccessChanged} įvykį.
     \item \textit{removeAccess}. Skirta naudotojui N panaikinti paslaugos P prieigą prie atributo A. Į funkciją paduodamas A identifikatorius ir P
-    adresas. Kaip ir \textit{grantAccess} atveju, keičiama siuntėjo atributo prieiga. Funkcija paskelbia \textit{AccessChanged} įvykį;
+    adresas. Kaip ir \textit{grantAccess} atveju, keičiama siuntėjo atributo prieiga. Funkcija paskelbia \textit{AccessChanged} įvykį.
     \item \textit{requestAccess}. Skirta paslaugai P pranešti, kad ji nori prieigos prie naudotojo N atributo A reikšmės. Į funkciją paduodamas A identifikatorius
-    bei N adresas. Funkcija paskelbia \textit{AccessRequested} įvykį;
+    bei N adresas. Funkcija paskelbia \textit{AccessRequested} įvykį.
     \item \textit{getAttribute}. Skirta gauti naudotojo N paslaugai P skirtą atributą A. Į funkciją paduodamas A identifikatorius, N adresas bei
     P adresas. Jei funkciją iškvietė N (t.y., pats naudotojas kreipiasi gauti suteiktą atributą A), grąžinamas siekiamas atributas. Jei kreipiasi paslauga,
     galimos 3 grąžinamos reikšmės. Jei prieiga naudotojo suteikta - grąžinama A reikšmė. Jei prieiga atmesta - pranešama, kad paslauga neautorizuota. Jei
@@ -97,7 +97,7 @@ langai. Pats interaktyvus prototipas pasiekiamas \enquote{GitHub} repozitorijoje
 Naudotojo sąsajos prototipe asmuo nesunkiai gali apžvelgti visas suteiktas prieigas, pakeisti jas. Jau patvirtintos bei
 dar laukiančios užklausos atskiriamos sekcijomis. Atributai, turintys dar nepatvirtintų užklausų žymimi su pranešimo ikonėle.
 Esamą užklausų būseną galima atskirti iš naudojamų spalvų (žalia - suteikta
-prieiga, raudona - atmesta, pilka - dar nesvarstyta). Meniu lange rodomas naudotojo paskyros adresas, kurį asmuo gali suteikti paslaugoms, norinčioms pasiekti jo atributus blokų grandinės
+prieiga, raudona - atmesta, pilka - dar nesvarstyta). Nustatymų lange rodomas naudotojo paskyros adresas, kurį asmuo gali suteikti paslaugoms, norinčioms pasiekti jo atributus blokų grandinės
 išmaniajame kontrakte.
 
 Sukurtas interaktyvus prototipas leidžia teigti, kad tokia mobilioji programėlė leistų naudotojui patogiai valdyti savo
