@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>210</y>
+      <w>200</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Paslauga*
+layer=1
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>250</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Identifikatoriai
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>310</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atributai
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>210</y>
+      <w>200</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Paslauga*
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>600</x>
+      <y>460</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Naudotojas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>350</y>
+      <w>120</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>350</y>
+      <w>120</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;130.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>350</y>
+      <w>130</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+fg=red</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>350</y>
+      <w>130</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+fg=red</panel_attributes>
+    <additional_attributes>10.0;150.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>430</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+fg=blue
+
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>310</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atributai
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>250</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Identifikatoriai
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>820</x>
+      <y>460</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>atsakymas
+style=wordwrap
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>480</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+fg=red
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>280</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atpažinimo duomenys
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>820</x>
+      <y>420</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>užklausa
+style=wordwrap
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>280</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atpažinimo duomenys
+layer=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>650</x>
+      <y>170</y>
+      <w>221</w>
+      <h>201</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+Paslaugų tiekėjas
+bg=yellow
+layer=-1</panel_attributes>
+    <additional_attributes/>
+    <custom_code>int y=textHeight();
+
+drawRectangleRound(0,0,width,height,20,20);
+
+for(String textline : textlines) {
+	y += printRight(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>190</x>
+      <y>170</y>
+      <w>441</w>
+      <h>201</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+Paslaugų tiekėjas
+bg=yellow
+layer=-1</panel_attributes>
+    <additional_attributes/>
+    <custom_code>int y=textHeight();
+
+drawRectangleRound(0,0,width,height,20,20);
+
+for(String textline : textlines) {
+	y += printRight(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>210</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Paslauga*
+layer=1
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>250</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Identifikatoriai
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>280</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atpažinimo duomenys
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>310</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atributai
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>350</y>
+      <w>260</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>350</y>
+      <w>290</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+fg=red</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>460</x>
+      <y>390</y>
+      <w>60</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=artifact
+CR1
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>570</x>
+      <y>380</y>
+      <w>60</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=artifact
+CR2
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>650</x>
+      <y>380</y>
+      <w>60</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=artifact
+CR3
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>820</x>
+      <y>540</y>
+      <w>60</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=artifact
+CR0
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>820</x>
+      <y>500</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>atpažinimo duomenys
+
+style=wordwrap
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

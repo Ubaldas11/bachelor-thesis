@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>430</x>
+      <y>250</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>: Atributų valdymo programa
+style=wordwrap
+bg=#ffe1d6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>280</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>250</x>
+      <y>190</y>
+      <w>630</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Atributo užklausos
+išsaugojimas</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>590</x>
+      <y>250</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>: Paslaugų registro
+kontraktas
+style=wordwrap
+bg=#B2E8E8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>280</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>480</x>
+      <y>310</y>
+      <w>20</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>310</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+P registracijos
+duomenų užklausa</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>650</x>
+      <y>320</y>
+      <w>20</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>350</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+atsiųsti P 
+pavad. bei kodą
+</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>400</x>
+      <y>410</y>
+      <w>70</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>[P kodas
+validus]
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>400</x>
+      <y>390</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>opt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>390</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+išsaugoti
+pranešimą
+/(notification)/</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;40.0;30.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>430</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>370</y>
+      <w>30</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>330</x>
+      <y>230</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>P - konkreti
+paslauga
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>260</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;70.0;60.0;30.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>310</x>
+      <y>300</y>
+      <w>560</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>opt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>310</x>
+      <y>320</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>[P kreipėsi į atributų saugyklos kontraktą gauti naudotojo N atributą A]
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>670</x>
+      <y>390</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>pranešimo naudotojui pvz.:
+/Paslauga "Jūsų parduotuvė" nori gauti jūsų telefeno numerį. Patvirtinti?/
+style=wordwrap
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>400</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>

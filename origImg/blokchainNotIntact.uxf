@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>400</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Maišos rezultatas
+/PVZ1P2V3Z/
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>270</y>
+      <w>140</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>440</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Ankstesnio bloko
+maišos rezultatas
+/O1R2I3G4/
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>310</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija 2
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>280</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija 1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>330</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=..
+group=1</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>360</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija N
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>240</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Sukūrimo data
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>200</y>
+      <w>180</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Blokas 42
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>310</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Maišos
+f-jos rezultatas
+=
+/PVZ1P2V3Z/
+bg=blue
+fg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>370</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=orange</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>320</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=orange</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>280</y>
+      <w>40</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;10.0;20.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>240</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=#ffc107</panel_attributes>
+    <additional_attributes>100.0;70.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>370</y>
+      <w>90</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=blue</panel_attributes>
+    <additional_attributes>10.0;50.0;70.0;50.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>400</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Maišos rezultatas
+/PVZ1P2V3Z/
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>270</y>
+      <w>140</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>440</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Ankstesnio bloko
+maišos rezultatas
+/P1AKEI2ST3/
+group=4
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>310</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija 2
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>280</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija 1
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>330</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=..
+group=4</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>360</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Transakcija N
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>240</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Sukūrimo data
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>280</y>
+      <w>40</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+group=4</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;10.0;20.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>200</y>
+      <w>180</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Blokas 42
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>240</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=#ffc107
+group=4</panel_attributes>
+    <additional_attributes>100.0;70.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>310</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Maišos
+f-jos rezultatas
+=
+/K1L2A3I4DA/
+bg=blue
+fg=white
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>320</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=orange
+group=4</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>370</y>
+      <w>90</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=blue
+group=4</panel_attributes>
+    <additional_attributes>10.0;50.0;70.0;50.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>370</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=orange
+group=4</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>140</y>
+      <w>30</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;400.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>900</x>
+      <y>480</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Gautas rezultatas nesutampa su įrašytu bloke.
+Blokų grandinės versija nevalidi, tinklo dalyviai turi ją atmesti.
+style=wordwrap
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>410</y>
+      <w>70</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=..
+fg=orange</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>550</x>
+      <y>480</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Gautas rezultatas sutampa su įrašytu bloke.
+Blokų grandinė validi.
+style=wordwrap
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>410</y>
+      <w>70</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=..
+fg=orange</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;70.0</additional_attributes>
+  </element>
+</diagram>

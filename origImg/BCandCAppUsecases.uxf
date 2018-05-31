@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>330</x>
+      <y>150</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Blokų grandinė</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>320</x>
+      <y>330</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Klientinė programa</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
